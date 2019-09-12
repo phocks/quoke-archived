@@ -16,7 +16,7 @@ nunjucks.configure("views", {
   express: app
 });
 
-async function addUser(data) {
+const addUser = async (data) => {
   const hash = await argon2.hash(data.password);
   const user = {username: data.username, passwordHash: hash};
   db.get("users")
@@ -44,7 +44,6 @@ app.get("/api/users", (request, response) => {
 });
 
 app.post("/api/register", (request, response) => {
-  console.log(request.body);
   addUser(request.body);
   response.redirect('/api/users');
 });
