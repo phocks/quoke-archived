@@ -6,6 +6,7 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync(".data/db.json");
 const db = low(adapter);
+const argon2 = require('argon2');
 
 db.defaults({ users: []})
   .write()
@@ -15,9 +16,11 @@ nunjucks.configure("views", {
   express: app
 });
 
-function addUser(data) {
+async function addUser(data) {
+  const hash = await argon2.hash(data.password);
+  const user = {username: data.username, passwordHash: hash};
   db.get("users")
-    .push(data)
+    .push(user)
     .write();
 }
 
@@ -47,7 +50,7 @@ app.post("/api/register", (request, response) => {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
+const listener = app.listen(process.env.PORT || 3000, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
 

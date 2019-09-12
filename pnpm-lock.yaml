@@ -1,19 +1,11 @@
 dependencies:
-  argon2: 0.24.1
   body-parser: 1.19.0
   express: 4.17.1
   lowdb: 1.0.0
   nunjucks: 3.2.0
   passport: 0.4.0
+lockfileVersion: 5.1
 packages:
-  /@phc/format/0.5.0:
-    dependencies:
-      safe-buffer: 5.2.0
-    dev: false
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha512-JWtZ5P1bfXU0bAtTzCpOLYHDXuxSVdtL/oqz4+xa97h8w9E5IlVN333wugXVFv8vZ1hbXObKQf1ptXmFFcMByg==
   /a-sync-waterfall/1.0.1:
     dev: false
     resolution:
@@ -41,17 +33,6 @@ packages:
     optional: true
     resolution:
       integrity: sha512-5teOsQWABXHHBFP9y3skS5P3d/WfWXpv3FUpy+LorMrNYaT9pI4oLMQX7jzQ2KklNpGpWHzdCXTDT2Y3XGlZBw==
-  /argon2/0.24.1:
-    dependencies:
-      '@phc/format': 0.5.0
-      node-addon-api: 1.7.1
-      node-gyp-build: 4.1.1
-    dev: false
-    engines:
-      node: '>=8.0.0'
-    requiresBuild: true
-    resolution:
-      integrity: sha512-2S677iO18I+SQEUONkpvyagF9BJDYdiT82KqSMPQ2zP0oIYagVIPM0Y8T5pJ/4F4CrnN9PTCGA+ye1S0KupW3g==
   /arr-diff/4.0.0:
     dev: false
     engines:
@@ -979,15 +960,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
-  /node-addon-api/1.7.1:
-    dev: false
-    resolution:
-      integrity: sha512-2+DuKodWvwRTrCfKOeR24KIc5unKjOh8mz17NCzVnHWfjAdDqbfbjqh7gUT+BkXBRQM52+xCHciKWonJ3CbJMQ==
-  /node-gyp-build/4.1.1:
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-dSq1xmcPDKPZ2EED2S6zw/b9NKsqzXRE6dVr8TVQnI3FJOTteUMuqF3Qqs6LZg+mLGYJWqQzMbIjMtJqTv87nQ==
   /normalize-path/2.1.1:
     dependencies:
       remove-trailing-separator: 1.1.0
@@ -1235,10 +1207,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
-  /safe-buffer/5.2.0:
-    dev: false
-    resolution:
-      integrity: sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
   /safe-regex/1.1.0:
     dependencies:
       ret: 0.1.15
@@ -1554,11 +1522,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-AwiOnr+edWtpdRYR0qXvWRSCyZU=
-registry: 'https://registry.npmjs.org/'
-shrinkwrapMinorVersion: 9
-shrinkwrapVersion: 3
 specifiers:
-  argon2: ^0.24.1
   body-parser: ^1.19.0
   express: ^4.16.4
   lowdb: ^1.0.0
