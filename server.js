@@ -6,23 +6,40 @@ const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync(".data/db.json");
 const db = low(adapter);
-const argon2 = require('argon2');
+const argon2 = require("argon2");
 
-db.defaults({ users: []})
-  .write()
+db.defaults({ users: [] }).write();
 
 nunjucks.configure("views", {
   autoescape: true,
   express: app
 });
 
-const addUser = async (data) => {
-  const hash = await argon2.hash(data.password);
-  const user = {username: data.username, passwordHash: hash};
-  db.get("users")
-    .push(user)
-    .write();
-}
+const addUser = async data => {
+  const userCheck = db
+    .get("users")
+    .find({ username: data.username })
+    .value();
+
+  for (let i = 0; i < 100; i++) {
+    console.log(await argon2.hash("password"));
+  }
+
+  if (typeof userCheck === "undefined") {
+    const hash = await argon2.hash(data.password);
+    const user = { username: data.username, passwordHash: hash };
+    db.get("users")
+      .push(user)
+      .write();
+  } else {
+    console.log("User exists...");
+    if (await argon2.verify(userCheck.passwordHash, data.password)) {
+      console.log("Password correct!");
+    } else {
+      console.log("Wrong password...");
+    }
+  }
+};
 
 // Serve /public statically
 app.use(express.static("public"));
@@ -43,9 +60,9 @@ app.get("/api/users", (request, response) => {
   response.json(db.get("users").value());
 });
 
-app.post("/api/register", (request, response) => {
-  addUser(request.body);
-  response.redirect('/api/users');
+app.post("/api/register", async (request, response) => {
+  await addUser(request.body);
+  response.redirect("/api/users");
 });
 
 // listen for requests :)
