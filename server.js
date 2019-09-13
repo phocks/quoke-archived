@@ -21,10 +21,6 @@ const addUser = async data => {
     .find({ username: data.username })
     .value();
 
-  for (let i = 0; i < 100; i++) {
-    console.log(await argon2.hash("password"));
-  }
-
   if (typeof userCheck === "undefined") {
     const hash = await argon2.hash(data.password);
     const user = { username: data.username, passwordHash: hash };
@@ -41,6 +37,24 @@ const addUser = async data => {
   }
 };
 
+const checkLogin = async data => {
+  const userCheck = db
+    .get("users")
+    .find({ username: data.username })
+    .value();
+  
+  if (typeof userCheck === "undefined") {
+    console.log("User not found...");
+  } else console.log("User exists...");
+      if (await argon2.verify(userCheck.passwordHash, data.password)) {
+        console.log("Password correct!");
+        return true;
+      } else {
+        console.log("Wrong password...");
+        return false;
+      }
+}
+
 // Serve /public statically
 app.use(express.static("public"));
 
@@ -48,21 +62,31 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.render("index.html", { username: "phocks" });
+app.get("/", (req, res) => {
+  res.render("index.html", { username: "phocks" });
 });
 
-app.get("/register", (request, response) => {
-  response.render("register.html");
+app.get("/register", (req, res) => {
+  res.render("register.html");
 });
 
-app.get("/api/users", (request, response) => {
-  response.json(db.get("users").value());
+app.get("/login", (req, res) => {
+  res.render("login.html");
 });
 
-app.post("/api/register", async (request, response) => {
-  await addUser(request.body);
-  response.redirect("/api/users");
+app.get("/api/users", (req, res) => {
+  res.json(db.get("users").value());
+});
+
+app.post("/api/register", async (req, res) => {
+  await addUser(req.body);
+  res.redirect("/api/users");
+});
+
+app.post("/api/login", async (req, res) => {
+  const result = await checkLogin(req.body);
+  if (result) res.redirect("/api/users");
+  else res.send("Username or password incorrect...")
 });
 
 // listen for requests :)
