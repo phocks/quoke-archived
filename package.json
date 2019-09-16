@@ -7,7 +7,9 @@
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "next",
+    "build": "next build",
+    "start": "next"
   },
   "dependencies": {
     "passport": "^0.4.0",
@@ -15,7 +17,10 @@
     "express": "^4.16.4",
     "nunjucks": "^3.2.0",
     "body-parser": "^1.19.0",
-    "argon2": "^0.24.1"
+    "argon2": "^0.24.1",
+    "next": "^8.1.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "engines": {
     "node": "10.15.x"
