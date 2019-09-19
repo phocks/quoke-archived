@@ -5,8 +5,9 @@ const url = `mongodb://${process.env.dbUser}:${process.env.dbPassword}@ds034677.
 export default async function handle(req, res) {
   const client = await MongoClient.connect(url, { useNewUrlParser: true });
   const db = client.db("quoke");
-  const result = await db.createCollection("testing");
+  const collection = db.collection("test");
+  const result = await collection.find({}).toArray();
   console.log(result);
   client.close();
-  res.end("Hello World");
+  res.status(200).json(result);
 }

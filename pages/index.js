@@ -2,9 +2,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
-const MongoClient = require("mongodb").MongoClient;
 
-const Home = ({ text }) => (
+const Home = props => (
   <div>
     <Head>
       <title>Quoke - A few quotations</title>
@@ -12,7 +11,7 @@ const Home = ({ text }) => (
     </Head>
 
     <div className="container">
-      <p>{text}</p>
+      <p>{props.text}</p>
     </div>
 
     <style jsx>{``}</style>
@@ -20,10 +19,11 @@ const Home = ({ text }) => (
 );
 
 Home.getInitialProps = async () => {
-  
+  const res = await fetch("http://localhost:3000/api/test");
+  const data = await res.json();
 
   return {
-    text: "There is no progress without sacrifice."
+    text: data[1].text
   };
 };
 
