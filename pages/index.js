@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
+import absoluteUrl from 'next-absolute-url'
 
 const Home = props => (
   <div>
@@ -18,8 +19,11 @@ const Home = props => (
   </div>
 );
 
-Home.getInitialProps = async () => {
-  const res = await fetch("http://localhost:3000/api/test");
+Home.getInitialProps = async ({ req, query }) => {
+  const { origin } = absoluteUrl(req);
+  const apiOrigin = `${origin}`;
+
+  const res = await fetch(apiOrigin + "/api/test");
   const data = await res.json();
 
   return {
