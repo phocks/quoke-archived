@@ -27,7 +27,7 @@ Home.getInitialProps = async ({ req, query }) => {
   const data = await res.json();
 
   return {
-    text: data[1].text
+    text: data[0].text
   };
 };
 
