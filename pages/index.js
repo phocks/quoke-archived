@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
-import absoluteUrl from 'next-absolute-url'
+import absoluteUrl from "next-absolute-url";
 
 const Home = props => (
   <div>
@@ -26,8 +26,12 @@ Home.getInitialProps = async ({ req, query }) => {
   const res = await fetch(apiOrigin + "/api/test");
   const data = await res.json();
 
+  const randomPos = Math.floor(Math.random() * data.length);
+  console.log(randomPos);
+  const text = data[randomPos].text;
+
   return {
-    text: data[0].text
+    text: text
   };
 };
 
