@@ -4,6 +4,9 @@ import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 
+// Components
+import Heading from "../components/heading";
+
 const Home = props => (
   <div>
     <Head>
@@ -12,6 +15,7 @@ const Home = props => (
     </Head>
 
     <div className="container">
+      <Heading />
       <p>{props.text}</p>
     </div>
 

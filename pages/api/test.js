@@ -16,6 +16,6 @@ export default async function handle(req, res) {
   const collection = db.collection("test");
   const result = await collection.find({}).toArray();
   client.close();
-  console.log(result);
+
   res.status(200).json(result);
 }
