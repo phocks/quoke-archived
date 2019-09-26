@@ -1,7 +1,5 @@
 import Head from "next/head";
 
-import HeadContents from "./head";
-
 const Layout = ({ children }) => (
   <div>
     <Head>
@@ -24,15 +22,12 @@ const Layout = ({ children }) => (
         rel="stylesheet"
         href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
       />
-      <link
-        href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
-        rel="stylesheet"
-      ></link>
     </Head>
     {children}
 
     <style jsx global>
       {`
+        @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
         html {
           height: 100%;
         }
