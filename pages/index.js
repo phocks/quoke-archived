@@ -12,6 +12,7 @@ const Home = props => (
       <div className="container">
         {/* <Heading /> */}
         <div>{props.text}</div>
+        <Link href="/quotes/[slug]" as={`/quotes/${"a-sorrowful-sight-i-saw"}`}>Link</Link>
       </div>
     </Layout>
   </>
