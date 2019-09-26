@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
           height: 100%;
         }
         body {
-          font-family: "Josefin Sans", sans-serif;
+          /* font-family: "Josefin Sans", sans-serif; */
           display: flex;
           align-items: center;
           justify-content: center;
