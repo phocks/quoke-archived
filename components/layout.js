@@ -33,6 +33,7 @@ const Layout = ({ children }) => (
         }
         body {
           /* font-family: "Josefin Sans", sans-serif; */
+          text-align: center;
           display: flex;
           align-items: center;
           justify-content: center;
