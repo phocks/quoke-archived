@@ -7,15 +7,15 @@ import Layout from "../components/layout";
 import Heading from "../components/heading";
 
 const Home = props => (
-  <>
-    <Layout>
-      <div className="container">
-        {/* <Heading /> */}
-        <div>{props.text}</div>
-        <Link href="/quotes/[slug]" as={`/quotes/${"a-sorrowful-sight-i-saw"}`}>Link</Link>
-      </div>
-    </Layout>
-  </>
+  <Layout>
+    <div className="container">
+      {/* <Heading /> */}
+      <div>{props.text}</div>
+      <Link href="/quote/[slug]" as={`/quote/${"a-sorrowful-sight-i-saw"}`}>
+        <a>Link</a>
+      </Link>
+    </div>
+  </Layout>
 );
 
 Home.getInitialProps = async ({ req, query }) => {

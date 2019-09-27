@@ -9,7 +9,6 @@ const Layout = ({ children }) => (
         content="width=device-width, initial-scale=1"
       ></meta>
       <link rel="icon" href="/static/favicon.ico" />
-      <link rel="stylesheet" href="/static/normalize.css"></link>
       <link
         rel="stylesheet"
         href="https://unpkg.com/spectre.css/dist/spectre.min.css"
