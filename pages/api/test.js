@@ -1,7 +1,8 @@
-import { dbName, client } from "../../lib/mongodb";
+import { MongoClient } from "mongodb";
+import { dbName, url, options } from "../../lib/mongodb";
 
 export default async function handle(req, res) {
-  await client.connect();
+  const client = await MongoClient.connect(url, options);
 
   const db = client.db(dbName);
   const collection = db.collection("test");
