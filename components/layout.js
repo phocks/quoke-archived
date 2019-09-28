@@ -9,7 +9,7 @@ const Layout = ({ children }) => (
         content="width=device-width, initial-scale=1"
       ></meta>
       <link rel="icon" href="/static/favicon.ico" />
-      <link
+      {/* <link
         rel="stylesheet"
         href="https://unpkg.com/spectre.css/dist/spectre.min.css"
       />
@@ -20,13 +20,13 @@ const Layout = ({ children }) => (
       <link
         rel="stylesheet"
         href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
-      />
+      /> */}
     </Head>
     {children}
 
     <style jsx global>
       {`
-        @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+        
         html {
           height: 100%;
         }

@@ -12,7 +12,7 @@ const Home = props => (
       {/* <Heading /> */}
       <div>{props.text}</div>
       <Link href="/quote/[slug]" as={`/quote/${"a-sorrowful-sight-i-saw"}`}>
-        <a>Link</a>
+        <a>Quote!</a>
       </Link>
     </div>
   </Layout>
