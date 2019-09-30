@@ -7,7 +7,10 @@ export default function Quote(props) {
   const quote = props.data;
   return (
     <Layout>
-      <p>"{quote.text}" —{quote.author}</p>
+      <blockquote>
+      <p>"{quote.text}"</p>
+      <cite>—{quote.author}</cite>
+      </blockquote>
     </Layout>
   );
 }

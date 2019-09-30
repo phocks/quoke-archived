@@ -22,17 +22,16 @@ const Layout = ({ children }) => (
         href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
       />
     </Head>
-    {children}
+    <div class="container">{children}</div>
 
     <style jsx global>
       {`
-        
         html {
           height: 100%;
         }
         body {
           /* font-family: "Josefin Sans", sans-serif; */
-          text-align: center;
+          /* text-align: center; */
           display: flex;
           align-items: center;
           justify-content: center;

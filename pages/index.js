@@ -10,10 +10,13 @@ const Home = props => (
   <Layout>
     <div className="container">
       {/* <Heading /> */}
-      <div>{props.text}</div>
-      <Link href="/quote/[slug]" as={`/quote/${"a-sorrowful-sight-i-saw"}`}>
-        <a>Quote!</a>
-      </Link>
+      {/* <div>{props.text}</div> */}
+      {/* <h1>
+        <Link href="/quote/[slug]" as={`/quote/${"a-sorrowful-sight-i-saw"}`}>
+          <a>Q</a>
+        </Link>
+      </h1> */}
+      <blockquote>{props.quote.text}</blockquote>
     </div>
   </Layout>
 );
@@ -22,14 +25,13 @@ Home.getInitialProps = async ({ req, query }) => {
   const { origin } = absoluteUrl(req);
   const apiOrigin = `${origin}`;
 
-  const res = await fetch(apiOrigin + "/api/test");
+  const res = await fetch(apiOrigin + "/api/random");
   const data = await res.json();
 
-  const randomPos = Math.floor(Math.random() * data.length);
-  const text = data[randomPos].text;
+  console.log(data);
 
   return {
-    text: text
+    quote: data
   };
 };
 
