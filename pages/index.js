@@ -28,8 +28,6 @@ Home.getInitialProps = async ({ req, query }) => {
   const res = await fetch(apiOrigin + "/api/random");
   const data = await res.json();
 
-  console.log(data);
-
   return {
     quote: data
   };

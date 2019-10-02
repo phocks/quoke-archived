@@ -1,21 +1,13 @@
 import { MongoClient } from "mongodb";
 
-import {dbName, url, options} from "../../../lib/mongodb"
-
+import { dbName, url, options } from "../../../lib/mongodb";
 
 export default async function handle(req, res) {
   const { slug } = req.query;
-
   const client = await MongoClient.connect(url, options);
-
-  // await client.connect();
-
   const db = client.db(dbName);
   const collection = db.collection("quotations");
   const result = await collection.find({ slug: slug }).toArray();
-
-
-  
 
   res.status(200).json(result);
   client.close();
