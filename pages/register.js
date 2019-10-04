@@ -4,7 +4,7 @@ const Register = props => {
   return (
     <Layout>
       <form action="/api/register" method="post">
-        <input type="text" name="username" placeholder="Username" required />
+        <input type="text" name="username" placeholder="Username" />
         <input type="email" name="email" placeholder="Email" required />
         <input
           type="password"
