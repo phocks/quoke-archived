@@ -1,4 +1,5 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 const COOKIE_MAX_AGE = 60 * 60;
 

@@ -3,7 +3,7 @@ import Head from "next/head";
 const Layout = ({ children }) => (
   <div>
     <Head>
-      <title>Quoke - A few quotations</title>
+      <title>Quoke</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1"
@@ -22,7 +22,17 @@ const Layout = ({ children }) => (
         href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
       />
     </Head>
-    <div class="container">{children}</div>
+    <div className="container">
+      <div className="quoke-container">{children}</div>
+    </div>
+
+    <style jsx>
+      {`
+      .quoke-container {
+        max-width: 480px;
+      }
+      `}
+    </style>
 
     <style jsx global>
       {`
