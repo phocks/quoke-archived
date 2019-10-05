@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Heading from "./heading";
+import Nav from "./nav";
 
 const Layout = ({ children }) => (
   <div>
@@ -23,14 +25,17 @@ const Layout = ({ children }) => (
       />
     </Head>
     <div className="container">
-      <div className="quoke-container">{children}</div>
+      <div className="quoke-container">
+        {/* <Nav /> */}
+        {children}
+      </div>
     </div>
 
     <style jsx>
       {`
-      .quoke-container {
-        max-width: 480px;
-      }
+        .quoke-container {
+          max-width: 480px;
+        }
       `}
     </style>
 

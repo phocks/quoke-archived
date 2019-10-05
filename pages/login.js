@@ -3,16 +3,15 @@ import Layout from "../components/layout";
 const Register = props => {
   return (
     <Layout>
-      <form action="/api/register" method="post">
-        <input type="text" name="username" placeholder="Username" />
-        <input type="email" name="email" placeholder="Email" required />
+      <form action="/api/login" method="post">
+        <input type="text" name="username" placeholder="Username" required/>
         <input
           type="password"
           name="password"
           placeholder="Password"
           required
         />
-        <input type="submit" value="Register" />
+        <input type="submit" value="Login" />
       </form>
       <style jsx>
         {`

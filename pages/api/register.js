@@ -7,7 +7,7 @@ const SALT_ROUNDS = 10;
 const register = async (req, res) => {
   // POST requests only
   if (req.method === "GET") {
-    res.json({ error: "use POST" });
+    res.json({ error: "Please use POST" });
     return;
   }
 
@@ -16,10 +16,11 @@ const register = async (req, res) => {
 
   // All inputs required
   if (!username || !email || !password) {
-    res.json({ error: "all inputs required" });
+    res.json({ error: "All inputs required" });
     return;
   }
 
+  // Generate a password hash and salt
   const hash = await bcrypt.hash(password, SALT_ROUNDS);
 
   const client = await MongoClient.connect(url, options);
@@ -30,12 +31,13 @@ const register = async (req, res) => {
   collection.insertOne({
     username: username,
     email: email,
-    passwordHash: hash
+    passwordHash: hash,
+    dateRegistered: new Date()
   });
 
   console.log(hash);
 
-  res.json({ OK: username });
+  res.json({ OK: "Successfully registered " + username });
 };
 
 export default register;

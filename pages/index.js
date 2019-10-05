@@ -16,7 +16,7 @@ const Home = props => (
           <a>Q</a>
         </Link>
       </h1> */}
-      <Link href="/register"><a>Register</a></Link>
+      
       <blockquote>{props.quote.text}</blockquote>
     </div>
   </Layout>
