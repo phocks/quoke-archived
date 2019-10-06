@@ -1,6 +1,7 @@
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
+import nextCookie from 'next-cookies'
 
 // Components
 import Layout from "../components/layout";
@@ -16,21 +17,26 @@ const Home = props => (
           <a>Q</a>
         </Link>
       </h1> */}
-      
+
       <blockquote>{props.quote.text}</blockquote>
+      <p>Logged in as {props.username}</p>
     </div>
   </Layout>
 );
 
-Home.getInitialProps = async ({ req, query }) => {
+Home.getInitialProps = async (ctx) => {
+  const { req, query } = ctx;
   const { origin } = absoluteUrl(req);
-  const apiOrigin = `${origin}`;
+  const apiOrigin = `${origin}/api/`;
 
-  const res = await fetch(apiOrigin + "/api/random");
-  const data = await res.json();
+  const res = await fetch(apiOrigin + "random");
+  const randomQuote = await res.json();
+
+  const cookies = parseCookies(ctx)
+ 
 
   return {
-    quote: data
+    quote: randomQuote
   };
 };
 

@@ -36,7 +36,7 @@ const login = async (req, res) => {
 
   const payload = { username: username };
   const token = jwt.sign(payload, process.env.jwtSecret, { expiresIn: "1h" });
-  res.setHeader("Set-Cookie", [`token=${token}; Max-Age=${COOKIE_MAX_AGE}`]);
+  res.setHeader("Set-Cookie", [`token=${token}; Max-Age=${COOKIE_MAX_AGE}; Path=/`]);
   res.json({ message: "signed in as " + username, token: token });
 };
 
