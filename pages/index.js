@@ -31,7 +31,6 @@ const Home = props => (
 
       <blockquote>{props.quote.text}</blockquote>
       <p>Logged in: {props.loggedIn.toString()}</p>
-      <p>{props.username}</p>
     </div>
   </Layout>
 );
@@ -49,7 +48,6 @@ Home.getInitialProps = async ctx => {
 
   return {
     loggedIn: auth.loggedIn,
-    username: auth.payload.username,
     quote: randomQuote
   };
 };
