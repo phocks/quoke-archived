@@ -28,7 +28,7 @@ const register = async (req, res) => {
   const db = client.db(dbName);
   const collection = db.collection("users");
 
-  collection.insertOne({
+  await collection.insertOne({
     username: username,
     email: email,
     passwordHash: hash,
