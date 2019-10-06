@@ -26,6 +26,11 @@ const login = async (req, res) => {
   const collection = db.collection("users");
   const foundUser = await collection.findOne({ username: username });
 
+  if (!foundUser) {
+    res.json({ message: "Wrong username or password" });
+    return;
+  }
+
   const { passwordHash } = foundUser;
   const isAuthenticated = await bcrypt.compare(password, passwordHash);
 
@@ -36,7 +41,9 @@ const login = async (req, res) => {
 
   const payload = { username: username };
   const token = jwt.sign(payload, process.env.jwtSecret, { expiresIn: "1h" });
-  res.setHeader("Set-Cookie", [`token=${token}; Max-Age=${COOKIE_MAX_AGE}; Path=/`]);
+  res.setHeader("Set-Cookie", [
+    `token=${token}; Max-Age=${COOKIE_MAX_AGE}; Path=/`
+  ]);
   res.json({ message: "signed in as " + username, token: token });
 };
 

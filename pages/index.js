@@ -19,7 +19,7 @@ const Home = props => (
       </h1> */}
 
       <blockquote>{props.quote.text}</blockquote>
-      <p>Logged in as {props.username}</p>
+      {/* <p>Logged in as {props.username}</p> */}
     </div>
   </Layout>
 );
@@ -32,8 +32,9 @@ Home.getInitialProps = async (ctx) => {
   const res = await fetch(apiOrigin + "random");
   const randomQuote = await res.json();
 
-  const cookies = parseCookies(ctx)
- 
+  const { token } = nextCookie(ctx)
+  console.log(token)
+
 
   return {
     quote: randomQuote
