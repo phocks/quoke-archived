@@ -44,7 +44,11 @@ const login = async (req, res) => {
   res.setHeader("Set-Cookie", [
     `token=${token}; Max-Age=${COOKIE_MAX_AGE}; Path=/`
   ]);
-  res.json({ message: "signed in as " + username, token: token });
+  // res.json({ message: "signed in as " + username, token: token });
+  res.writeHead(302, {
+    Location: "/"
+  });
+  res.end();
 };
 
 export default login;

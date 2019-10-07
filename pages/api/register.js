@@ -37,7 +37,10 @@ const register = async (req, res) => {
 
   console.log(hash);
 
-  res.json({ OK: "Successfully registered " + username });
+  res.writeHead(302, {
+    Location: "/login"
+  });
+  res.end();
 };
 
 export default register;
