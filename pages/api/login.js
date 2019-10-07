@@ -13,7 +13,7 @@ const login = async (req, res) => {
   }
 
   // Get user input
-  const { username, password } = req.body;
+  const { username, password, noRedirect } = req.body;
 
   // All inputs required
   if (!username || !password) {
@@ -44,11 +44,15 @@ const login = async (req, res) => {
   res.setHeader("Set-Cookie", [
     `token=${token}; Max-Age=${COOKIE_MAX_AGE}; Path=/`
   ]);
-  // res.json({ message: "signed in as " + username, token: token });
-  res.writeHead(302, {
-    Location: "/"
-  });
-  res.end();
+
+  if (noRedirect) {
+    res.json({ loggedIn: true });
+  } else {
+    res.writeHead(302, {
+      Location: "/"
+    });
+    res.end();
+  }
 };
 
 export default login;

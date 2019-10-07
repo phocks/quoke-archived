@@ -1,10 +1,28 @@
+import axios from "axios";
+
 import Layout from "../components/layout";
 
 const Register = props => {
+  const attemptlogin = async event => {
+    event.preventDefault();
+
+    const res = await axios.post(
+      "/api/login",
+      {
+        username: event.target.username.value,
+        password: event.target.password.value,
+        noRedirect: true
+      },
+      { withCredentials: true }
+    );
+
+    console.log(res);
+  };
+
   return (
     <Layout>
-      <form action="/api/login" method="post">
-        <input type="text" name="username" placeholder="Username" required/>
+      <form action="/api/login" method="post" onSubmit={attemptlogin}>
+        <input type="text" name="username" placeholder="Username" required />
         <input
           type="password"
           name="password"
