@@ -2,38 +2,34 @@ import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import nextCookie from "next-cookies";
-import jwt from "jsonwebtoken";
+
+import authState from "../lib/authState";
 
 // Components
 import Layout from "../components/layout";
 import Heading from "../components/heading";
 
-const authState = token => {
-  if (!token) return { loggedIn: false };
-  try {
-    var decoded = jwt.verify(token, process.env.jwtSecret);
-    return { loggedIn: true, payload: decoded };
-  } catch (err) {
-    return { loggedIn: false, error: err };
-  }
-};
+const Home = props => {
+  const { loggedIn } = props;
 
-const Home = props => (
-  <Layout>
-    <div className="container">
-      {/* <Heading /> */}
-      {/* <div>{props.text}</div> */}
-      {/* <h1>
+  console.log(loggedIn);
+
+  return (
+    <Layout>
+      <div className="container">
+        {/* <Heading /> */}
+        {/* <div>{props.text}</div> */}
+        {/* <h1>
         <Link href="/quote/[slug]" as={`/quote/${"a-sorrowful-sight-i-saw"}`}>
           <a>Q</a>
         </Link>
       </h1> */}
 
-      <blockquote>{props.quote.text}</blockquote>
-      <p>Logged in: {props.loggedIn.toString()}</p>
-    </div>
-  </Layout>
-);
+        <blockquote>{props.quote.text}</blockquote>
+      </div>
+    </Layout>
+  );
+};
 
 Home.getInitialProps = async ctx => {
   const { req, query } = ctx;
