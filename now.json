@@ -1,4 +1,9 @@
 {
   "name": "quoke",
-  "version": 2
+  "version": 2,
+  "env": {
+    "dbUser": "@dbuser",
+    "dbPassword": "@dbpassword",
+    "jwtSecret": "@jwtsecret"
+  }
 }
