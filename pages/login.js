@@ -1,8 +1,11 @@
 import axios from "axios";
+import { useRouter } from 'next/router'
 
 import Layout from "../components/layout";
 
 const Register = props => {
+  const router = useRouter()
+
   const attemptlogin = async event => {
     event.preventDefault();
 
@@ -17,6 +20,7 @@ const Register = props => {
     );
 
     console.log(res);
+    router.push("/")
   };
 
   return (
