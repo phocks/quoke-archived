@@ -13,16 +13,17 @@ const Layout = ({ children }) => (
       <link rel="icon" href="/static/favicon.ico" />
       <link
         rel="stylesheet"
-        href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+        href="/static/css/spectre.min.css"
       />
       <link
         rel="stylesheet"
-        href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css"
+        href="/static/css/spectre-exp.min.css"
       />
       <link
         rel="stylesheet"
-        href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
+        href="/static/css/spectre-icons.min.css"
       />
+      
     </Head>
     <div className="container">
       <div className="quoke-container">
@@ -41,16 +42,21 @@ const Layout = ({ children }) => (
 
     <style jsx global>
       {`
+        /* @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap'); */
         html {
           height: 100%;
         }
         body {
-          /* font-family: "Josefin Sans", sans-serif; */
+          /* font-family: "Merriweather", sans-serif;  */
           /* text-align: center; */
           display: flex;
           align-items: center;
           justify-content: center;
           height: 100%;
+        }
+        a, a:visited, a:hover, a:active {
+          color: black;
+          text-decoration: none;
         }
       `}
     </style>

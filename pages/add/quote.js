@@ -1,18 +1,13 @@
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 
 export default props => {
   return (
     <Layout>
       <form action="/api/register" method="post">
-        <input type="text" name="username" placeholder="Username" />
-        <input type="email" name="email" placeholder="Email" required />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <input type="submit" value="Register" />
+        <input type="text" name="text" placeholder="Quotation text" required />
+        <input type="text" name="author" placeholder="Author" />
+        <input type="text" name="source" placeholder="Source" required />
+        <input type="submit" value="Add quote" />
       </form>
       <style jsx>
         {`

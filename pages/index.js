@@ -8,6 +8,7 @@ import authState from "../lib/authState";
 // Components
 import Layout from "../components/layout";
 import Heading from "../components/heading";
+import Quotation from "../components/quotation";
 
 const Home = props => {
   const { loggedIn } = props;
@@ -17,15 +18,8 @@ const Home = props => {
   return (
     <Layout>
       <div className="container">
-        {/* <Heading /> */}
-        {/* <div>{props.text}</div> */}
-        {/* <h1>
-        <Link href="/quote/[slug]" as={`/quote/${"a-sorrowful-sight-i-saw"}`}>
-          <a>Q</a>
-        </Link>
-      </h1> */}
-
-        <blockquote>{props.quote.text}</blockquote>
+        <Quotation text={props.quote.text} />
+        <Link href={"/quote/" + props.quote._id.toString()}><a> &gt;</a></Link>
       </div>
     </Layout>
   );
