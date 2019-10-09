@@ -54,6 +54,10 @@ const Layout = ({ children }) => (
           justify-content: center;
           height: 100%;
         }
+        a, a:visited, a:hover, a:active {
+          color: black;
+          text-decoration: none;
+        }
       `}
     </style>
   </div>

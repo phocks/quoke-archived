@@ -19,6 +19,7 @@ const Home = props => {
     <Layout>
       <div className="container">
         <Quotation text={props.quote.text} />
+        <Link href={"/quote/" + props.quote._id.toString()}><a> &gt;</a></Link>
       </div>
     </Layout>
   );
