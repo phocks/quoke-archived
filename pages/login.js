@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import Layout from "../components/layout";
 
-const Register = props => {
+export default props => {
   const router = useRouter();
 
   const attemptlogin = async event => {
@@ -57,5 +57,3 @@ const Register = props => {
     </Layout>
   );
 };
-
-export default Register;

@@ -8,8 +8,8 @@ const Quotation = props => {
       <style jsx>
         {`
           blockquote {
-            font-family: "Merriweather", sans-serif;
-            font-size: 1rem;
+            /* font-family: "Merriweather", sans-serif; /*
+            /* font-size: 1em; */
           }
         `}
       </style>

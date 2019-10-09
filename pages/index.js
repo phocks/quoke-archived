@@ -19,13 +19,6 @@ const Home = props => {
     <Layout>
       <div className="container">
         <Quotation text={props.quote.text} />
-        {/* <p>
-          <small>
-            <Link href={"/"}>
-              <a>Another</a>
-            </Link>
-          </small>
-        </p> */}
       </div>
     </Layout>
   );

@@ -40,11 +40,12 @@ const login = async (req, res) => {
   }
 
   const payload = { username: username };
-  const token = jwt.sign(payload, process.env.jwtSecret, { expiresIn: "1h" });
+  const token = jwt.sign(payload, process.env.jwtSecret, { expiresIn: "1y" });
   res.setHeader("Set-Cookie", [
     `token=${token}; Max-Age=${COOKIE_MAX_AGE}; Path=/`
   ]);
 
+  // If no JavaScript let's hard redirect
   if (noRedirect) {
     res.json({ loggedIn: true });
   } else {

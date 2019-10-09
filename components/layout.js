@@ -42,7 +42,7 @@ const Layout = ({ children }) => (
 
     <style jsx global>
       {`
-        @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+        /* @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap'); */
         html {
           height: 100%;
         }
