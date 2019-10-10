@@ -31,10 +31,13 @@ const register = async (req, res) => {
     })
   );
 
-  console.log(recaptchaResult.data);
+  if (!recaptchaResult.data.success) {
+    res.json({ error: "reCAPTCHA call failed" });
+    return;
+  }
 
   if (recaptchaResult.data.score < 0.5) {
-    res.json({ error: "Likely you are a robot, sorry..." });
+    res.json({ error: "Maybe you are a robot, sorry..." });
     return;
   }
 
@@ -54,10 +57,9 @@ const register = async (req, res) => {
       dateRegistered: new Date()
     });
   } catch (err) {
-    res.json({error: err})
+    res.json({ error: err });
     return;
   }
-  
 
   console.log(hash);
 

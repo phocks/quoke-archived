@@ -4,6 +4,7 @@ import { MongoClient } from "mongodb";
 import { dbName, url, options } from "../../lib/mongodb";
 
 const COOKIE_MAX_AGE = 365 * 24 * 60 * 60;
+const USER_PASS_ERROR = { error: "Wrong username or password" }
 
 const login = async (req, res) => {
   // Accept POST requests only
@@ -27,7 +28,7 @@ const login = async (req, res) => {
   const foundUser = await collection.findOne({ username: username });
 
   if (!foundUser) {
-    res.json({ message: "Wrong username or password" });
+    res.json(USER_PASS_ERROR);
     return;
   }
 
@@ -35,7 +36,7 @@ const login = async (req, res) => {
   const isAuthenticated = await bcrypt.compare(password, passwordHash);
 
   if (!isAuthenticated) {
-    res.json({ error: "Wrong username or password" });
+    res.json(USER_PASS_ERROR);
     return;
   }
 

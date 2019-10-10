@@ -4,6 +4,7 @@
   "env": {
     "dbUser": "@dbuser",
     "dbPassword": "@dbpassword",
-    "jwtSecret": "@jwtsecret"
+    "jwtSecret": "@jwtsecret",
+    "recaptchaSecret": "@recaptchasecret"
   }
 }
