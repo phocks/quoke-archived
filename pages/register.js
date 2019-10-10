@@ -14,7 +14,7 @@ const Register = props => {
 
   const init = async () => {
     const recaptcha = await load(RECAPTCHA_SITE_KEY, {
-      useRecaptchaNet: true,
+      useRecaptchaNet: false,
       autoHideBadge: true
     });
     const token = await recaptcha.execute("register");

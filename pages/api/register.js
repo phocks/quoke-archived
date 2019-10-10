@@ -57,7 +57,7 @@ const register = async (req, res) => {
       dateRegistered: new Date()
     });
   } catch (err) {
-    res.json({ error: err });
+    res.json(err);
     return;
   }
 
