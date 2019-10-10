@@ -13,7 +13,7 @@ import Quotation from "../components/quotation";
 const Home = props => {
   const { loggedIn } = props;
 
-  console.log(loggedIn);
+  console.log("Logged in state: " + loggedIn);
 
   return (
     <Layout>
