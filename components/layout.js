@@ -11,23 +11,12 @@ const Layout = ({ children }) => (
         content="width=device-width, initial-scale=1"
       ></meta>
       <link rel="icon" href="/static/favicon.ico" />
-      <link
-        rel="stylesheet"
-        href="/static/css/spectre.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="/static/css/spectre-exp.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="/static/css/spectre-icons.min.css"
-      />
-      
+      <link rel="stylesheet" href="/static/css/spectre.min.css" />
+      <link rel="stylesheet" href="/static/css/spectre-exp.min.css" />
+      <link rel="stylesheet" href="/static/css/spectre-icons.min.css" />
     </Head>
     <div className="container">
       <div className="quoke-container">
-        {/* <Nav /> */}
         {children}
       </div>
     </div>
@@ -42,21 +31,23 @@ const Layout = ({ children }) => (
 
     <style jsx global>
       {`
-        /* @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap'); */
         html {
           height: 100%;
         }
         body {
-          /* font-family: "Merriweather", sans-serif;  */
-          /* text-align: center; */
           display: flex;
           align-items: center;
           justify-content: center;
           height: 100%;
         }
-        a, a:visited, a:hover, a:active {
+        a,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
           color: black;
-          text-decoration: none;
+          text-decoration
+          : none;
         }
       `}
     </style>

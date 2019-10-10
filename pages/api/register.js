@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 import { dbName, url, options } from "../../lib/mongodb";
 import bcrypt from "bcrypt";
+import axios from "axios";
+import qs from "qs";
 
 const SALT_ROUNDS = 10;
 
@@ -12,11 +14,27 @@ const register = async (req, res) => {
   }
 
   // Get user input
-  const { username, email, password } = req.body;
+  const { username, email, password, noRedirect, recaptchaToken } = req.body;
 
   // All inputs required
   if (!username || !email || !password) {
     res.json({ error: "All inputs required" });
+    return;
+  }
+
+  // Check if robot
+  const recaptchaResult = await axios.post(
+    "https://www.google.com/recaptcha/api/siteverify",
+    qs.stringify({
+      secret: process.env.recaptchaSecret,
+      response: recaptchaToken
+    })
+  );
+
+  console.log(recaptchaResult.data);
+
+  if (recaptchaResult.data.score < 0.5) {
+    res.json({ error: "Likely you are a robot, sorry..." });
     return;
   }
 
@@ -28,19 +46,29 @@ const register = async (req, res) => {
   const db = client.db(dbName);
   const collection = db.collection("users");
 
-  await collection.insertOne({
-    username: username,
-    email: email,
-    passwordHash: hash,
-    dateRegistered: new Date()
-  });
+  try {
+    await collection.insertOne({
+      username: username,
+      email: email,
+      passwordHash: hash,
+      dateRegistered: new Date()
+    });
+  } catch (err) {
+    res.json({error: err})
+    return;
+  }
+  
 
   console.log(hash);
 
-  res.writeHead(302, {
-    Location: "/login"
-  });
-  res.end();
+  if (noRedirect) {
+    res.json({ success: true });
+  } else {
+    res.writeHead(302, {
+      Location: "/login"
+    });
+    res.end();
+  }
 };
 
 export default register;

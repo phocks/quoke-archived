@@ -1,9 +1,51 @@
+import { useState, useEffect } from "react";
 import Layout from "../components/layout";
+import { loadReCaptcha, ReCaptcha } from "react-recaptcha-v3";
+import axios from "axios";
+import { useRouter } from "next/router";
 
-export default props => {
+const RECAPTCHA_SITE_KEY = "6LcIzbwUAAAAAAn47gGOqId6Z9FAWRrbWqcrE9PT";
+
+const Register = props => {
+  const [recaptchaToken, setRecaptchaToken] = useState();
+
+  const router = useRouter()
+
+  const verifyCallback = recaptchaToken => {
+    setRecaptchaToken(recaptchaToken);
+  };
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    const res = await axios.post(
+      "/api/register",
+      {
+        username: event.target.username.value,
+        email: event.target.email.value,
+        password: event.target.password.value,
+        recaptchaToken: recaptchaToken,
+        noRedirect: true
+      }
+    );
+
+    console.log(res);
+    const {success} = res.data
+
+    if (success) router.push("/login");
+  };
+
+  useEffect(() => {
+    loadReCaptcha(RECAPTCHA_SITE_KEY);
+  }, []);
+
   return (
     <Layout>
-      <form action="/api/register" method="post">
+      <ReCaptcha
+        sitekey={RECAPTCHA_SITE_KEY}
+        action="register"
+        verifyCallback={verifyCallback}
+      />
+      <form action="/api/register" method="post" onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Username" />
         <input type="email" name="email" placeholder="Email" required />
         <input
@@ -14,6 +56,11 @@ export default props => {
         />
         <input type="submit" value="Register" />
       </form>
+      {/* <p>
+        This site is protected by reCAPTCHA and the Google{" "}
+        <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
+        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+      </p> */}
       <style jsx>
         {`
           input,
@@ -34,3 +81,13 @@ export default props => {
     </Layout>
   );
 };
+
+Register.getInitialProps = async ctx => {
+  return {
+    checkCaptcha: () => {
+      console.log("server");
+    }
+  };
+};
+
+export default Register;
