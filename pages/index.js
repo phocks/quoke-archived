@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
-import nextCookie from "next-cookies";
+import cookies from 'next-cookies'
 
 import authState from "../lib/authState";
 
@@ -58,8 +58,10 @@ Home.getInitialProps = async ctx => {
   const res = await fetch(apiOrigin + "random");
   const randomQuote = await res.json();
 
-  const { token } = nextCookie(ctx);
+  const { token } = cookies(ctx);
   const auth = authState(token);
+
+  console.log(auth)
 
   return {
     loggedIn: auth.loggedIn,

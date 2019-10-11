@@ -22,7 +22,11 @@ export default props => {
     console.log(res.data);
     const { loggedIn } = res.data;
 
-    if (loggedIn) router.push("/");
+    if (loggedIn) {
+      setTimeout(() => router.push("/"), 1000);
+    } else {
+      console.log("Something bad happened..")
+    }
   };
 
   return (
