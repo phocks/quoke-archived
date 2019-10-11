@@ -25,4 +25,6 @@ Quote.getInitialProps = async ({ req, query }) => {
   return {
     data: data[0]
   };
+
+  return {}
 };
