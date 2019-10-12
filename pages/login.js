@@ -23,9 +23,9 @@ export default props => {
     const { loggedIn } = res.data;
 
     if (loggedIn) {
-      setTimeout(() => router.push("/"), 1000);
+      router.push("/");
     } else {
-      console.log("Something bad happened..")
+      console.log("Something bad happened..");
     }
   };
 

@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
-import cookies from 'next-cookies'
+import cookies from "next-cookies";
 
-import authState from "../lib/authState";
+// import authState from "../lib/authState";
 
 // Components
 import Layout from "../components/layout";
@@ -55,13 +55,29 @@ Home.getInitialProps = async ctx => {
 
   const apiOrigin = `${origin}/api/`;
 
-  const res = await fetch(apiOrigin + "random");
-  const randomQuote = await res.json();
+  const resRandom = await fetch(apiOrigin + "random");
+  const randomQuote = await resRandom.json();
 
   const { token } = cookies(ctx);
-  const auth = authState(token);
 
-  console.log(auth)
+  if (!token) {
+    return {
+      loggedIn: false,
+      quote: randomQuote
+    };
+  }
+
+  const resAuth = await fetch(apiOrigin + "is-authenticated", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ token: token })
+  });
+
+  const auth = resAuth ? await resAuth.json() : false;
+
+  console.log(auth);
 
   return {
     loggedIn: auth.loggedIn,
