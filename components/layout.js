@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
     </Head>
     <div className="container">
       <div className="quoke-container">
-        <Nav />
+        {/* <Nav /> */}
         {children}
       </div>
     </div>
