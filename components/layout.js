@@ -36,6 +36,7 @@ const Layout = ({ children }) => (
         }
         html {
           height: 100%;
+          line-height: 1.5;
         }
         body {
           margin: 0;
