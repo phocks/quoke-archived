@@ -21,28 +21,14 @@ const Home = props => {
 
   return (
     <Layout>
-      <div className="container">
-        <Link href={"/"}>
-          <a>
-            <h3></h3>
-          </a>
-        </Link>
+    
         <Quotation text={props.quote.text} author={props.quote.author} />
         {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
-      </div>
+      
 
       <style jsx>
         {`
-          h3 {
-            margin-left: 18px;
-            background: white;
-            height: 5px;
-            width: 38px;
-          }
-
-          a {
-            color: white;
-          }
+         
         `}
       </style>
     </Layout>
