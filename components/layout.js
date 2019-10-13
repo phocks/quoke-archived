@@ -37,6 +37,9 @@ const Layout = ({ children }) => (
           margin: 0;
           height: 100%;
         }
+        h1 {
+          margin-top: 0;
+        }
         #__next {
           height: 100%;
         }
