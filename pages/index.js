@@ -21,14 +21,16 @@ const Home = props => {
 
   return (
     <Layout>
-    
+        <h1 className={"Q"}>Q</h1>
         <Quotation text={props.quote.text} author={props.quote.author} />
         {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
       
 
       <style jsx>
         {`
-         
+          .Q {
+            font-family: 'Press Start 2P', cursive;
+          }
         `}
       </style>
     </Layout>
