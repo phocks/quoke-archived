@@ -24,7 +24,7 @@ const Layout = ({ children }) => (
         </h1>
       </header>
       {children}
-      <footer class="footer">
+      <footer>
         <Link href="/login">
           <a>Login</a>
         </Link>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import Layout from "../components/layout";
 
@@ -42,9 +43,16 @@ export default props => {
           />
           <input type="submit" value="Login" />
         </form>
+        <p><small>No account? <Link href="/register">Register</Link> first.</small></p>
       </main>
       <style jsx>
         {`
+          main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
           input,
           .btn {
             width: 100%;
