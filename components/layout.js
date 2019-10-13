@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Heading from "./heading";
 import Nav from "./nav";
+import Link from "next/link";
 
 const Layout = ({ children }) => (
   <>
@@ -14,22 +15,41 @@ const Layout = ({ children }) => (
       <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
     </Head>
 
-    <div className="container">{children}</div>
+    <div className="container">
+      <header>
+        <h1 className="Q">
+          <Link href="/">
+            <a>Q</a>
+          </Link>
+        </h1>
+      </header>
+      {children}
+      <footer class="footer">
+        <Link href="/login">
+          <a>Login</a>
+        </Link>
+      </footer>
+    </div>
 
-    <style jsx>
-      {`
-        
-      `}
-    </style>
+    <style jsx>{`
+      .Q {
+        font-family: "Press Start 2P", cursive;
+        font-size: 33px;
+      }
+      .Q a {
+        color: white;
+        text-decoration: none;
+      }
+    `}</style>
 
     <style jsx global>
       {`
         @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
-        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+        @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+        @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
         html {
           height: 100%;
-          font-family: 'Roboto', sans-serif;
+          font-family: "Roboto", sans-serif;
           color: white;
           line-height: 1.5;
         }
@@ -37,17 +57,26 @@ const Layout = ({ children }) => (
           margin: 0;
           height: 100%;
         }
+        a {
+          color: white;
+        }
         h1 {
           margin-top: 0;
         }
         #__next {
-         height: 100%;
+          height: 100%;
         }
         .container {
           background: #222;
           min-height: 100%;
           padding: 20px;
           border: 16px solid #fff;
+          display: flex;
+          flex-direction: column;
+        }
+        main,
+        .content {
+          flex: 1;
         }
       `}
     </style>
