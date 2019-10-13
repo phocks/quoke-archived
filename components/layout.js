@@ -41,13 +41,13 @@ const Layout = ({ children }) => (
           margin-top: 0;
         }
         #__next {
-          height: 100%;
+         height: 100%;
         }
         .container {
           background: #222;
-          height: 100%;
+          min-height: 100%;
           padding: 20px;
-          border: 16px solid #eee;
+          border: 16px solid #fff;
         }
       `}
     </style>
