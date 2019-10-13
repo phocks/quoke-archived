@@ -3,7 +3,7 @@ import Heading from "./heading";
 import Nav from "./nav";
 import Link from "next/link";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, username }) => (
   <>
     <Head>
       <title>Quoke</title>
@@ -25,8 +25,17 @@ const Layout = ({ children }) => (
       </header>
       {children}
       <footer>
-        <Link href="/login">
-          <a>Login</a>
+        {username ? (
+          <Link href="/api/logout">
+            <a>{username}</a>
+          </Link>
+        ) : (
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+        )}{" "}
+        <Link href="/">
+          <a>Another quote</a>
         </Link>
       </footer>
     </div>
@@ -39,6 +48,9 @@ const Layout = ({ children }) => (
       .Q a {
         color: white;
         text-decoration: none;
+      }
+      footer a {
+        margin-right: 10px;
       }
     `}</style>
 

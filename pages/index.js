@@ -20,7 +20,7 @@ const Home = props => {
   });
 
   return (
-    <Layout>
+    <Layout username={props.username} >
       <main className="content">
         <Quotation text={props.quote.text} author={props.quote.author} />
         {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
@@ -66,6 +66,7 @@ Home.getInitialProps = async ctx => {
 
   return {
     loggedIn: auth.loggedIn,
+    username: auth.loggedIn ? auth.payload.username : null,
     quote: randomQuote
   };
 };
