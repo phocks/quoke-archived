@@ -44,39 +44,54 @@ const Register = props => {
 
   return (
     <Layout>
-      <form action="/api/register" method="post" onSubmit={handleSubmit}>
-        <input type="text" name="username" placeholder="Username" required/>
-        <input type="email" name="email" placeholder="Email" required />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <input type="submit" value="Register" />
-      </form>
-      <p>
-        <small>
-          This site is protected by reCAPTCHA and the Google{" "}
-          <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
-          <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
-          apply.
-        </small>
-      </p>
+      <main>
+        <form action="/api/register" method="post" onSubmit={handleSubmit}>
+          <input type="text" name="username" placeholder="Username" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" value="Register" />
+        </form>
+        <p className="recaptcha">
+          <small>
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
+            <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
+            apply.
+          </small>
+        </p>
+      </main>
       <style jsx>
         {`
+          main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
           input,
           .btn {
             width: 100%;
+            max-width: 480px;
             padding: 12px;
             border: 1px solid #e1e1e1;
             border-radius: 4px;
             margin: 5px 0;
             opacity: 0.85;
-            display: inline-block;
+            display: block;
             font-size: 17px;
             line-height: 20px;
             text-decoration: none;
+            background: none;
+            color: white;
+          }
+          .recaptcha {
+            text-align: center;
+            max-width: 360px;
           }
         `}
       </style>

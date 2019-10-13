@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Heading from "./heading";
 import Nav from "./nav";
+import Link from "next/link";
 
 const Layout = ({ children }) => (
-  <div>
+  <>
     <Head>
       <title>Quoke</title>
       <meta
@@ -13,51 +14,73 @@ const Layout = ({ children }) => (
       <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
     </Head>
+
     <div className="container">
-      <div className="quoke-container">
-        {/* <Nav /> */}
-        {children}
-      </div>
+      <header>
+        <h1 className="Q">
+          <Link href="/">
+            <a>Q</a>
+          </Link>
+        </h1>
+      </header>
+      {children}
+      <footer>
+        <Link href="/login">
+          <a>Login</a>
+        </Link>
+      </footer>
     </div>
 
-    <style jsx>
-      {`
-        .quoke-container {
-          max-width: 480px;
-        }
-      `}
-    </style>
+    <style jsx>{`
+      .Q {
+        font-family: "Press Start 2P", cursive;
+        font-size: 33px;
+      }
+      .Q a {
+        color: white;
+        text-decoration: none;
+      }
+    `}</style>
 
     <style jsx global>
       {`
         @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
-        * {
-          box-sizing: border-box;
-        }
+        @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+        @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
         html {
           height: 100%;
+          font-family: "Roboto", sans-serif;
+          color: white;
           line-height: 1.5;
         }
         body {
           margin: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           height: 100%;
-          background-color: #222;
+        }
+        a {
           color: white;
         }
-        a,
-        a:visited,
-        a:hover,
-        a:active,
-        a:focus {
-          /* color: black; */
-          text-decoration: none;
+        h1 {
+          margin-top: 0;
+        }
+        #__next {
+          height: 100%;
+        }
+        .container {
+          background: #222;
+          min-height: 100%;
+          padding: 20px;
+          border: 16px solid #fff;
+          display: flex;
+          flex-direction: column;
+        }
+        main,
+        .content {
+          flex: 1;
         }
       `}
     </style>
-  </div>
+  </>
 );
 
 export default Layout;
