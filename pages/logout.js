@@ -45,7 +45,7 @@ export default props => {
           }
           input,
           button {
-            width: 100%;
+            /* width: 100%; */
             max-width: 480px;
             padding: 12px;
             border: 1px solid #e1e1e1;
