@@ -43,7 +43,15 @@ export default props => {
           />
           <input type="submit" value="Login" />
         </form>
-        <p><small>No account? <Link href="/register"><a>Register</a></Link> first.</small></p>
+        <p>
+          <small>
+            No account?{" "}
+            <Link href="/register">
+              <a>Register</a>
+            </Link>{" "}
+            first.
+          </small>
+        </p>
       </main>
       <style jsx>
         {`

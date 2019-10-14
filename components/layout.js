@@ -26,7 +26,7 @@ const Layout = ({ children, username }) => (
       {children}
       <footer>
         {username ? (
-          <Link href="/api/logout">
+          <Link href="/logout">
             <a>{username}</a>
           </Link>
         ) : (
@@ -74,6 +74,10 @@ const Layout = ({ children, username }) => (
         }
         h1 {
           margin-top: 0;
+        }
+        button,
+        input[type="submit"] {
+          cursor: pointer;
         }
         #__next {
           height: 100%;
