@@ -8,7 +8,6 @@ import cookies from "next-cookies";
 
 // Components
 import Layout from "../components/layout";
-import Heading from "../components/heading";
 import Quotation from "../components/quotation";
 
 const Home = props => {
