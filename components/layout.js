@@ -34,8 +34,8 @@ const Layout = ({ children, username }) => (
             <a>Login</a>
           </Link>
         )}{" "}
-        <Link href="/">
-          <a>Another quote</a>
+        <Link href="/random">
+          <a>Random</a>
         </Link>
       </footer>
     </div>

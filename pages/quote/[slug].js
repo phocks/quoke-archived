@@ -2,15 +2,19 @@ import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 
 import Layout from "../../components/layout";
+import Quotation from "../../components/quotation";
 
 export default function Quote(props) {
-  const quote = props.data;
+  const quote = props.quote;
   return (
     <Layout>
-      <blockquote>
+      <main className="content">
+        <Quotation text={quote.text} author={quote.author} />
+        {/* <blockquote>
       <p>"{quote.text}"</p>
       <cite>—{quote.author}</cite>
-      </blockquote>
+      </blockquote> */}
+      </main>
     </Layout>
   );
 }
@@ -22,9 +26,11 @@ Quote.getInitialProps = async ({ req, query }) => {
   const res = await fetch(apiOrigin + "/api/quote/" + query.slug);
   const data = await res.json();
 
+  console.log(data);
+
   return {
-    data: data[0]
+    quote: data[0]
   };
 
-  return {}
+  return {};
 };
