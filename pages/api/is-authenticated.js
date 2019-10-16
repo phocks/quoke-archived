@@ -8,7 +8,7 @@ const isAuthenticated = async (req, res) => {
   }
 
   try {
-    var decoded = jwt.verify(token, process.env.jwtSecret);
+    var decoded = jwt.verify(token, process.env.jwtSecret || "secret");
     res.json({ loggedIn: true, payload: decoded });
   } catch (err) {
     res.json({ loggedIn: false, error: err });

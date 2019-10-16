@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/layout";
-// import { loadReCaptcha, ReCaptcha } from "react-recaptcha-v3";
 import { load } from "recaptcha-v3";
 import axios from "axios";
 import { useRouter } from "next/router";
