@@ -16,7 +16,8 @@ Prerequisites: must have MongoDB server running locally with a database called "
 Then:
 
 1. Clone this repo
-2. run `yarn install`
-3. run `yarn run dev`
+2. Run `yarn install`
+3. Rename `next.config.example.js` to `next.config.js`
+4. Run `yarn run dev`
 
 Go to: http://localhost:3000/
