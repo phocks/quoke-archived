@@ -22,23 +22,25 @@ const register = async (req, res) => {
     return;
   }
 
-  // Check if robot
-  const recaptchaResult = await axios.post(
-    "https://www.google.com/recaptcha/api/siteverify",
-    qs.stringify({
-      secret: process.env.recaptchaSecret,
-      response: recaptchaToken
-    })
-  );
+  // On production check if robot
+  if (process.env.NODE_ENV === "production") {
+    const recaptchaResult = await axios.post(
+      "https://www.google.com/recaptcha/api/siteverify",
+      qs.stringify({
+        secret: process.env.recaptchaSecret,
+        response: recaptchaToken
+      })
+    );
 
-  if (!recaptchaResult.data.success) {
-    res.json({ error: "reCAPTCHA call failed" });
-    return;
-  }
+    if (!recaptchaResult.data.success) {
+      res.json({ error: "reCAPTCHA call failed" });
+      return;
+    }
 
-  if (recaptchaResult.data.score < 0.5) {
-    res.json({ error: "Maybe you are a robot, sorry..." });
-    return;
+    if (recaptchaResult.data.score < 0.5) {
+      res.json({ error: "Maybe you are a robot, sorry..." });
+      return;
+    }
   }
 
   // Generate a password hash and salt
