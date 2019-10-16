@@ -8,7 +8,7 @@ Prerequisites: must have MongoDB server running locally with a database called "
 ```
 {
   _id:ObjectId(5da7095914f83005db482f93),
-  "text": "When one door of happiness closes, another opens; but often we look so..."
+  "text": "When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one that has been opened for us."
   author: "Helen Keller"
 }
 ```
