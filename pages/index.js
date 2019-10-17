@@ -19,7 +19,8 @@ const Home = props => {
   });
 
   return (
-    <Layout username={props.username} >
+  <>
+     <Layout username={props.username} >
       <main className="content">
         <Quotation text={props.quote.text} author={props.quote.author} />
         {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
@@ -29,7 +30,8 @@ const Home = props => {
           
         `}
       </style>
-    </Layout>
+     </Layout>
+    </>
   );
 };
 

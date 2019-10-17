@@ -68,6 +68,7 @@ const Layout = ({ children, username }) => (
         body {
           margin: 0;
           height: 100%;
+          background-color: #fff
         }
         a {
           color: white;
