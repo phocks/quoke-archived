@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import Link from "next/link";
+// import Link from "next/link";
 
 import Layout from "../components/layout";
 
@@ -37,12 +37,6 @@ export default props => {
       </main>
       <style jsx>
         {`
-          main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-          }
           input,
           button {
             /* width: 100%; */

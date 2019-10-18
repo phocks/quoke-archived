@@ -26,8 +26,6 @@ Quote.getInitialProps = async ({ req, query }) => {
   const res = await fetch(apiOrigin + "/api/quote/" + query.slug);
   const data = await res.json();
 
-  console.log(data);
-
   return {
     quote: data[0]
   };
