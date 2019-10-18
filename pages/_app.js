@@ -19,7 +19,7 @@ class MyApp extends App {
   // }
 
   componentDidMount() {
-    console.log("Mounted App...");
+    console.log(":)");
   }
 
   render() {

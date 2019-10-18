@@ -25,7 +25,7 @@ const Layout = ({ children, username }) => (
       </header>
       {children}
       <footer>
-        {username ? (
+        {/* {username ? (
           <Link href="/logout">
             <a>{username}</a>
           </Link>
@@ -33,7 +33,7 @@ const Layout = ({ children, username }) => (
           <Link href="/login">
             <a>Login</a>
           </Link>
-        )}{" "}
+        )}{" "} */}
         <Link href="/random">
           <a>Random</a>
         </Link>
@@ -101,6 +101,8 @@ const Layout = ({ children, username }) => (
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          padding-left: 5px;
+          padding-right: 5px;
         }
       `}
     </style>

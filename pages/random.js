@@ -8,7 +8,7 @@ const Random = props => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/quote/[slug]", "/quote/" + props.randomQuote._id.toString());
+    router.replace("/quote/[slug]", "/quote/" + props.randomQuote._id.toString());
   }, []);
   return (
     <Layout>

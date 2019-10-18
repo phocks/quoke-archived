@@ -22,16 +22,16 @@ const Quotation = props => {
 
           @media (min-width: 641px) {
             blockquote {
-              font-size: 2.3rem;
+              font-size: 2.1rem;
               padding-left: 5vw;
               padding-right: 5vw;
-              max-width: 1600px;
+              max-width: 1200px;
             }
           }
 
           @media (min-width: 961px) {
             blockquote {
-              font-size: 3.3rem;
+              font-size: 2.6rem;
             }
           }
         `}
