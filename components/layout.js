@@ -64,11 +64,12 @@ const Layout = ({ children, username }) => (
           font-family: "Roboto", sans-serif;
           color: white;
           line-height: 1.5;
+          background-color: #222;
         }
         body {
           margin: 0;
           height: 100%;
-          background-color: #fff
+          background-color: #222;
         }
         a {
           color: white;
@@ -87,13 +88,19 @@ const Layout = ({ children, username }) => (
           background: #222;
           min-height: 100%;
           padding: 20px;
-          border: 16px solid #fff;
+          /* border: 16px solid #fff; */
           display: flex;
           flex-direction: column;
         }
         main,
         .content {
           flex: 1;
+        }
+        main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
       `}
     </style>

@@ -12,7 +12,7 @@ const Random = props => {
   }, []);
   return (
     <Layout>
-      <main className="content"></main>
+      <main className="content">Loading...</main>
     </Layout>
   );
 };

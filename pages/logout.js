@@ -37,12 +37,6 @@ export default props => {
       </main>
       <style jsx>
         {`
-          main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-          }
           input,
           button {
             /* width: 100%; */
