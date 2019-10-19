@@ -9,11 +9,7 @@ export default async function handle(req, res) {
   const collection = db.collection("quotations");
 
   const searchString = "^" + slug.replace(/\-/g, ".*");
-
   const regexSearch = new RegExp(searchString, "i");
-
-  console.log(regexSearch)
-  
 
   const result = await collection.find({ text: regexSearch }).toArray();
 
