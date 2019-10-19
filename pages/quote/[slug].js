@@ -10,10 +10,6 @@ export default function Quote(props) {
     <Layout>
       <main className="content">
         <Quotation text={quote.text} author={quote.author} />
-        {/* <blockquote>
-      <p>"{quote.text}"</p>
-      <cite>—{quote.author}</cite>
-      </blockquote> */}
       </main>
     </Layout>
   );
