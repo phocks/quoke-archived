@@ -1,21 +1,31 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import absoluteUrl from "next-absolute-url";
-import slugify from "slugify";
+// import slug from "slug";
 
 import Layout from "../components/layout";
 
 // Number of words to truncate the quote text to
-const SLUG_WORD_COUNT = 8;
+const SLUG_WORD_COUNT = 10;
 
 const Random = props => {
   const router = useRouter();
 
   useEffect(() => {
-    const quoteText = props.randomQuote.text;
-    const truncatedText = truncate(quoteText, SLUG_WORD_COUNT);
-    const slugText = slugify(truncatedText, { lower: true });
-    router.replace("/quote/[slug]", "/quote/" + slugText);
+    // const quoteText = props.randomQuote.text;
+    // const truncatedText = truncate(quoteText, SLUG_WORD_COUNT);
+    
+    // const slugText = slug(truncatedText, {
+    //   replacement: "-", // replace spaces with replacement
+    //   symbols: true, // replace unicode symbols or not
+    //   remove: /[.]/g, // (optional) regex to remove characters
+    //   lower: true, // result in lower case
+    //   charmap: slug.charmap, // replace special characters
+    //   multicharmap: slug.multicharmap // replace multi-characters
+    // });
+    // console.log(slugText);
+
+    router.replace("/quote/[slug]", "/quote/" + props.randomQuote.slug);
   }, []);
   return (
     <Layout>
@@ -40,9 +50,4 @@ Random.getInitialProps = async ctx => {
 
 export default Random;
 
-function truncate(str, no_words) {
-  return str
-    .split(" ")
-    .splice(0, no_words)
-    .join(" ");
-}
+

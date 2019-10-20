@@ -8,10 +8,7 @@ export default async function handle(req, res) {
   const db = client.db(dbName);
   const collection = db.collection("quotations");
 
-  const searchString = "^" + slug.replace(/\-/g, ".*");
-  const regexSearch = new RegExp(searchString, "i");
-
-  const result = await collection.find({ text: regexSearch }).toArray();
+  const result = await collection.find({ slug: slug }).toArray();
 
   res.status(200).json(result);
   client.close();
