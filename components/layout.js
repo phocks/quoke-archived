@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Heading from "./heading";
-import Nav from "./nav";
 import Link from "next/link";
 
 const Layout = ({ children, username }) => (
@@ -16,13 +15,7 @@ const Layout = ({ children, username }) => (
     </Head>
 
     <div className="container">
-      <header>
-        <h1 className="Q">
-          <Link href="/">
-            <a>Q</a>
-          </Link>
-        </h1>
-      </header>
+      <Heading />
       {children}
       <footer>
         {/* {username ? (
@@ -41,14 +34,6 @@ const Layout = ({ children, username }) => (
     </div>
 
     <style jsx>{`
-      .Q {
-        font-family: "Press Start 2P", cursive;
-        font-size: 33px;
-      }
-      .Q a {
-        color: white;
-        text-decoration: none;
-      }
       footer a {
         margin-right: 10px;
       }

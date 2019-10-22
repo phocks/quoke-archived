@@ -15,23 +15,23 @@ const Quotation = props => {
       <style jsx>
         {`
           blockquote {
-            font-family: "Grenze", serif;
-            font-size: 1.8rem;
+            /* font-family: "Grenze", serif; */
+            font-size: 1.5em;
             margin: 0;
           }
 
           @media (min-width: 641px) {
             blockquote {
-              font-size: 2.1rem;
+              font-size: 1.8em;
               padding-left: 5vw;
               padding-right: 5vw;
-              max-width: 1200px;
+              max-width: 960px;
             }
           }
 
           @media (min-width: 961px) {
             blockquote {
-              font-size: 2.6rem;
+              font-size: 2.0em;
             }
           }
         `}
