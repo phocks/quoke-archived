@@ -1,11 +1,47 @@
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import axios from "axios";
+
 const Heading = () => {
+  const [loginInfo, setLoginInfo] = useState();
+
+  useEffect(() => {
+
+  })
+
   return (
-    <div className={"header-container"}>
-      <h1>Quoke</h1>
+    <>
+      <header>
+        <div>
+          <h1 className="branding">
+            <Link href="/">
+              <a>Q</a>
+            </Link>
+          </h1>
+        </div>
+        <div>
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+        </div>
+      </header>
+
       <style jsx>{`
-        
+        header {
+          display: flex;
+          justify-content: space-between;
+        }
+        .branding {
+          font-family: "Press Start 2P", cursive;
+          font-size: 33px;
+          margin-bottom: 0;
+        }
+        .branding a {
+          color: white;
+          text-decoration: none;
+        }
       `}</style>
-    </div>
+    </>
   );
 };
 
