@@ -24,11 +24,11 @@ class MyApp extends App {
 
     const { token } = cookies(ctx);
 
-    if (!token) {
-      return {
-        loggedIn: false
-      };
-    }
+    // if (!token) {
+    //   return {
+    //     loggedIn: false
+    //   };
+    // }
 
     const resAuth = await fetch(apiOrigin + "/is-authenticated", {
       method: "post",
@@ -46,7 +46,7 @@ class MyApp extends App {
     const appProps = await App.getInitialProps(appContext);
 
     return {
-      loggedIn: auth.loggedIn,
+      loggedIn: token ? auth.loggedIn : false,
       username: auth.loggedIn ? auth.payload.username : null,
       ...appProps
     };
