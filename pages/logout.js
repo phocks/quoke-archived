@@ -31,7 +31,7 @@ export default props => {
   };
 
   return (
-    <Layout>
+      <>
       <main>
         <button onClick={doLogout}>Logout?</button>
       </main>
@@ -55,6 +55,6 @@ export default props => {
           }
         `}
       </style>
-    </Layout>
+      </>
   );
 };

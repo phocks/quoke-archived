@@ -31,7 +31,8 @@ export default props => {
   };
 
   return (
-    <Layout>
+    <>
+    {/* <Layout> */}
       <main>
         <form action="/api/login" method="post" onSubmit={attemptlogin}>
           <input type="text" name="username" placeholder="Username" required />
@@ -79,6 +80,7 @@ export default props => {
           }
         `}
       </style>
-    </Layout>
+    {/* </Layout> */}
+    </>
   );
 };

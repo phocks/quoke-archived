@@ -15,18 +15,9 @@ const Layout = ({ children, username }) => (
     </Head>
 
     <div className="container">
-      <Heading />
+      <Heading username={username} />
       {children}
       <footer>
-        {/* {username ? (
-          <Link href="/logout">
-            <a>{username}</a>
-          </Link>
-        ) : (
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-        )}{" "} */}
         <Link href="/random">
           <a>Random</a>
         </Link>

@@ -42,7 +42,7 @@ const Register = props => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <main>
         <form action="/api/register" method="post" onSubmit={handleSubmit}>
           <input type="text" name="username" placeholder="Username" required />
@@ -94,7 +94,7 @@ const Register = props => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import Layout from "../../components/layout";
 
 export default props => {
   return (
-    <Layout>
+    <>
       <form action="/api/register" method="post">
         <input type="text" name="text" placeholder="Quotation text" required />
         <input type="text" name="author" placeholder="Author" />
@@ -26,6 +26,6 @@ export default props => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
