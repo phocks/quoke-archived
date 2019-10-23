@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
 
-const Heading = () => {
+const Heading = props => {
   const [loginInfo, setLoginInfo] = useState();
 
-  useEffect(() => {
-
-  })
+  useEffect(() => {});
 
   return (
     <>
@@ -20,9 +18,15 @@ const Heading = () => {
           </h1>
         </div>
         <div>
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
+          {props.username ? (
+            <Link href="/logout">
+              <a>{props.username}</a>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          )}{" "}
         </div>
       </header>
 

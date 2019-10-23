@@ -12,9 +12,10 @@ const Random = props => {
   const router = useRouter();
 
   useEffect(() => {
+    console.log(props)
     // const quoteText = props.randomQuote.text;
     // const truncatedText = truncate(quoteText, SLUG_WORD_COUNT);
-    
+
     // const slugText = slug(truncatedText, {
     //   replacement: "-", // replace spaces with replacement
     //   symbols: true, // replace unicode symbols or not
@@ -27,21 +28,19 @@ const Random = props => {
 
     router.replace("/quote/[slug]", "/quote/" + props.randomQuote.slug);
   }, []);
-  return (
-    <Layout>
-      <main className="content"></main>
-    </Layout>
-  );
+  return <main className="content"></main>;
 };
 
 Random.getInitialProps = async ctx => {
   const { req, query } = ctx;
   const { origin } = absoluteUrl(req);
 
-  const apiOrigin = `${origin}/api/`;
+  const apiOrigin = `${origin}/api`;
 
-  const resRandom = await fetch(apiOrigin + "random");
+  const resRandom = await fetch(apiOrigin + "/random");
   const randomQuote = await resRandom.json();
+
+  console.log(randomQuote);
 
   return {
     randomQuote: randomQuote
@@ -49,5 +48,3 @@ Random.getInitialProps = async ctx => {
 };
 
 export default Random;
-
-

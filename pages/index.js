@@ -20,7 +20,7 @@ const Home = props => {
 
   return (
     <>
-      <Layout username={props.username}>
+      {/* <Layout username={props.username}> */}
         <main className="content">
           <h1 className="heading">
             quoke. Verb. (archaic) simple past tense and past participle of
@@ -38,7 +38,7 @@ const Home = props => {
             }
           `}
         </style>
-      </Layout>
+      {/* </Layout> */}
     </>
   );
 };

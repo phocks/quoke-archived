@@ -7,11 +7,11 @@ import Quotation from "../../components/quotation";
 export default function Quote(props) {
   const quote = props.quote;
   return (
-    <Layout>
+    <>
       <main className="content">
         <Quotation text={quote.text} author={quote.author} />
       </main>
-    </Layout>
+    </>
   );
 }
 

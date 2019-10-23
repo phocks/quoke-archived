@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 function Error({ statusCode }) {
   return (
-    <Layout>
+    <>
       <main>
         <p>
           {statusCode
@@ -11,7 +11,7 @@ function Error({ statusCode }) {
             : "An error occurred on client"}
         </p>
       </main>
-    </Layout>
+    </>
   );
 }
 
