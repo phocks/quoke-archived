@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { useStoreActions } from "easy-peasy";
 
 const Heading = props => {
   const [loginInfo, setLoginInfo] = useState();
+  const setUsername = useStoreActions(actions => actions.user.setUsername);
 
-  useEffect(() => {});
+  useEffect(() => {
+    
+    setUsername(props.username);
+  });
 
   return (
     <>
