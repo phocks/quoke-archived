@@ -21,10 +21,9 @@ const Home = props => {
   return (
     <>
       {/* <Layout username={props.username}> */}
-        <main className="content">
+        <main className="mid">
           <h1 className="heading">
-            quoke. Verb. (archaic) simple past tense and past participle of
-            quake.
+            quoke. Verb. (archaic) a short, well-known saying, stating a general truth or piece of advice.
           </h1>
           {/* <Quotation text={props.quote.text} author={props.quote.author} /> */}
           {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}

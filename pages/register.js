@@ -43,7 +43,7 @@ const Register = props => {
 
   return (
     <>
-      <main>
+      <main className={"mid"}>
         <form action="/api/register" method="post" onSubmit={handleSubmit}>
           <input type="text" name="username" placeholder="Username" required />
           <input type="email" name="email" placeholder="Email" required />

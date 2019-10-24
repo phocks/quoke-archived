@@ -3,8 +3,22 @@ import App from "next/app";
 import absoluteUrl from "next-absolute-url";
 import cookies from "next-cookies";
 import fetch from "isomorphic-unfetch";
+import { createStore } from "easy-peasy";
+import { StoreProvider } from "easy-peasy";
+import { action } from "easy-peasy"; // 👈 import
 
 import Layout from "../components/layout";
+
+const storeModel = {
+  user: {
+    username: "none",
+    setUsername: action((state, payload) => {
+      state.username = payload;
+    })
+  }
+};
+
+const store = createStore(storeModel);
 
 class MyApp extends App {
   // Only uncomment this method if you have blocking data requirements for
@@ -19,16 +33,7 @@ class MyApp extends App {
 
     const apiOrigin = `${origin}/api`;
 
-    // const resRandom = await fetch(apiOrigin + "/random");
-    // const randomQuote = await resRandom.json();
-
     const { token } = cookies(ctx);
-
-    // if (!token) {
-    //   return {
-    //     loggedIn: false
-    //   };
-    // }
 
     const resAuth = await fetch(apiOrigin + "/is-authenticated", {
       method: "post",
@@ -59,9 +64,11 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <Layout username={this.props.username}>
-        <Component {...pageProps} />
-      </Layout>
+      <StoreProvider store={store}>
+        <Layout username={this.props.username}>
+          <Component {...pageProps} />
+        </Layout>
+      </StoreProvider>
     );
   }
 }

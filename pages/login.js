@@ -33,7 +33,7 @@ export default props => {
   return (
     <>
     {/* <Layout> */}
-      <main>
+      <main className={"mid"}>
         <form action="/api/login" method="post" onSubmit={attemptlogin}>
           <input type="text" name="username" placeholder="Username" required />
           <input

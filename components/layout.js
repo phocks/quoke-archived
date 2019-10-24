@@ -19,7 +19,7 @@ const Layout = ({ children, username }) => (
       {children}
       <footer>
         <Link href="/random">
-          <a>Random</a>
+          <a className={"no-underline"}>&#x1f500;</a>
         </Link>
       </footer>
     </div>
@@ -27,6 +27,9 @@ const Layout = ({ children, username }) => (
     <style jsx>{`
       footer a {
         margin-right: 10px;
+      }
+      .no-underline {
+        text-decoration: none;
       }
     `}</style>
 
@@ -68,11 +71,10 @@ const Layout = ({ children, username }) => (
           display: flex;
           flex-direction: column;
         }
-        main,
-        .content {
+        main {
           flex: 1;
         }
-        main {
+        main.mid {
           display: flex;
           flex-direction: column;
           align-items: center;

@@ -12,23 +12,9 @@ const Random = props => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(props)
-    // const quoteText = props.randomQuote.text;
-    // const truncatedText = truncate(quoteText, SLUG_WORD_COUNT);
-
-    // const slugText = slug(truncatedText, {
-    //   replacement: "-", // replace spaces with replacement
-    //   symbols: true, // replace unicode symbols or not
-    //   remove: /[.]/g, // (optional) regex to remove characters
-    //   lower: true, // result in lower case
-    //   charmap: slug.charmap, // replace special characters
-    //   multicharmap: slug.multicharmap // replace multi-characters
-    // });
-    // console.log(slugText);
-
     router.replace("/quote/[slug]", "/quote/" + props.randomQuote.slug);
   }, []);
-  return <main className="content"></main>;
+  return <main className={"mid"}></main>;
 };
 
 Random.getInitialProps = async ctx => {
