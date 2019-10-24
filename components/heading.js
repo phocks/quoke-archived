@@ -19,7 +19,7 @@ const Heading = props => {
         </div>
         <div>
           {props.username ? (
-            <Link href="/logout">
+            <Link href={"/[username]"} as={"/" + props.username}>
               <a>{props.username}</a>
             </Link>
           ) : (

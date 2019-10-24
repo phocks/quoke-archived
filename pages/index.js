@@ -23,7 +23,7 @@ const Home = props => {
       {/* <Layout username={props.username}> */}
         <main className="content">
           <h1 className="heading">
-            quoke. Verb. (archaic) a short, well-known pithy saying, stating a general truth or piece of advice.
+            quoke. Verb. (archaic) a short, well-known saying, stating a general truth or piece of advice.
           </h1>
           {/* <Quotation text={props.quote.text} author={props.quote.author} /> */}
           {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
