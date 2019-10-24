@@ -21,7 +21,7 @@ const Home = props => {
   return (
     <>
       {/* <Layout username={props.username}> */}
-        <main className="content">
+        <main className="mid">
           <h1 className="heading">
             quoke. Verb. (archaic) a short, well-known saying, stating a general truth or piece of advice.
           </h1>

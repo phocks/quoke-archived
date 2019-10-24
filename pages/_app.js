@@ -19,16 +19,7 @@ class MyApp extends App {
 
     const apiOrigin = `${origin}/api`;
 
-    // const resRandom = await fetch(apiOrigin + "/random");
-    // const randomQuote = await resRandom.json();
-
     const { token } = cookies(ctx);
-
-    // if (!token) {
-    //   return {
-    //     loggedIn: false
-    //   };
-    // }
 
     const resAuth = await fetch(apiOrigin + "/is-authenticated", {
       method: "post",
