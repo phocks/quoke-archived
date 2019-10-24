@@ -14,7 +14,7 @@ const Random = props => {
   useEffect(() => {
     router.replace("/quote/[slug]", "/quote/" + props.randomQuote.slug);
   }, []);
-  return <main className="content"></main>;
+  return <main className={"mid"}></main>;
 };
 
 Random.getInitialProps = async ctx => {

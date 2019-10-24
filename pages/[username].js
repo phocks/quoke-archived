@@ -1,5 +1,5 @@
 const Test = props => {
-  return <main>{props.username}</main>;
+  return <main className={"mid"}>{props.username}</main>;
 };
 
 Test.getInitialProps = async context => {

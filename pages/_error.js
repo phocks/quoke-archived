@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 function Error({ statusCode }) {
   return (
     <>
-      <main>
+      <main className={"mid"}>
         <p>
           {statusCode
             ? `An error ${statusCode} occurred on server`

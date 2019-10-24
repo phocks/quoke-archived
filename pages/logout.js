@@ -32,7 +32,7 @@ export default props => {
 
   return (
       <>
-      <main>
+      <main className={"mid"}>
         <button onClick={doLogout}>Logout?</button>
       </main>
       <style jsx>
