@@ -1,11 +1,13 @@
+import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 import Layout from "../components/layout";
 
-export default props => {
+const Login = props => {
   const router = useRouter();
+  const [userMessage, setUserMessage] = useState();
 
   const attemptlogin = async event => {
     event.preventDefault();
@@ -27,13 +29,14 @@ export default props => {
       router.push("/");
     } else {
       console.log("Something bad happened..");
+      setUserMessage("Something went wrong. Try again.");
     }
   };
 
   return (
     <>
-    {/* <Layout> */}
       <main className={"mid"}>
+        {userMessage && <div>{userMessage}</div>}
         <form action="/api/login" method="post" onSubmit={attemptlogin}>
           <input type="text" name="username" placeholder="Username" required />
           <input
@@ -80,7 +83,8 @@ export default props => {
           }
         `}
       </style>
-    {/* </Layout> */}
     </>
   );
 };
+
+export default Login;
