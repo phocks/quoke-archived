@@ -1,4 +1,5 @@
 import { useStoreState } from "easy-peasy";
+import Error from './_error'
 
 const Test = props => {
   const username = useStoreState(state => {
@@ -6,9 +7,10 @@ const Test = props => {
     return state.user.username;
   });
 
+  // return <Error statusCode={404} />
+
   return (
     <main className={"mid"}>
-      {/* <p>{props.username}</p> */}
       <p>{username}</p>
     </main>
   );
