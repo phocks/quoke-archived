@@ -53,9 +53,6 @@ const Layout = ({ children, username }) => (
         a {
           color: white;
         }
-        h1 {
-          margin-top: 0;
-        }
         button,
         input[type="submit"] {
           cursor: pointer;
@@ -81,6 +78,16 @@ const Layout = ({ children, username }) => (
           justify-content: center;
           padding-left: 5px;
           padding-right: 5px;
+        }
+        main.article {
+          font-size: 20px;
+          padding-top: 16px;
+          display: flex;
+          justify-content: center;
+        }
+        main.article section {
+          max-width: 480px;
+          width: 100%;
         }
       `}
     </style>

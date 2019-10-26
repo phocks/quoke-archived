@@ -44,6 +44,7 @@ const Heading = props => {
           font-family: "Press Start 2P", cursive;
           font-size: 33px;
           margin-bottom: 0;
+          margin: 0;
         }
         .branding a {
           color: white;
