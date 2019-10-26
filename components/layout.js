@@ -82,6 +82,14 @@ const Layout = ({ children, username }) => (
           padding-left: 5px;
           padding-right: 5px;
         }
+        main.article {
+          padding-top: 16px;
+          display: flex;
+          justify-content: center;
+        }
+        main.article section {
+          max-width: 960px;
+        }
       `}
     </style>
   </>

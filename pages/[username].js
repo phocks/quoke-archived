@@ -19,8 +19,6 @@ const Test = props => {
 Test.getInitialProps = async context => {
   const { req, query } = context;
 
-  console.log(query);
-
   return { username: query.username };
 };
 
