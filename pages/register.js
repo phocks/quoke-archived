@@ -8,6 +8,7 @@ const RECAPTCHA_SITE_KEY = "6LcIzbwUAAAAAAn47gGOqId6Z9FAWRrbWqcrE9PT";
 
 const Register = props => {
   const [recaptchaToken, setRecaptchaToken] = useState();
+  const [userMessage, setUserMessage] = useState();
 
   const router = useRouter();
 
@@ -35,6 +36,9 @@ const Register = props => {
     const { success } = res.data;
 
     if (success) router.push("/login");
+    else {
+      setUserMessage("Something went wrong. Try again.");
+    }
   };
 
   useEffect(() => {
@@ -44,6 +48,7 @@ const Register = props => {
   return (
     <>
       <main className={"mid"}>
+        {userMessage && <div>{userMessage}</div>}
         <form action="/api/register" method="post" onSubmit={handleSubmit}>
           <input type="text" name="username" placeholder="Username" required />
           <input type="email" name="email" placeholder="Email" required />
