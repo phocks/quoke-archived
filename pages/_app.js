@@ -45,8 +45,6 @@ class MyApp extends App {
 
     const auth = resAuth ? await resAuth.json() : false;
 
-    console.log(auth);
-
     // calls page's `getInitialProps` and fills `appProps.pageProps`
     const appProps = await App.getInitialProps(appContext);
 

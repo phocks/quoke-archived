@@ -42,41 +42,4 @@ const Home = props => {
   );
 };
 
-// Home.getInitialProps = async ctx => {
-//   const { req, query } = ctx;
-//   const { origin } = absoluteUrl(req);
-
-//   const apiOrigin = `${origin}/api/`;
-
-//   const resRandom = await fetch(apiOrigin + "random");
-//   const randomQuote = await resRandom.json();
-
-//   const { token } = cookies(ctx);
-
-//   if (!token) {
-//     return {
-//       loggedIn: false,
-//       quote: randomQuote
-//     };
-//   }
-
-//   const resAuth = await fetch(apiOrigin + "is-authenticated", {
-//     method: "post",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({ token: token })
-//   });
-
-//   const auth = resAuth ? await resAuth.json() : false;
-
-//   console.log(auth);
-
-//   return {
-//     loggedIn: auth.loggedIn,
-//     username: auth.loggedIn ? auth.payload.username : null,
-//     quote: randomQuote
-//   };
-// };
-
 export default Home;

@@ -83,12 +83,13 @@ const Layout = ({ children, username }) => (
           padding-right: 5px;
         }
         main.article {
+          font-size: 20px;
           padding-top: 16px;
           display: flex;
           justify-content: center;
         }
         main.article section {
-          max-width: 960px;
+          max-width: 720px;
         }
       `}
     </style>
