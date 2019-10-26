@@ -13,8 +13,11 @@ const Test = props => {
   if (!props.userFound) return <Error statusCode={404} />;
   else {
     return (
-      <main className={"mid"}>
-        <p>{props.username}</p>
+      <main className={"article"}>
+        <section>
+          <h2>@{props.username}</h2>
+          <p>Date joined: {props.dateRegistered}</p>
+        </section>
       </main>
     );
   }
@@ -32,7 +35,11 @@ Test.getInitialProps = async context => {
   if (!data.userFound) {
     return { userFound: false };
   } else {
-    return { userFound: true, username: data.username };
+    return {
+      userFound: true,
+      username: data.username,
+      dateRegistered: data.dateRegistered
+    };
   }
 };
 

@@ -11,7 +11,7 @@ import Layout from "../components/layout";
 
 const storeModel = {
   user: {
-    username: "none",
+    username: null,
     setUsername: action((state, payload) => {
       state.username = payload;
     })
