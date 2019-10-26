@@ -20,6 +20,7 @@ export default async (req, res) => {
     res.status(200).json({ userFound: false });
     client.close();
   } else {
-    const userReturn = { userFound: true, username: result.username };
+    res.status(200).json({ userFound: true, username: result.username });
+    client.close();
   }
 };
