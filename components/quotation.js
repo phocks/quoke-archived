@@ -15,7 +15,7 @@ const Quotation = props => {
       <style jsx>
         {`
           blockquote {
-            /* font-family: "Grenze", serif; */
+            font-family: "Grenze", serif;
             font-size: 1.5em;
             margin: 0;
           }

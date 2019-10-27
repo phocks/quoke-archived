@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import axios from "axios";
 import { useStoreActions } from "easy-peasy";
 
 const Heading = props => {
@@ -8,7 +7,6 @@ const Heading = props => {
   const setUsername = useStoreActions(actions => actions.user.setUsername);
 
   useEffect(() => {
-    
     setUsername(props.username);
   });
 
@@ -37,8 +35,14 @@ const Heading = props => {
 
       <style jsx>{`
         header {
+          color: white;
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          padding: 8px 16px;
+        }
+        a {
+          color: white;
         }
         .branding {
           font-family: "Press Start 2P", cursive;
@@ -47,7 +51,6 @@ const Heading = props => {
           margin: 0;
         }
         .branding a {
-          color: white;
           text-decoration: none;
         }
       `}</style>
