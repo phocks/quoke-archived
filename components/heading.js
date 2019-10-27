@@ -51,7 +51,6 @@ const Heading = props => {
           margin: 0;
         }
         .branding a {
-          color: white;
           text-decoration: none;
         }
       `}</style>

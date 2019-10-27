@@ -15,10 +15,6 @@ const Layout = props => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
-        <script
-          src="https://kit.fontawesome.com/7b433f5e25.js"
-          crossorigin="anonymous"
-        ></script>
       </Head>
 
       <div className="container">
@@ -26,8 +22,6 @@ const Layout = props => {
         {children}
         <Footer />
       </div>
-
-      
 
       <style jsx global>
         {`
@@ -37,14 +31,13 @@ const Layout = props => {
           html {
             height: 100%;
             font-family: "Roboto", sans-serif;
-            color: #222;
             line-height: 1.5;
             background-color: #222;
           }
           body {
             margin: 0;
             height: 100%;
-            background-color: #222;
+            color: #222;
           }
           a {
             color: #222;
@@ -59,8 +52,6 @@ const Layout = props => {
           .container {
             background: #222;
             min-height: 100%;
-            /* padding: 20px; */
-            /* border: 16px solid #fff; */
             display: flex;
             flex-direction: column;
           }
@@ -90,6 +81,10 @@ const Layout = props => {
           }
         `}
       </style>
+      <script
+        src="https://kit.fontawesome.com/7b433f5e25.js"
+        crossorigin="anonymous"
+      ></script>
     </>
   );
 };
