@@ -20,7 +20,10 @@ const Heading = props => {
             </Link>
           </h1>
         </div>
-        <div>
+        <div className={"nav"}>
+          {/* <Link href="/about">
+            <a>About</a>
+          </Link> */}
           {props.username ? (
             <Link href={"/[username]"} as={"/" + props.username}>
               <a>{props.username}</a>
@@ -39,7 +42,7 @@ const Heading = props => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 5px 16px 3px;
+          padding: 0px 16px;
         }
         a {
           color: white;
@@ -47,11 +50,14 @@ const Heading = props => {
         .branding {
           font-family: "Press Start 2P", cursive;
           font-size: 33px;
-          margin-bottom: 0;
           margin: 0;
+          padding-top: 5px;
         }
         .branding a {
           text-decoration: none;
+        }
+        .nav a {
+          margin-left: 6px;
         }
       `}</style>
     </>
