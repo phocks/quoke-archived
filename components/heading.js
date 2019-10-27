@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import axios from "axios";
 import { useStoreActions } from "easy-peasy";
 
 const Heading = props => {

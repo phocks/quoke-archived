@@ -85,7 +85,7 @@ const Layout = props => {
             justify-content: center;
           }
           main.article section {
-            max-width: 480px;
+            max-width: 720px;
             width: 100%;
           }
         `}
