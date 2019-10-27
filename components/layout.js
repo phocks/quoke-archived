@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Heading from "./heading";
-import Link from "next/link";
+
+import Footer from "./footer";
 
 const Layout = props => {
   const { children, username } = props;
@@ -23,35 +24,10 @@ const Layout = props => {
       <div className="container">
         <Heading username={username} />
         {children}
-        <footer>
-          <Link href="/random">
-            <a className={"no-underline"}>
-              <i className="fas fa-random"></i>
-            </a>
-          </Link>
-        </footer>
+        <Footer />
       </div>
 
-      <style jsx>
-        {`
-          footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            border-top: 1px #ddd dotted;
-            min-height: 60px;
-            color: #222;
-          }
-          footer a {
-            margin-right: 10px;
-            color: #222;
-          }
-          .no-underline {
-            text-decoration: none;
-          }
-        `}
-      </style>
+      
 
       <style jsx global>
         {`
