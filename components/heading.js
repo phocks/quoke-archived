@@ -8,7 +8,6 @@ const Heading = props => {
   const setUsername = useStoreActions(actions => actions.user.setUsername);
 
   useEffect(() => {
-    
     setUsername(props.username);
   });
 
@@ -37,8 +36,14 @@ const Heading = props => {
 
       <style jsx>{`
         header {
+          color: white;
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          padding: 8px 16px;
+        }
+        a {
+          color: white;
         }
         .branding {
           font-family: "Press Start 2P", cursive;
