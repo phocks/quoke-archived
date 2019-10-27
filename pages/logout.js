@@ -51,7 +51,6 @@ export default props => {
             line-height: 20px;
             text-decoration: none;
             background: none;
-            color: white;
           }
         `}
       </style>

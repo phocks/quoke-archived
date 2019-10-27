@@ -39,7 +39,7 @@ const Heading = props => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 8px 16px;
+          padding: 5px 16px 3px;
         }
         a {
           color: white;

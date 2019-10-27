@@ -91,7 +91,6 @@ const Register = props => {
             line-height: 20px;
             text-decoration: none;
             background: none;
-            color: white;
           }
           .recaptcha {
             text-align: center;
