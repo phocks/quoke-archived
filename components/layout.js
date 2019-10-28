@@ -83,7 +83,7 @@ const Layout = props => {
       </style>
       <script
         src="https://kit.fontawesome.com/7b433f5e25.js"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
     </>
   );
