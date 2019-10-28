@@ -21,22 +21,20 @@ const Home = props => {
   return (
     <>
       {/* <Layout username={props.username}> */}
-        <main className="mid">
-          <h1 className="heading">
-            quoke. Verb. (archaic) a short, well-known saying, stating a general truth or piece of advice.
-          </h1>
-          {/* <Quotation text={props.quote.text} author={props.quote.author} /> */}
-          {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
-        </main>
-        <style jsx>
-          {`
-            h1.heading {
-              /* font-family: "Press Start 2P", cursive; */
-              /* font-size: 48px; */
-              max-width: 720px;
-            }
-          `}
-        </style>
+      <main className="mid">
+        <h1 className="heading">quoke.</h1>
+        {/* <Quotation text={props.quote.text} author={props.quote.author} /> */}
+        {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
+      </main>
+      <style jsx>
+        {`
+          h1.heading {
+            /* font-family: "Press Start 2P", cursive; */
+            /* font-size: 48px; */
+            max-width: 720px;
+          }
+        `}
+      </style>
       {/* </Layout> */}
     </>
   );
