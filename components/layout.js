@@ -32,7 +32,6 @@ const Layout = props => {
             height: 100%;
             font-family: "Roboto", sans-serif;
             line-height: 1.5;
-            background-color: #222;
           }
           body {
             margin: 0;
@@ -50,7 +49,6 @@ const Layout = props => {
             height: 100%;
           }
           .container {
-            background: #222;
             min-height: 100%;
             display: flex;
             flex-direction: column;
@@ -58,6 +56,7 @@ const Layout = props => {
           main {
             background-color: white;
             color: #111;
+            min-height: 100%;
             flex: 1;
             padding-top: 16px;
             padding-bottom: 16px;

@@ -18,8 +18,7 @@ const Footer = () => {
             align-items: center;
             justify-content: center;
             background-color: white;
-            border-top: 1px #ddd dotted;
-            min-height: 60px;
+            min-height: 40px;
             color: #222;
           }
           footer a {

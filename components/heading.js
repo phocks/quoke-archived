@@ -32,26 +32,26 @@ const Heading = props => {
             <Link href="/login">
               <a>Login</a>
             </Link>
-          )}{" "}
+          )}
         </div>
       </header>
 
       <style jsx>{`
         header {
-          color: white;
           display: flex;
           justify-content: space-between;
-          align-items: center;
-          padding: 0px 16px;
+          /* align-items: center; */
+          padding: 8px 16px;
         }
         a {
-          color: white;
+          
         }
         .branding {
           font-family: "Press Start 2P", cursive;
           font-size: 33px;
           margin: 0;
-          padding-top: 5px;
+          position: relative;
+          top: -3px;
         }
         .branding a {
           text-decoration: none;
