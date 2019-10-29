@@ -14,8 +14,8 @@ const Home = props => {
   const { loggedIn } = props;
 
   useEffect(() => {
-    // console.log("Logged in state: " + loggedIn);
-    // console.log(props.quote);
+    console.log("Logged in state: " + loggedIn);
+    console.log(props.quote);
   });
 
   return (

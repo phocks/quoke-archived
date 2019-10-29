@@ -3,8 +3,6 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import Layout from "../components/layout";
-
 const Login = props => {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState();
