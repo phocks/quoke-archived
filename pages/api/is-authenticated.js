@@ -1,9 +1,7 @@
 import jwt from "jsonwebtoken";
 
 const isAuthenticated = async (req, res) => {
-  const { token } = req.body;
-
-  console.log(req.cookies)
+  const { token } = req.cookies;
 
   if (typeof token === "undefined") {
     res.json({ message: "No token" });

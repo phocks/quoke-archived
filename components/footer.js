@@ -14,11 +14,12 @@ const Footer = () => {
       <style jsx>
         {`
           footer {
+            font-size: 1.5em;
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; */
             background-color: white;
-            min-height: 40px;
+            padding: 4px 16px;
             color: #222;
           }
           footer a {

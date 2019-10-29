@@ -10,6 +10,7 @@ import axios from "axios";
 
 import Layout from "../components/layout";
 
+// Create a global data store using Easy Peasy
 const storeModel = {
   user: {
     username: null,
@@ -22,52 +23,63 @@ const storeModel = {
 const store = createStore(storeModel);
 
 class MyApp extends App {
+  constructor(props) {
+    super(props);
+    this.state = { username: null };
+  }
+
   // Only uncomment this method if you have blocking data requirements for
   // every single page in your application. This disables the ability to
   // perform automatic static optimization, causing every page in your app to
   // be server-side rendered.
   //
-  static async getInitialProps(appContext) {
-    const { Component, router, ctx } = appContext;
-    const { req, query } = ctx;
-    const { origin } = absoluteUrl(req);
+  // static async getInitialProps(appContext) {
+  //   const { Component, router, ctx } = appContext;
+  //   const { req, query } = ctx;
+  //   const { origin } = absoluteUrl(req);
 
-    const apiOrigin = `${origin}/api`;
+  //   const apiOrigin = `${origin}/api`;
 
-    const { token } = cookies(ctx);
+  //   const { token } = cookies(ctx);
 
-    const resAuth = await fetch(apiOrigin + "/is-authenticated", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ token: token })
-    });
+  //   const resAuth = await fetch(apiOrigin + "/is-authenticated", {
+  //     method: "post",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({ token: token })
+  //   });
 
-    const auth = resAuth ? await resAuth.json() : false;
+  //   const auth = resAuth ? await resAuth.json() : false;
 
-    // calls page's `getInitialProps` and fills `appProps.pageProps`
-    const appProps = await App.getInitialProps(appContext);
+  //   // calls page's `getInitialProps` and fills `appProps.pageProps`
+  //   const appProps = await App.getInitialProps(appContext);
 
-    return {
-      loggedIn: token ? auth.loggedIn : false,
-      username: auth.loggedIn ? auth.payload.username : null,
-      ...appProps
-    };
-  }
+  //   return {
+  //     loggedIn: token ? auth.loggedIn : false,
+  //     username: auth.loggedIn ? auth.payload.username : null,
+  //     ...appProps
+  //   };
+  // }
 
   componentDidMount() {
     console.log(":)");
-    axios.post("/api/is-authenticated", {}).then(response => {
-      console.log(response);
-    });
+
+    axios.post("/api/is-authenticated", {}).then(
+      response => {
+        if (response.data.loggedIn === true) {
+          this.setState({ username: response.data.payload.username });
+        }
+      },
+      { withCredentials: true }
+    );
   }
 
   render() {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Layout username={this.props.username}>
+        <Layout username={this.state.username}>
           <Component {...pageProps} />
         </Layout>
       </StoreProvider>
