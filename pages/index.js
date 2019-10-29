@@ -11,11 +11,11 @@ import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 
 const Home = props => {
-  const { loggedIn } = props;
+  // const { loggedIn } = props;
 
   useEffect(() => {
-    console.log("Logged in state: " + loggedIn);
-    console.log(props.quote);
+    // console.log("Logged in state: " + loggedIn);
+    // console.log(props.quote);
   });
 
   return (

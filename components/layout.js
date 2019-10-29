@@ -4,7 +4,7 @@ import Heading from "./heading";
 import Footer from "./footer";
 
 const Layout = props => {
-  const { children, username } = props;
+  const { children } = props;
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ const Layout = props => {
       </Head>
 
       <div className="container">
-        <Heading username={username} />
+        <Heading />
         {children}
         <Footer />
       </div>

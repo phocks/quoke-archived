@@ -1,13 +1,28 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import axios from "axios";
+import { useStoreState } from "easy-peasy";
 import { useStoreActions } from "easy-peasy";
 
 const Heading = props => {
-  const [loginInfo, setLoginInfo] = useState();
-  const setUsername = useStoreActions(actions => actions.user.setUsername);
+  const [username, setUsername] = useState();
+  const setGlobalUsername = useStoreActions(
+    actions => actions.user.setUsername
+  );
+
+  const user = useStoreState(state => state.user.username);
 
   useEffect(() => {
-    setUsername(props.username);
+    // setUsername(props.username);
+    axios.post("/api/is-authenticated", {}).then(
+      response => {
+        if (response.data.loggedIn === true) {
+          setGlobalUsername(response.data.payload.username);
+          setUsername(user);
+        }
+      },
+      { withCredentials: true }
+    );
   });
 
   return (
@@ -24,9 +39,9 @@ const Heading = props => {
           {/* <Link href="/about">
             <a>About</a>
           </Link> */}
-          {props.username ? (
-            <Link href={"/[username]"} as={"/" + props.username}>
-              <a>{props.username}</a>
+          {user ? (
+            <Link href={"/[username]"} as={"/" + username}>
+              <a>{user}</a>
             </Link>
           ) : (
             <Link href="/login">
@@ -44,7 +59,6 @@ const Heading = props => {
           padding: 8px 16px;
         }
         a {
-          
         }
         .branding {
           font-family: "Press Start 2P", cursive;

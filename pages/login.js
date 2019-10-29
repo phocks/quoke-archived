@@ -2,10 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useStoreActions } from "easy-peasy";
 
 const Login = props => {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState();
+  const setGlobalUsername = useStoreActions(actions => actions.user.setUsername);
 
   const attemptlogin = async event => {
     event.preventDefault();
@@ -24,6 +26,14 @@ const Login = props => {
     const { loggedIn } = res.data;
 
     if (loggedIn) {
+      axios.post("/api/is-authenticated", {}).then(
+        response => {
+          if (response.data.loggedIn === true) {
+            setGlobalUsername(response.data.payload.username);
+          }
+        },
+        { withCredentials: true }
+      );
       router.push("/");
     } else {
       console.log("Something bad happened..");

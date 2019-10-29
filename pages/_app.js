@@ -25,7 +25,7 @@ const store = createStore(storeModel);
 class MyApp extends App {
   constructor(props) {
     super(props);
-    this.state = { username: null };
+    // this.state = { username: null };
   }
 
   // Only uncomment this method if you have blocking data requirements for
@@ -65,21 +65,21 @@ class MyApp extends App {
   componentDidMount() {
     console.log(":)");
 
-    axios.post("/api/is-authenticated", {}).then(
-      response => {
-        if (response.data.loggedIn === true) {
-          this.setState({ username: response.data.payload.username });
-        }
-      },
-      { withCredentials: true }
-    );
+    // axios.post("/api/is-authenticated", {}).then(
+    //   response => {
+    //     if (response.data.loggedIn === true) {
+    //       this.setState({ username: response.data.payload.username });
+    //     }
+    //   },
+    //   { withCredentials: true }
+    // );
   }
 
   render() {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Layout username={this.state.username}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </StoreProvider>
