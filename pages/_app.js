@@ -5,7 +5,8 @@ import cookies from "next-cookies";
 import fetch from "isomorphic-unfetch";
 import { createStore } from "easy-peasy";
 import { StoreProvider } from "easy-peasy";
-import { action } from "easy-peasy"; // 👈 import
+import { action } from "easy-peasy";
+import axios from "axios";
 
 import Layout from "../components/layout";
 
@@ -57,6 +58,9 @@ class MyApp extends App {
 
   componentDidMount() {
     console.log(":)");
+    axios.post("/api/is-authenticated", {}).then(response => {
+      console.log(response);
+    });
   }
 
   render() {
