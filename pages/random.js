@@ -26,8 +26,6 @@ Random.getInitialProps = async ctx => {
   const resRandom = await fetch(apiOrigin + "/random");
   const randomQuote = await resRandom.json();
 
-  console.log(randomQuote);
-
   return {
     randomQuote: randomQuote
   };
