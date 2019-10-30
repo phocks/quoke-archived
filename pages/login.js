@@ -1,11 +1,13 @@
+import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useStoreActions } from "easy-peasy";
 
-import Layout from "../components/layout";
-
-export default props => {
+const Login = props => {
   const router = useRouter();
+  const [userMessage, setUserMessage] = useState();
+  const setGlobalUsername = useStoreActions(actions => actions.user.setUsername);
 
   const attemptlogin = async event => {
     event.preventDefault();
@@ -24,16 +26,25 @@ export default props => {
     const { loggedIn } = res.data;
 
     if (loggedIn) {
+      axios.post("/api/is-authenticated", {}).then(
+        response => {
+          if (response.data.loggedIn === true) {
+            setGlobalUsername(response.data.payload.username);
+          }
+        },
+        { withCredentials: true }
+      );
       router.push("/");
     } else {
       console.log("Something bad happened..");
+      setUserMessage("Something went wrong. Try again.");
     }
   };
 
   return (
     <>
-    {/* <Layout> */}
       <main className={"mid"}>
+        {userMessage && <div>{userMessage}</div>}
         <form action="/api/login" method="post" onSubmit={attemptlogin}>
           <input type="text" name="username" placeholder="Username" required />
           <input
@@ -76,11 +87,11 @@ export default props => {
             line-height: 20px;
             text-decoration: none;
             background: none;
-            color: white;
           }
         `}
       </style>
-    {/* </Layout> */}
     </>
   );
 };
+
+export default Login;

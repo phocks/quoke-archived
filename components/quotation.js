@@ -15,12 +15,13 @@ const Quotation = props => {
       <style jsx>
         {`
           blockquote {
-            /* font-family: "Grenze", serif; */
-            font-size: 1.5em;
+            /*font-family: "Grenze", serif;
+            font-size: 1.5em;*/
             margin: 0;
+            max-width: 500px;
           }
 
-          @media (min-width: 641px) {
+          /* @media (min-width: 641px) {
             blockquote {
               font-size: 1.8em;
               padding-left: 5vw;
@@ -33,7 +34,7 @@ const Quotation = props => {
             blockquote {
               font-size: 2.0em;
             }
-          }
+          } */
         `}
       </style>
     </>

@@ -1,90 +1,95 @@
 import Head from "next/head";
 import Heading from "./heading";
-import Link from "next/link";
 
-const Layout = ({ children, username }) => (
-  <>
-    <Head>
-      <title>Quoke</title>
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-      ></meta>
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
-    </Head>
+import Footer from "./footer";
 
-    <div className="container">
-      <Heading username={username} />
-      {children}
-      <footer>
-        <Link href="/random">
-          <a className={"no-underline"}>&#x1f500;</a>
-        </Link>
-      </footer>
-    </div>
+const Layout = props => {
+  const { children } = props;
+  return (
+    <>
+      <Head>
+        <title>Quoke</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
+        <link
+          href="/css/all.min.css"
+          rel="stylesheet"
+        ></link>
+      </Head>
 
-    <style jsx>{`
-      footer a {
-        margin-right: 10px;
-      }
-      .no-underline {
-        text-decoration: none;
-      }
-    `}</style>
+      <div className="container">
+        <Heading />
+        {children}
+        <Footer />
+      </div>
 
-    <style jsx global>
-      {`
-        @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
-        @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-        @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-        html {
-          height: 100%;
-          font-family: "Roboto", sans-serif;
-          color: white;
-          line-height: 1.5;
-          background-color: #222;
-        }
-        body {
-          margin: 0;
-          height: 100%;
-          background-color: #222;
-        }
-        a {
-          color: white;
-        }
-        h1 {
-          margin-top: 0;
-        }
-        button,
-        input[type="submit"] {
-          cursor: pointer;
-        }
-        #__next {
-          height: 100%;
-        }
-        .container {
-          background: #222;
-          min-height: 100%;
-          padding: 20px;
-          /* border: 16px solid #fff; */
-          display: flex;
-          flex-direction: column;
-        }
-        main {
-          flex: 1;
-        }
-        main.mid {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      `}
-    </style>
-  </>
-);
+      <style jsx global>
+        {`
+          @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+          html {
+            height: 100%;
+            font-family: "Roboto", sans-serif;
+            line-height: 1.5;
+          }
+          body {
+            margin: 0;
+            height: 100%;
+            color: #222;
+          }
+          a {
+            color: #222;
+          }
+          button,
+          input[type="submit"] {
+            cursor: pointer;
+          }
+          #__next {
+            height: 100%;
+          }
+          .container {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          main {
+            background-color: white;
+            color: #111;
+            min-height: 100%;
+            flex: 1;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+          main.mid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          main.article {
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+          }
+          main.article section {
+            max-width: 720px;
+            width: 100%;
+          }
+        `}
+      </style>
+      {/* <script
+        src="https://kit.fontawesome.com/7b433f5e25.js"
+        crossOrigin="anonymous"
+      ></script> */}
+    </>
+  );
+};
 
 export default Layout;

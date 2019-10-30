@@ -11,7 +11,7 @@ import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 
 const Home = props => {
-  const { loggedIn } = props;
+  // const { loggedIn } = props;
 
   useEffect(() => {
     // console.log("Logged in state: " + loggedIn);
@@ -21,62 +21,23 @@ const Home = props => {
   return (
     <>
       {/* <Layout username={props.username}> */}
-        <main className="mid">
-          <h1 className="heading">
-            quoke. Verb. (archaic) a short, well-known saying, stating a general truth or piece of advice.
-          </h1>
-          {/* <Quotation text={props.quote.text} author={props.quote.author} /> */}
-          {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
-        </main>
-        <style jsx>
-          {`
-            h1.heading {
-              /* font-family: "Press Start 2P", cursive; */
-              /* font-size: 48px; */
-              max-width: 720px;
-            }
-          `}
-        </style>
+      <main className="mid">
+        <h1 className="heading">quoke.</h1>
+        {/* <Quotation text={props.quote.text} author={props.quote.author} /> */}
+        {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
+      </main>
+      <style jsx>
+        {`
+          h1.heading {
+            /* font-family: "Press Start 2P", cursive; */
+            /* font-size: 48px; */
+            max-width: 720px;
+          }
+        `}
+      </style>
       {/* </Layout> */}
     </>
   );
 };
-
-// Home.getInitialProps = async ctx => {
-//   const { req, query } = ctx;
-//   const { origin } = absoluteUrl(req);
-
-//   const apiOrigin = `${origin}/api/`;
-
-//   const resRandom = await fetch(apiOrigin + "random");
-//   const randomQuote = await resRandom.json();
-
-//   const { token } = cookies(ctx);
-
-//   if (!token) {
-//     return {
-//       loggedIn: false,
-//       quote: randomQuote
-//     };
-//   }
-
-//   const resAuth = await fetch(apiOrigin + "is-authenticated", {
-//     method: "post",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({ token: token })
-//   });
-
-//   const auth = resAuth ? await resAuth.json() : false;
-
-//   console.log(auth);
-
-//   return {
-//     loggedIn: auth.loggedIn,
-//     username: auth.loggedIn ? auth.payload.username : null,
-//     quote: randomQuote
-//   };
-// };
 
 export default Home;

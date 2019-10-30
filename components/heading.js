@@ -1,15 +1,27 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { useStoreActions } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 const Heading = props => {
-  const [loginInfo, setLoginInfo] = useState();
-  const setUsername = useStoreActions(actions => actions.user.setUsername);
+  const [username, setUsername] = useState();
+  const setGlobalUsername = useStoreActions(
+    actions => actions.user.setUsername
+  );
+
+  const user = useStoreState(state => state.user.username);
 
   useEffect(() => {
-    
-    setUsername(props.username);
+    // setUsername(props.username);
+    axios.post("/api/is-authenticated", {}).then(
+      response => {
+        if (response.data.loggedIn === true) {
+          setGlobalUsername(response.data.payload.username);
+          setUsername(user);
+        }
+      },
+      { withCredentials: true }
+    );
   });
 
   return (
@@ -22,16 +34,19 @@ const Heading = props => {
             </Link>
           </h1>
         </div>
-        <div>
-          {props.username ? (
-            <Link href={"/[username]"} as={"/" + props.username}>
-              <a>{props.username}</a>
+        <div className={"nav"}>
+          {/* <Link href="/about">
+            <a>About</a>
+          </Link> */}
+          {user ? (
+            <Link href={"/[username]"} as={"/" + user}>
+              <a>{user}</a>
             </Link>
           ) : (
             <Link href="/login">
               <a>Login</a>
             </Link>
-          )}{" "}
+          )}
         </div>
       </header>
 
@@ -39,15 +54,23 @@ const Heading = props => {
         header {
           display: flex;
           justify-content: space-between;
+          /* align-items: center; */
+          padding: 8px 16px;
+        }
+        a {
         }
         .branding {
           font-family: "Press Start 2P", cursive;
           font-size: 33px;
-          margin-bottom: 0;
+          margin: 0;
+          position: relative;
+          top: -3px;
         }
         .branding a {
-          color: white;
           text-decoration: none;
+        }
+        .nav a {
+          margin-left: 6px;
         }
       `}</style>
     </>
