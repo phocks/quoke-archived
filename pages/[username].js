@@ -2,6 +2,7 @@ import { useStoreState } from "easy-peasy";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import Error from "./_error";
+import dayjs from "dayjs";
 
 import LogoutButton from "../components/LogoutButton";
 
@@ -18,7 +19,9 @@ const UserPage = props => {
       <main className={"article"}>
         <section>
           <h2>@{props.userPageName}</h2>
-          <p>Date joined: {props.dateRegistered}</p>
+          <p>
+            Date joined: {dayjs(props.dateRegistered).format("DD MMMM YYYY")}
+          </p>
           {currentUser === props.userPageName && <LogoutButton />}
         </section>
       </main>
@@ -34,6 +37,8 @@ UserPage.getInitialProps = async context => {
 
   const res = await fetch(apiOrigin + "/api/" + query.username);
   const data = await res.json();
+
+  console.log(data);
 
   if (!data.userFound) {
     return { userFound: false };
