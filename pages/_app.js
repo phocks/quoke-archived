@@ -1,12 +1,9 @@
 import React from "react";
 import App from "next/app";
-import absoluteUrl from "next-absolute-url";
-import cookies from "next-cookies";
-import fetch from "isomorphic-unfetch";
 import { createStore } from "easy-peasy";
 import { StoreProvider } from "easy-peasy";
 import { action } from "easy-peasy";
-import axios from "axios";
+import Router from 'next/router'
 
 import Layout from "../components/layout";
 
@@ -21,6 +18,12 @@ const storeModel = {
 };
 
 const store = createStore(storeModel);
+
+const handleRouteChange = url => {
+  console.log("App is changing to: ", url);
+};
+
+Router.events.on("routeChangeStart", handleRouteChange);
 
 class MyApp extends App {
   constructor(props) {
@@ -64,15 +67,6 @@ class MyApp extends App {
 
   componentDidMount() {
     console.log(":)");
-
-    // axios.post("/api/is-authenticated", {}).then(
-    //   response => {
-    //     if (response.data.loggedIn === true) {
-    //       this.setState({ username: response.data.payload.username });
-    //     }
-    //   },
-    //   { withCredentials: true }
-    // );
   }
 
   render() {

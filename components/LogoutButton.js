@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-// import Link from "next/link";
+import { useStoreActions } from "easy-peasy";
 
-import Layout from "../components/layout";
-
-export default props => {
+const LogoutButton = props => {
   const router = useRouter();
+  const setGlobalUsername = useStoreActions(
+    actions => actions.user.setUsername
+  );
 
   const doLogout = async event => {
     event.preventDefault();
@@ -13,8 +14,6 @@ export default props => {
     const res = await axios.post(
       "/api/logout",
       {
-        // username: event.target.username.value,
-        // password: event.target.password.value,
         noRedirect: true
       },
       { withCredentials: true }
@@ -24,6 +23,7 @@ export default props => {
     const { success } = res.data;
 
     if (success) {
+      setGlobalUsername(null);
       router.push("/");
     } else {
       console.log("Something bad happened..");
@@ -31,15 +31,13 @@ export default props => {
   };
 
   return (
-      <>
-      <main className={"mid"}>
-        <button onClick={doLogout}>Logout?</button>
-      </main>
+    <>
+      <button onClick={doLogout}>Logout?</button>
+
       <style jsx>
         {`
           input,
           button {
-            /* width: 100%; */
             max-width: 480px;
             padding: 12px;
             border: 1px solid #e1e1e1;
@@ -54,6 +52,9 @@ export default props => {
           }
         `}
       </style>
-      </>
+    </>
   );
 };
+
+export default LogoutButton;
+

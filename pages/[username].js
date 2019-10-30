@@ -3,7 +3,9 @@ import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import Error from "./_error";
 
-const Test = props => {
+import LogoutButton from "../components/LogoutButton";
+
+const UserPage = props => {
   const currentUser = useStoreState(state => {
     return state.user.username;
   });
@@ -15,15 +17,16 @@ const Test = props => {
     return (
       <main className={"article"}>
         <section>
-          <h2>@{props.username}</h2>
+          <h2>@{props.userPageName}</h2>
           <p>Date joined: {props.dateRegistered}</p>
+          {currentUser === props.userPageName && <LogoutButton />}
         </section>
       </main>
     );
   }
 };
 
-Test.getInitialProps = async context => {
+UserPage.getInitialProps = async context => {
   const { req, query } = context;
 
   const { origin } = absoluteUrl(req);
@@ -37,10 +40,10 @@ Test.getInitialProps = async context => {
   } else {
     return {
       userFound: true,
-      username: data.username,
+      userPageName: data.username,
       dateRegistered: data.dateRegistered
     };
   }
 };
 
-export default Test;
+export default UserPage;

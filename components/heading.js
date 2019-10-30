@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { useStoreState } from "easy-peasy";
-import { useStoreActions } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 const Heading = props => {
   const [username, setUsername] = useState();
@@ -40,7 +39,7 @@ const Heading = props => {
             <a>About</a>
           </Link> */}
           {user ? (
-            <Link href={"/[username]"} as={"/" + username}>
+            <Link href={"/[username]"} as={"/" + user}>
               <a>{user}</a>
             </Link>
           ) : (

@@ -15,6 +15,10 @@ const Layout = props => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
+        <link
+          href="/css/all.min.css"
+          rel="stylesheet"
+        ></link>
       </Head>
 
       <div className="container">
@@ -80,10 +84,10 @@ const Layout = props => {
           }
         `}
       </style>
-      <script
+      {/* <script
         src="https://kit.fontawesome.com/7b433f5e25.js"
         crossOrigin="anonymous"
-      ></script>
+      ></script> */}
     </>
   );
 };
