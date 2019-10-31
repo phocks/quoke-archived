@@ -7,7 +7,7 @@ const Quotation = props => {
         &ldquo;{props.text}&rdquo;
         <cite>
           <p>
-            <small>—{props.author}</small>
+            &mdash;{props.author}
           </p>
         </cite>
       </blockquote>
@@ -15,10 +15,9 @@ const Quotation = props => {
       <style jsx>
         {`
           blockquote {
-            /*font-family: "Grenze", serif;
-            font-size: 1.5em;*/
+            font-family: 'Zilla Slab Highlight', cursive;
+            font-size: 1.5em;
             margin: 0;
-            max-width: 500px;
           }
 
           /* @media (min-width: 641px) {

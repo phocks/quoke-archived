@@ -15,23 +15,32 @@ const Layout = props => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
-        <link
-          href="/css/all.min.css"
-          rel="stylesheet"
-        ></link>
+        <link href="/css/all.min.css" rel="stylesheet"></link>
       </Head>
 
       <div className="container">
-        <Heading />
+        {/* <Heading /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </div>
+      {/* <div className={"sub-fold"}>Test.</div> */}
+
+      <style jsx>
+        {`
+          .sub-fold {
+            min-height: 300px;
+            background-color: black;
+            color: white;
+          }
+        `}
+      </style>
 
       <style jsx global>
         {`
           @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
           @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
           @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+          @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap');
           html {
             height: 100%;
             font-family: "Roboto", sans-serif;
@@ -40,10 +49,9 @@ const Layout = props => {
           body {
             margin: 0;
             height: 100%;
-            color: #222;
           }
           a {
-            color: #222;
+            color: black;
           }
           button,
           input[type="submit"] {

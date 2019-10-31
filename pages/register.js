@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Layout from "../components/layout";
 import { load } from "recaptcha-v3";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -12,6 +11,7 @@ const Register = props => {
 
   const router = useRouter();
 
+  // Runs once on load
   const init = async () => {
     const recaptcha = await load(RECAPTCHA_SITE_KEY, {
       useRecaptchaNet: false,
@@ -71,12 +71,6 @@ const Register = props => {
       </main>
       <style jsx>
         {`
-          main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-          }
           input,
           .btn {
             width: 100%;
