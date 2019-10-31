@@ -9,7 +9,7 @@ const Login = props => {
   const [userMessage, setUserMessage] = useState();
   const setGlobalUsername = useStoreActions(actions => actions.user.setUsername);
 
-  const attemptlogin = async event => {
+  const attemptLogin = async event => {
     event.preventDefault();
 
     const res = await axios.post(
@@ -45,7 +45,7 @@ const Login = props => {
     <>
       <main className={"mid"}>
         {userMessage && <div>{userMessage}</div>}
-        <form action="/api/login" method="post" onSubmit={attemptlogin}>
+        <form action="/api/login" method="post" onSubmit={attemptLogin}>
           <input type="text" name="username" placeholder="Username" required />
           <input
             type="password"
@@ -67,12 +67,6 @@ const Login = props => {
       </main>
       <style jsx>
         {`
-          main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-          }
           input,
           .btn {
             width: 100%;
