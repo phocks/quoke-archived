@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Heading from "./heading";
 
+import Heading from "./heading";
 import Footer from "./footer";
 
 const Layout = props => {
@@ -37,10 +37,10 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
+          /* @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap"); */
           @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
           @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-          @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap');
+          @import url("https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap");
           html {
             height: 100%;
             font-family: "Roboto", sans-serif;
