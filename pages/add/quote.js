@@ -1,6 +1,39 @@
+import axios from "axios";
+
 export default props => {
-  const attemptAddQuote = async event => {
+  const addQuote = async event => {
     event.preventDefault();
+
+
+    const text = event.target.text.value;
+    const author = event.target.author.value;
+    const source = event.target.source.value;
+    const slug = event.target.slug.value;
+    
+
+    // const authRes = await axios.post(
+    //   "/api/is-authenticated",
+    //   {},
+    //   { withCredentials: true }
+    // );
+
+    // console.log(authRes);
+
+    const res = await axios.post(
+      "/api/add/quote",
+      {
+        text: text,
+        author: author,
+        source: source,
+        slug: slug,
+        noRedirect: true
+      },
+      { withCredentials: true }
+    );
+
+    console.log(res.data);
+
+    
 
     console.log("Adding quote?");
   };
@@ -9,11 +42,7 @@ export default props => {
       <main className="">
         <section>
           <p>Add quotation:</p>
-          <form
-            action="/api/add/quote"
-            method="post"
-            onSubmit={attemptAddQuote}
-          >
+          <form action="/api/add/quote" method="post" onSubmit={addQuote}>
             <input
               type="text"
               name="text"
