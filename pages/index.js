@@ -3,6 +3,7 @@ import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import cookies from "next-cookies";
+import axios from "axios";
 
 // import authState from "../lib/authState";
 
@@ -11,39 +12,64 @@ import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 
 const Home = props => {
-  const [homeQuote, setHomeQuote] = useState({
-    text:
-      "Science is not only compatible with spirituality; it is a profound source of spirituality. When we recognize our place in an immensity of light-years and in the passage of ages, when we grasp the intricacy, beauty, and subtlety of life, then that soaring feeling, that sense of elation and humility combined, is surely spiritual. So are our emotions in the presence of great art or music or literature, or acts of exemplary selfless courage such as those of Mohandas Gandhi or Martin Luther King, Jr. The notion that science and spirituality are somehow mutually exclusive does a disservice to both.",
-    author: "Carl Sagan",
-    source: "The Demon-Haunted World: Science as a Candle in the Dark",
-    slug: "science-is-not-only-compatible-with-spirituality"
-  });
+  const [homeQuotes, setHomeQuotes] = useState();
 
-  useEffect(() => {});
+  const init = async () => {
+    const result = await axios.get("/api/quoke");
+    setHomeQuotes(result.data);
+
+    // Setup Masonry.js layout
+    var elem = document.querySelector(".grid");
+    var msnry = new Masonry(elem, {
+      // options
+      itemSelector: ".grid-item",
+      columnWidth: 450
+    });
+
+    // element argument can be a selector string
+    //   for an individual element
+    // var msnry = new Masonry(".grid", {
+    //   // options
+    //   itemSelector: ".grid-item",
+    //   columnWidth: 400
+    // });
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
 
   return (
     <>
       {/* <Layout username={props.username}> */}
       <main className="">
         <section>
-          {/* <h1 className="heading">quoke.</h1> */}
-          <Quotation
-            text={homeQuote && homeQuote.text}
-            author={homeQuote && homeQuote.author}
-          />
-          {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}
+          <div className="grid">
+            {/* <h1 className="heading">quoke.</h1> */}
+            {homeQuotes &&
+              homeQuotes.map(quote => {
+                console.log(typeof quote._id);
+                return (
+                  <Quotation
+                    text={quote.text}
+                    author={quote.author}
+                    key={quote._id}
+                  />
+                );
+              })}
+            {/* <Link href={"/quote/[slug]"} as={"/quote/" + props.quote.slug}><a> &gt;</a></Link> */}{" "}
+          </div>
         </section>
       </main>
       <style jsx>
         {`
-          main {
+          /*main {
             display: flex;
             justify-content: left;
           }
           section {
-            max-width: 640px;
             flex: 1;
-          }
+          } */
           h1.heading {
             max-width: 720px;
           }

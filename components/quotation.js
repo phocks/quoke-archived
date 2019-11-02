@@ -3,21 +3,22 @@ import Link from "next/link";
 const Quotation = props => {
   return (
     <>
-      <blockquote>
-        &ldquo;{props.text}&rdquo;
-        <cite>
-          <p>
-            &mdash;{props.author}
-          </p>
-        </cite>
-      </blockquote>
-
+      <div className="grid-item">
+        <blockquote>
+          &ldquo;{props.text}&rdquo;
+          <cite>
+            <p>&mdash;{props.author}</p>
+          </cite>
+        </blockquote>
+      </div>
       <style jsx>
         {`
           blockquote {
-            font-family: 'Zilla Slab Highlight', cursive;
+            font-family: "Zilla Slab Highlight", sans-serif;
             font-size: 1.5em;
             margin: 0;
+            display: inline-block;
+            max-width: 500px;
           }
 
           /* @media (min-width: 641px) {

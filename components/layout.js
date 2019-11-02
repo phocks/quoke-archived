@@ -90,12 +90,16 @@ const Layout = props => {
             max-width: 720px;
             width: 100%;
           }
+          .grid-item {
+            width: 400px;
+          }
         `}
       </style>
       {/* <script
         src="https://kit.fontawesome.com/7b433f5e25.js"
         crossOrigin="anonymous"
       ></script> */}
+      <script src="/js/masonry.pkgd.min.js"></script>
     </>
   );
 };
