@@ -5,8 +5,6 @@ import absoluteUrl from "next-absolute-url";
 import cookies from "next-cookies";
 import axios from "axios";
 
-// import authState from "../lib/authState";
-
 // Components
 import Layout from "../components/layout";
 import Quotation from "../components/quotation";
@@ -38,7 +36,6 @@ const Home = props => {
           <div className="grid">
             {homeQuotes &&
               homeQuotes.map(quote => {
-                console.log(typeof quote._id);
                 return (
                   <Quotation
                     text={quote.text}
