@@ -23,7 +23,7 @@ const Home = props => {
     var msnry = new Masonry(elem, {
       // options
       itemSelector: ".grid-item",
-      columnWidth: 450
+      columnWidth: 405
     });
 
     // element argument can be a selector string

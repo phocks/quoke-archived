@@ -17,8 +17,6 @@ const Quotation = props => {
             font-family: "Zilla Slab Highlight", sans-serif;
             font-size: 1.5em;
             margin: 0;
-            display: inline-block;
-            max-width: 500px;
           }
 
           /* @media (min-width: 641px) {
