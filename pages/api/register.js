@@ -47,7 +47,6 @@ const register = async (req, res) => {
   const hash = await bcrypt.hash(password, SALT_ROUNDS);
 
   const client = await MongoClient.connect(url, options);
-
   const db = client.db(dbName);
   const collection = db.collection("users");
 

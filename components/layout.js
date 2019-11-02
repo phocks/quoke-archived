@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Heading from "./heading";
 
+import Heading from "./heading";
 import Footer from "./footer";
 
 const Layout = props => {
@@ -37,10 +37,7 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          @import url("https://fonts.googleapis.com/css?family=Grenze&display=swap");
           @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-          @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-          @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap');
           html {
             height: 100%;
             font-family: "Roboto", sans-serif;
@@ -90,12 +87,16 @@ const Layout = props => {
             max-width: 720px;
             width: 100%;
           }
+          .grid-item {
+            width: 400px;
+          }
         `}
       </style>
       {/* <script
         src="https://kit.fontawesome.com/7b433f5e25.js"
         crossOrigin="anonymous"
       ></script> */}
+      <script src="/js/masonry.pkgd.min.js"></script>
     </>
   );
 };

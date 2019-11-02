@@ -24,6 +24,8 @@ const Register = props => {
 
   const handleSubmit = async event => {
     event.preventDefault();
+
+    // Call our backend and send data
     const res = await axios.post("/api/register", {
       username: event.target.username.value,
       email: event.target.email.value,

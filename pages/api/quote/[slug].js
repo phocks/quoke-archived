@@ -1,5 +1,4 @@
 import { MongoClient, ObjectID } from "mongodb";
-
 import { dbName, url, options } from "../../../lib/mongodb";
 
 export default async function handle(req, res) {
