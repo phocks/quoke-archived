@@ -12,7 +12,6 @@ const Heading = props => {
   const user = useStoreState(state => state.user.username);
 
   useEffect(() => {
-    // setUsername(props.username);
     axios.post("/api/is-authenticated", {}).then(
       response => {
         if (response.data.loggedIn === true) {
