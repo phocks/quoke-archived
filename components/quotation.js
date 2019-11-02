@@ -13,6 +13,8 @@ const Quotation = props => {
       </div>
       <style jsx>
         {`
+          @import url("https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap");
+          
           blockquote {
             font-family: "Zilla Slab Highlight", sans-serif;
             font-size: 1.5em;
