@@ -19,7 +19,7 @@ const Layout = props => {
       </Head>
 
       <div className="container">
-        {/* <Heading /> */}
+        <Heading />
         {children}
         {/* <Footer /> */}
       </div>
@@ -88,7 +88,7 @@ const Layout = props => {
             width: 100%;
           }
           .grid-item {
-            width: 400px;
+            max-width: 400px;
           }
         `}
       </style>
