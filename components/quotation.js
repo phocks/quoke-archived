@@ -27,7 +27,6 @@ const Quotation = props => {
             }
           }
           /*
-
           @media (min-width: 961px) {
             blockquote {
               font-size: 2.0em;

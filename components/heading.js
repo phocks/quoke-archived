@@ -50,9 +50,9 @@ const Heading = props => {
       </header>
 
       <style jsx>{`
-      @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+        @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
         header {
-          font-family: 'Inconsolata', monospace;
+          font-family: "Inconsolata", monospace;
           display: flex;
           justify-content: space-between;
           font-size: 14px;
@@ -61,18 +61,16 @@ const Heading = props => {
           color: white;
         }
         a {
+          color: white;
         }
         .branding {
-          
         }
         .branding a {
           text-decoration: none;
-          color: white;
         }
         .nav a {
           margin-left: 6px;
           text-decoration: none;
-          color: white;
         }
       `}</style>
     </>

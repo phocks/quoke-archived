@@ -13,7 +13,7 @@ const Home = props => {
   const [homeQuotes, setHomeQuotes] = useState();
 
   const init = async () => {
-    const result = await axios.get("/api/main");
+    const result = await axios.get("/api/get-quotes/quoke");
     setHomeQuotes(result.data);
 
     // Setup Masonry.js layout
@@ -49,9 +49,7 @@ const Home = props => {
       </main>
       <style jsx>
         {`
-          h1.heading {
-            max-width: 720px;
-          }
+          
         `}
       </style>
     </>
