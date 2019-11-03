@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 import { dbName, url, options } from "../../lib/mongodb";
 
-const index = async (req, res) => {
+const main = async (req, res) => {
   const client = await MongoClient.connect(url, options);
   const db = client.db(dbName);
   const collection = db.collection("quotations");
@@ -14,4 +14,4 @@ const index = async (req, res) => {
   }
 };
 
-export default index;
+export default main;

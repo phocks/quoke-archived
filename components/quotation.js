@@ -17,13 +17,13 @@ const Quotation = props => {
 
           blockquote {
             font-family: "Zilla Slab Highlight", sans-serif;
-            font-size: 1.4em;
+            font-size: 16px;
             margin: 0 0 30px;
           }
 
           @media (min-width: 641px) {
             blockquote {
-              font-size: 1.5em;
+              font-size: 18px;
             }
           }
           /*

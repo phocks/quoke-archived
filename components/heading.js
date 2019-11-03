@@ -27,11 +27,11 @@ const Heading = props => {
     <>
       <header>
         <div>
-          <h1 className="branding">
+          <span className="branding">
             <Link href="/">
-              <a>Q</a>
+              <a>Quoke</a>
             </Link>
-          </h1>
+          </span>
         </div>
         <div className={"nav"}>
           {/* <Link href="/about">
@@ -50,26 +50,29 @@ const Heading = props => {
       </header>
 
       <style jsx>{`
+      @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
         header {
+          font-family: 'Inconsolata', monospace;
           display: flex;
           justify-content: space-between;
-          /* align-items: center; */
-          padding: 8px 16px;
+          font-size: 14px;
+          padding: 4px 16px;
+          background-color: black;
+          color: white;
         }
         a {
         }
         .branding {
-          font-family: "Press Start 2P", cursive;
-          font-size: 33px;
-          margin: 0;
-          position: relative;
-          top: -3px;
+          
         }
         .branding a {
           text-decoration: none;
+          color: white;
         }
         .nav a {
           margin-left: 6px;
+          text-decoration: none;
+          color: white;
         }
       `}</style>
     </>

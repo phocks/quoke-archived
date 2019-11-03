@@ -13,7 +13,7 @@ const Home = props => {
   const [homeQuotes, setHomeQuotes] = useState();
 
   const init = async () => {
-    const result = await axios.get("/api/quoke");
+    const result = await axios.get("/api/main");
     setHomeQuotes(result.data);
 
     // Setup Masonry.js layout
