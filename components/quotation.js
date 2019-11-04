@@ -24,7 +24,7 @@ const Quotation = props => {
       <style jsx>
         {`
           blockquote {
-            font-family: "Titillium Web", sans-serif;
+            /* font-family: "Titillium Web", sans-serif; */
             font-size: 1.1em;
             margin: 0 0 30px;
             max-width: 720px;

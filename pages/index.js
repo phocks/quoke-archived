@@ -46,7 +46,7 @@ const Home = props => {
                 />
               );
             })} */}
-          <h1>&ldquo;</h1>
+          <h1 className="quotation-mark">&ldquo;</h1>
           {q && <Quotation text={q.text} author={q.author} source={q.source} key={q._id} />}
 
           {q && (
@@ -59,6 +59,10 @@ const Home = props => {
           color: #657786;
           font-size: 13px;
           font-family: "Inconsolata", monospace;
+        }
+        .quotation-mark {
+          font-size: 38px;
+          font-family: 'Paytone One', sans-serif;
         }
       `}</style>
     </>

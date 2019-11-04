@@ -37,11 +37,12 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          /*@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");*/
           @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+          @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
           html {
             height: 100%;
-            font-family: "Inconsolata", monospace;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.5;
           }
           body {
