@@ -37,10 +37,12 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+          @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
           html {
             height: 100%;
-            font-family: "Roboto", sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.5;
           }
           body {
@@ -79,7 +81,6 @@ const Layout = props => {
             justify-content: center;
           }
           main.article {
-            font-size: 20px;
             display: flex;
             justify-content: center;
           }
@@ -88,7 +89,7 @@ const Layout = props => {
             width: 100%;
           }
           .grid-item {
-            max-width: 400px;
+            max-width: 300px;
           }
         `}
       </style>
@@ -96,7 +97,7 @@ const Layout = props => {
         src="https://kit.fontawesome.com/7b433f5e25.js"
         crossOrigin="anonymous"
       ></script> */}
-      <script src="/js/masonry.pkgd.min.js"></script>
+      {/* <script src="/js/masonry.pkgd.min.js"></script> */}
     </>
   );
 };

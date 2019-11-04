@@ -17,7 +17,6 @@ const Footer = () => {
             font-size: 1.5em;
             display: flex;
             align-items: center;
-            /* justify-content: center; */
             background-color: white;
             padding: 4px 16px;
             color: #222;

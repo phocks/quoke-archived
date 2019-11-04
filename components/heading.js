@@ -50,7 +50,6 @@ const Heading = props => {
       </header>
 
       <style jsx>{`
-        @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
         header {
           font-family: "Inconsolata", monospace;
           display: flex;

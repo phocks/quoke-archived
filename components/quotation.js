@@ -1,37 +1,52 @@
 import Link from "next/link";
+import Head from "next/head";
 
 const Quotation = props => {
   return (
     <>
-      <div className="grid-item">
-        <blockquote>
-          &ldquo;{props.text}&rdquo;
-          <cite>
-            <p>&mdash;{props.author}</p>
-          </cite>
-        </blockquote>
-      </div>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+
+      <blockquote>
+        {props.text}
+        <cite>
+          <small>
+            &mdash;{props.author}
+            {props.source && <i>, {props.source}</i>}
+          </small>
+        </cite>
+      </blockquote>
+
       <style jsx>
         {`
-          @import url("https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap");
-
           blockquote {
-            font-family: "Zilla Slab Highlight", sans-serif;
-            font-size: 16px;
+            /* font-family: "Titillium Web", sans-serif; */
+            font-size: 1.1em;
             margin: 0 0 30px;
+            max-width: 720px;
           }
 
           @media (min-width: 641px) {
             blockquote {
-              font-size: 18px;
+              font-size: 1.8em;
             }
           }
-          /*
+
           @media (min-width: 961px) {
             blockquote {
-              font-size: 2.0em;
+              font-size: 2em;
             }
-          } */
+          }
+
+          cite {
+            display: block;
+            margin-top: 1em;
+            font-style: normal;
+          }
         `}
       </style>
     </>
