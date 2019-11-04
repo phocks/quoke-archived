@@ -8,7 +8,7 @@ export default function Quote(props) {
   return (
     <>
       <main className="mid">
-        <Quotation text={quote.text} author={quote.author} />
+        <Quotation text={quote.text} author={quote.author} source={quote.source} />
       </main>
     </>
   );

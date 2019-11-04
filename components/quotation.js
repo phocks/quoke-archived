@@ -10,33 +10,43 @@ const Quotation = props => {
           rel="stylesheet"
         />
       </Head>
-      <div className="grid-item">
-        <blockquote>
-          &ldquo;{props.text}&rdquo;
-          <cite>
-            <p>&mdash;{props.author}</p>
-          </cite>
-        </blockquote>
-      </div>
+
+      <blockquote>
+        {props.text}
+        <cite>
+          <small>
+            &mdash;{props.author}
+            {props.source && <i>, {props.source}</i>}
+          </small>
+        </cite>
+      </blockquote>
+
       <style jsx>
         {`
           blockquote {
-            font-family: 'Titillium Web', sans-serif;
-            font-size: 16px;
+            font-family: "Titillium Web", sans-serif;
+            font-size: 1.1em;
             margin: 0 0 30px;
+            max-width: 720px;
           }
 
           @media (min-width: 641px) {
             blockquote {
-              font-size: 18px;
+              font-size: 1.8em;
             }
           }
-          /*
+
           @media (min-width: 961px) {
             blockquote {
-              font-size: 2.0em;
+              font-size: 2em;
             }
-          } */
+          }
+
+          cite {
+            display: block;
+            margin-top: 1em;
+            font-style: normal;
+          }
         `}
       </style>
     </>
