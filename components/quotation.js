@@ -1,8 +1,15 @@
 import Link from "next/link";
+import Head from "next/head";
 
 const Quotation = props => {
   return (
     <>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <div className="grid-item">
         <blockquote>
           &ldquo;{props.text}&rdquo;
@@ -13,10 +20,8 @@ const Quotation = props => {
       </div>
       <style jsx>
         {`
-          @import url("https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap");
-
           blockquote {
-            font-family: "Zilla Slab Highlight", sans-serif;
+            font-family: 'Titillium Web', sans-serif;
             font-size: 16px;
             margin: 0 0 30px;
           }
