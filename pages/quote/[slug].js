@@ -7,8 +7,15 @@ export default function Quote(props) {
   const quote = props.quote;
   return (
     <>
-      <main className="mid">
-        <Quotation text={quote.text} author={quote.author} source={quote.source} />
+      <main className="center">
+        <section>
+          <h1 className="quotation-mark">&ldquo;</h1>
+          <Quotation
+            text={quote.text}
+            author={quote.author}
+            source={quote.source}
+          />
+        </section>
       </main>
     </>
   );

@@ -30,39 +30,42 @@ const Home = props => {
     init();
   }, []);
 
-  const q = homeQuotes && homeQuotes[0];
-
   return (
     <>
-      <main className="">
+      <main className="center">
         <section>
-          {/* {homeQuotes &&
+          {homeQuotes &&
             homeQuotes.map(quote => {
               return (
-                <Quotation
-                  text={quote.text}
-                  author={quote.author}
-                  key={quote._id}
-                />
+                <div className="list-quote" key={quote._id}>
+                  <Quotation text={quote.text} author={quote.author} />
+                  <div className="date">
+                    <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
+                      <a>{dayjs(quote.date).format("DD MMMM YYYY")}</a>
+                    </Link>
+                    <a href="#" onClick={() => {}}>
+                      Like
+                    </a>
+                  </div>
+                </div>
               );
-            })} */}
-          <h1 className="quotation-mark">&ldquo;</h1>
+            })}
+          {/* <h1 className="quotation-mark">&ldquo;</h1>
           {q && <Quotation text={q.text} author={q.author} source={q.source} key={q._id} />}
 
           {q && (
-            <div className="date"><Link href="/quote/[slug]" as={"/quote/" + q.slug}>{dayjs(q.date).format("DD MMMM YYYY")}</Link></div>
-          )}
+            <div className="date"><Link href="/quote/[slug]" as={"/quote/" + q.slug}>{dayjs(q.date).format("DD MMMM YYYY")}</Link></div> 
+          )} */}
         </section>
       </main>
       <style jsx>{`
+        a {
+          margin-right: 10px;
+        }
         .date {
           color: #657786;
           font-size: 13px;
           font-family: "Inconsolata", monospace;
-        }
-        .quotation-mark {
-          font-size: 38px;
-          font-family: 'Paytone One', sans-serif;
         }
       `}</style>
     </>

@@ -38,11 +38,11 @@ const Layout = props => {
       <style jsx global>
         {`
           @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
-          @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-          @import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
+          @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
           html {
             height: 100%;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
             line-height: 1.5;
           }
           body {
@@ -88,8 +88,20 @@ const Layout = props => {
             max-width: 720px;
             width: 100%;
           }
+          main.center {
+            display: flex;
+            justify-content: center;
+          }
           .grid-item {
             max-width: 300px;
+          }
+          .quotation-mark {
+            font-size: 38px;
+            font-family: "Paytone One", sans-serif;
+          }
+          .list-quote {
+            margin-top: 2em;
+            margin-bottom: 4em;
           }
         `}
       </style>
