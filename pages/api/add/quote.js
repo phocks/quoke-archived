@@ -10,7 +10,6 @@ const addQuote = async (req, res) => {
   }
 
   const { token } = req.cookies;
-
   const loginData = isAuthd(token);
 
   if (loginData.loggedIn !== true) {
