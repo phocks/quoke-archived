@@ -27,18 +27,18 @@ const Quotation = props => {
             /* font-family: "Titillium Web", sans-serif; */
             font-size: 1.1em;
             margin: 0 0 30px;
-            max-width: 720px;
+            max-width: 640px;
           }
 
           @media (min-width: 641px) {
             blockquote {
-              font-size: 1.8em;
+              font-size: 1.4em;
             }
           }
 
           @media (min-width: 961px) {
             blockquote {
-              font-size: 2em;
+              font-size: 1.8em;
             }
           }
 
