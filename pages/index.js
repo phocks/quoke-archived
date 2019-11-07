@@ -26,6 +26,12 @@ const Home = props => {
     // });
   };
 
+  const likeQuote = async slug => {
+    console.log("Liking quote")
+    const result = await axios.post("/api/like/quote/" + slug, {});
+    console.log(result);
+  };
+
   useEffect(() => {
     init();
   }, []);
@@ -47,7 +53,7 @@ const Home = props => {
                       className="pseudo-link"
                       href="#"
                       onClick={() => {
-                        console.log("Implement the like button...");
+                        likeQuote(quote.slug);
                       }}
                     >
                       Like
