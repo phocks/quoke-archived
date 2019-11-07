@@ -5,6 +5,7 @@ import absoluteUrl from "next-absolute-url";
 import cookies from "next-cookies";
 import axios from "axios";
 import dayjs from "dayjs";
+import { useStoreState } from "easy-peasy";
 
 // Components
 import Layout from "../components/layout";
@@ -12,6 +13,7 @@ import Quotation from "../components/quotation";
 
 const Home = props => {
   const [homeQuotes, setHomeQuotes] = useState();
+  const username = useStoreState(state => state.user.username);
 
   const init = async () => {
     const result = await axios.get("/api/get-quotes/quoke");
@@ -27,8 +29,14 @@ const Home = props => {
   };
 
   const likeQuote = async slug => {
-    console.log("Liking quote")
+    console.log("Liking quote");
     const result = await axios.post("/api/like/quote/" + slug, {});
+    console.log(result);
+  };
+
+  const unlikeQuote = async slug => {
+    console.log("Unliking quote");
+    const result = await axios.post("/api/unlike/quote/" + slug, {});
     console.log(result);
   };
 
@@ -49,15 +57,27 @@ const Home = props => {
                     <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
                       <a>{dayjs(quote.date).format("DD MMMM YYYY")}</a>
                     </Link>
-                    <span
-                      className="pseudo-link"
-                      href="#"
-                      onClick={() => {
-                        likeQuote(quote.slug);
-                      }}
-                    >
-                      Like
-                    </span>
+                    {quote.likedBy.includes(username) ? (
+                      <span
+                        className="pseudo-link"
+                        href="#"
+                        onClick={() => {
+                          unlikeQuote(quote.slug);
+                        }}
+                      >
+                        Unlike
+                      </span>
+                    ) : (
+                      <span
+                        className="pseudo-link"
+                        href="#"
+                        onClick={() => {
+                          likeQuote(quote.slug);
+                        }}
+                      >
+                        Like
+                      </span>
+                    )}
                   </div>
                 </div>
               );
