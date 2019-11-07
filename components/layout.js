@@ -103,6 +103,11 @@ const Layout = props => {
             margin-top: 2em;
             margin-bottom: 4em;
           }
+          .pseudo-link {
+            cursor: pointer;
+            text-decoration: underline;
+            color: black;
+          }
         `}
       </style>
       {/* <script

@@ -43,14 +43,15 @@ const Home = props => {
                     <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
                       <a>{dayjs(quote.date).format("DD MMMM YYYY")}</a>
                     </Link>
-                    <a
+                    <span
+                      className="pseudo-link"
                       href="#"
                       onClick={() => {
                         console.log("Implement the like button...");
                       }}
                     >
                       Like
-                    </a>
+                    </span>
                   </div>
                 </div>
               );
