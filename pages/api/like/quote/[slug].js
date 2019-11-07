@@ -15,8 +15,6 @@ export default async function handle(req, res) {
     return;
   }
 
-  console.log(loginData.payload.username);
-
   const client = await MongoClient.connect(url, options);
   const db = client.db(dbName);
   const collection = db.collection("quotations");
