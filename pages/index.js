@@ -45,7 +45,7 @@ const Home = props => {
                     <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
                       <a>{dayjs(quote.date).format("DD MMMM YYYY")}</a>
                     </Link>
-                    {quote.likedBy.includes(username) ? (
+                    {quote.likedBy && quote.likedBy.includes(username) ? (
                       <span
                         className="pseudo-link"
                         href="#"
