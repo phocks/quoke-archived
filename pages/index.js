@@ -1,31 +1,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import fetch from "isomorphic-unfetch";
-import absoluteUrl from "next-absolute-url";
-import cookies from "next-cookies";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState } from "easy-peasy";
 
 // Components
-import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 
 const Home = props => {
   const [homeQuotes, setHomeQuotes] = useState();
   const username = useStoreState(state => state.user.username);
 
-  const init = async () => {
+  const sync = async () => {
     const result = await axios.get("/api/get-quotes/quoke");
     setHomeQuotes(result.data);
-
-    // Setup Masonry.js layout
-    // var elem = document.querySelector(".grid");
-    // var msnry = new Masonry(elem, {
-    //   // options
-    //   itemSelector: ".grid-item",
-    //   columnWidth: 410
-    // });
   };
 
   const likeQuote = async slug => {
@@ -41,7 +29,7 @@ const Home = props => {
   };
 
   useEffect(() => {
-    init();
+    sync();
   }, []);
 
   return (
@@ -61,8 +49,9 @@ const Home = props => {
                       <span
                         className="pseudo-link"
                         href="#"
-                        onClick={() => {
-                          unlikeQuote(quote.slug);
+                        onClick={async () => {
+                          await unlikeQuote(quote.slug);
+                          await sync();
                         }}
                       >
                         Unlike
@@ -71,8 +60,9 @@ const Home = props => {
                       <span
                         className="pseudo-link"
                         href="#"
-                        onClick={() => {
-                          likeQuote(quote.slug);
+                        onClick={async () => {
+                          await likeQuote(quote.slug);
+                          await sync();
                         }}
                       >
                         Like
