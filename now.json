@@ -6,5 +6,6 @@
     "dbPassword": "@dbpassword",
     "jwtSecret": "@jwtsecret",
     "recaptchaSecret": "@recaptchasecret"
-  }
+  },
+  "regions": ["sfo1", "pdx1"]
 }
