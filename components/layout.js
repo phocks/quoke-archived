@@ -11,11 +11,19 @@ const Layout = props => {
         <title>Quoke</title>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
         <link href="/css/all.min.css" rel="stylesheet"></link>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
       </Head>
 
       <div className="container">
@@ -42,7 +50,7 @@ const Layout = props => {
           @import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
           html {
             height: 100%;
-            font-family: "Montserrat", sans-serif;
+            font-family: "Roboto", sans-serif;
             line-height: 1.5;
           }
           body {
