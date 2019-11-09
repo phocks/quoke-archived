@@ -7,5 +7,5 @@
     "jwtSecret": "@jwtsecret",
     "recaptchaSecret": "@recaptchasecret"
   },
-  "regions": ["syd", "sfo", "pdx"]
+  "regions": ["sfo", "pdx"]
 }
