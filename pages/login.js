@@ -3,16 +3,16 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useStoreActions } from "easy-peasy";
-import { Button } from "@material-ui/core";
-import { TextField } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
+// import { Button } from "@material-ui/core";
+// import { TextField } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
-  textField: {
-    margin: "0 0 12px",
-    // padding: 0
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   textField: {
+//     margin: "0 0 12px"
+//     // padding: 0
+//   }
+// }));
 
 const Login = props => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const Login = props => {
   const setGlobalUsername = useStoreActions(
     actions => actions.user.setUsername
   );
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const attemptLogin = async event => {
     event.preventDefault();
@@ -59,14 +59,22 @@ const Login = props => {
       <main className={"mid"}>
         {userMessage && <div>{userMessage}</div>}
         <form action="/api/login" method="post" onSubmit={attemptLogin}>
-          {/* <input type="text" name="username" placeholder="Username" required />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          /> */}
-          <div>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              required
+              className="btn"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+              className="btn"
+            />
+            <input type="submit" value="Login" className="btn" />
+          {/* <div>
             <TextField
               id="username"
               name="username"
@@ -75,9 +83,6 @@ const Login = props => {
               variant="filled"
               required
               className={classes.textField}
-              // inputProps={{
-              //   minLength: 2,
-              // }}
             />
           </div>
           <div>
@@ -90,12 +95,10 @@ const Login = props => {
               variant="filled"
               required
               className={classes.textField}
-              // inputProps={{
-              //   minLength: 8,
-              // }}
+              
             />
           </div>
-          {/* <input type="submit" value="Login" /> */}
+
           <div className="button-container">
             <Button
               type="submit"
@@ -105,7 +108,7 @@ const Login = props => {
             >
               Login
             </Button>
-          </div>
+          </div> */}
         </form>
         <p>
           <small>
@@ -133,13 +136,13 @@ const Login = props => {
             text-decoration: none;
             background: none;
           }
-          .button-container {
+          {/* .button-container {
             display: flex;
             justify-content: flex-end;
           }
           .button-container button {
             margin: 3px;
-          }
+          } */}
         `}
       </style>
     </>
