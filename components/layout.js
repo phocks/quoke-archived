@@ -31,6 +31,9 @@ const Layout = props => {
 
       <style jsx>
         {`
+          .container {
+            color: green;
+          }
           .sub-fold {
             min-height: 300px;
             background-color: black;
@@ -41,9 +44,9 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+          /* @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
           @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-          @import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap"); */
           html {
             height: 100%;
             font-family: "Roboto", sans-serif;
@@ -70,7 +73,7 @@ const Layout = props => {
           }
           main {
             background-color: white;
-            color: #111;
+            /* color: #111; */
             min-height: 100%;
             flex: 1;
             padding-top: 16px;

@@ -4,6 +4,7 @@ import Link from "next/link";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState } from "easy-peasy";
+import css from "./index.scss"
 
 // Components
 import Quotation from "../components/quotation";
@@ -36,7 +37,7 @@ const Home = props => {
   return (
     <>
       <main className="center">
-        {props.title}
+        <div className={css.example}>{props.title}</div>
         {/* <section>
           {homeQuotes &&
             homeQuotes.map(quote => {
