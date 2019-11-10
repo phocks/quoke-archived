@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import axios from "axios";
 import dayjs from "dayjs";
@@ -29,13 +30,14 @@ const Home = props => {
   };
 
   useEffect(() => {
-    sync();
+    // sync();
   }, []);
 
   return (
     <>
       <main className="center">
-        <section>
+        {props.title}
+        {/* <section>
           {homeQuotes &&
             homeQuotes.map(quote => {
               return (
@@ -72,13 +74,7 @@ const Home = props => {
                 </div>
               );
             })}
-          {/* <h1 className="quotation-mark">&ldquo;</h1>
-          {q && <Quotation text={q.text} author={q.author} source={q.source} key={q._id} />}
-
-          {q && (
-            <div className="date"><Link href="/quote/[slug]" as={"/quote/" + q.slug}>{dayjs(q.date).format("DD MMMM YYYY")}</Link></div> 
-          )} */}
-        </section>
+        </section> */}
       </main>
       <style jsx>{`
         a {
@@ -92,6 +88,12 @@ const Home = props => {
       `}</style>
     </>
   );
+};
+
+Home.getInitialProps = async function() {
+  return {
+    title: "quoke"
+  };
 };
 
 export default Home;
