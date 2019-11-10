@@ -5,6 +5,13 @@ import slug from "slug";
 // Number of words to truncate the quote text to
 const SLUG_WORD_COUNT = 10;
 
+const truncate = (str, wordCount) => {
+  return str
+    .split(" ")
+    .splice(0, wordCount)
+    .join(" ");
+};
+
 const random = async (req, res) => {
   const client = await MongoClient.connect(url, options);
 
@@ -43,10 +50,3 @@ const random = async (req, res) => {
 };
 
 export default random;
-
-function truncate(str, wordCount) {
-  return str
-    .split(" ")
-    .splice(0, wordCount)
-    .join(" ");
-}

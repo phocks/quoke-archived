@@ -1,0 +1,70 @@
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:global {
+  html {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+  }
+  a {
+    color: black;
+  }
+  button,
+  input[type="submit"] {
+    cursor: pointer;
+  }
+  #__next {
+    height: 100%;
+  }
+  main {
+    background-color: white;
+    min-height: 100%;
+    flex: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  main.mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main.article {
+    display: flex;
+    justify-content: center;
+  }
+  main.article section {
+    max-width: 720px;
+    width: 100%;
+  }
+  main.center {
+    display: flex;
+    justify-content: center;
+  }
+  .grid-item {
+    max-width: 300px;
+  }
+  .quotation-mark {
+    font-size: 38px;
+    font-family: "Paytone One", sans-serif;
+  }
+  .list-quote {
+    margin-top: 2em;
+    margin-bottom: 4em;
+  }
+  .pseudo-link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+  }
+}
