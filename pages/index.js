@@ -11,18 +11,15 @@ import css from "./index.scss";
 const Home = props => {
   return (
     <main className={css.root}>
-      <section>
-        <div className={css.title}>{props.randomQuote.text}</div>
-      </section>
+      <div className={css.title}>{props.randomQuote.text}</div>
     </main>
   );
 };
 
 Home.getInitialProps = async ({ req, query }) => {
   const { origin } = absoluteUrl(req);
-  const apiOrigin = `${origin}`;
 
-  const fetched = await fetch(apiOrigin + "/api/random");
+  const fetched = await fetch(origin + "/api/random");
   const data = await fetched.json();
 
   return {

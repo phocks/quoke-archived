@@ -3,6 +3,8 @@ import Link from "next/link";
 import axios from "axios";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
+import css from "./heading.scss";
+
 const Heading = props => {
   const [username, setUsername] = useState();
   const setGlobalUsername = useStoreActions(
@@ -24,55 +26,29 @@ const Heading = props => {
   });
 
   return (
-    <>
-      <header>
-        <div>
-          <span className="branding">
-            <Link href="/">
-              <a>Quoke</a>
-            </Link>
-          </span>
-        </div>
-        <div className={"nav"}>
-          {/* <Link href="/about">
+    <header className={css.root}>
+      <div>
+        <span className={css.branding}>
+          <Link href="/">
+            <a>Quoke</a>
+          </Link>
+        </span>
+      </div>
+      <div className={css.nav}>
+        {/* <Link href="/about">
             <a>About</a>
           </Link> */}
-          {user ? (
-            <Link href={"/[username]"} as={"/" + user}>
-              <a>{user}</a>
-            </Link>
-          ) : (
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-          )}
-        </div>
-      </header>
-
-      <style jsx>{`
-        header {
-          font-family: "Inconsolata", monospace;
-          display: flex;
-          justify-content: space-between;
-          font-size: 14px;
-          padding: 4px 16px;
-          background-color: black;
-          color: white;
-        }
-        a {
-          color: white;
-        }
-        .branding {
-        }
-        .branding a {
-          text-decoration: none;
-        }
-        .nav a {
-          margin-left: 6px;
-          text-decoration: none;
-        }
-      `}</style>
-    </>
+        {user ? (
+          <Link href={"/[username]"} as={"/" + user}>
+            <a>{user}</a>
+          </Link>
+        ) : (
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+        )}
+      </div>
+    </header>
   );
 };
 
