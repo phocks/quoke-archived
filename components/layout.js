@@ -23,7 +23,7 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        {/* <Heading /> */}
+        <Heading />
         {children}
         {/* <Footer /> */}
       </div>

@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+
+  a {
+    color: #666;
+  }
+}
+.branding a {
+  text-decoration: none;
+}
+.nav a {
+  margin-left: 6px;
+  text-decoration: none;
+}
