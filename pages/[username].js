@@ -8,6 +8,7 @@ import LogoutButton from "../components/LogoutButton";
 
 const UserPage = props => {
   const currentUser = useStoreState(state => state.username);
+  
   const setTitle = useStoreActions(actions => actions.setTitle);
   setTitle(props.userPageName + " - Quoke");
 
