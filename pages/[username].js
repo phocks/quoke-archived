@@ -1,4 +1,4 @@
-import { useStoreState } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import Error from "./_error";
@@ -7,9 +7,10 @@ import dayjs from "dayjs";
 import LogoutButton from "../components/LogoutButton";
 
 const UserPage = props => {
-  const currentUser = useStoreState(state => {
-    return state.user.username;
-  });
+  const currentUser = useStoreState(state => state.username);
+  
+  const setTitle = useStoreActions(actions => actions.setTitle);
+  setTitle(props.userPageName + " - Quoke");
 
   console.log("Current user: " + currentUser);
 

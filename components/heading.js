@@ -8,10 +8,10 @@ import css from "./heading.scss";
 const Heading = props => {
   const [username, setUsername] = useState();
   const setGlobalUsername = useStoreActions(
-    actions => actions.user.setUsername
+    actions => actions.setUsername
   );
 
-  const user = useStoreState(state => state.user.username);
+  const user = useStoreState(state => state.username);
 
   useEffect(() => {
     axios.post("/api/is-authenticated", {}).then(
@@ -35,9 +35,6 @@ const Heading = props => {
         </span>
       </div>
       <div className={css.nav}>
-        {/* <Link href="/about">
-            <a>About</a>
-          </Link> */}
         {user ? (
           <Link href={"/[username]"} as={"/" + user}>
             <a>{user}</a>
