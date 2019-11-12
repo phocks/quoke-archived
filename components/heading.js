@@ -7,9 +7,7 @@ import css from "./heading.scss";
 
 const Heading = props => {
   const [username, setUsername] = useState();
-  const setGlobalUsername = useStoreActions(
-    actions => actions.setUsername
-  );
+  const setGlobalUsername = useStoreActions(actions => actions.setUsername);
 
   const user = useStoreState(state => state.username);
 
@@ -27,7 +25,11 @@ const Heading = props => {
 
   return (
     <header className={css.root}>
-      <h2>Quoke</h2>
+      <h2>
+        <Link href="/">
+          <a>Quoke</a>
+        </Link>
+      </h2>
       {/* <div>
         <span className={css.branding}>
           <Link href="/">
