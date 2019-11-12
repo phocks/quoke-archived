@@ -27,7 +27,8 @@ const Heading = props => {
 
   return (
     <header className={css.root}>
-      <div>
+      <h2>Quoke</h2>
+      {/* <div>
         <span className={css.branding}>
           <Link href="/">
             <a>Quoke</a>
@@ -44,7 +45,7 @@ const Heading = props => {
             <a>Login</a>
           </Link>
         )}
-      </div>
+      </div> */}
     </header>
   );
 };

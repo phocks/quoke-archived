@@ -13,7 +13,7 @@ const Home = props => {
   setTitle("Quoke")
   return (
     <main className={css.root}>
-      <div className={css.title}>{props.randomQuote.text}</div>
+      <div className={css.text}>{props.randomQuote.text}</div>
     </main>
   );
 };
