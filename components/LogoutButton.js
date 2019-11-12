@@ -5,7 +5,7 @@ import { useStoreActions } from "easy-peasy";
 const LogoutButton = props => {
   const router = useRouter();
   const setGlobalUsername = useStoreActions(
-    actions => actions.user.setUsername
+    actions => actions.setUsername
   );
 
   const doLogout = async event => {

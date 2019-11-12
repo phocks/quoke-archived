@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { load } from "recaptcha-v3";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { useStoreAction } from "easy-peasy";
 
 const RECAPTCHA_SITE_KEY = "6LcIzbwUAAAAAAn47gGOqId6Z9FAWRrbWqcrE9PT";
 
 const Register = props => {
   const [recaptchaToken, setRecaptchaToken] = useState();
   const [userMessage, setUserMessage] = useState();
+
+  const setTitle = useStoreActions(actions => actions.setTitle);
+  setTitle("Register - Quoke");
 
   const router = useRouter();
 

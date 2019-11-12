@@ -1,15 +1,17 @@
 import Head from "next/head";
 import css from "./layout.scss";
+import { useStoreState } from 'easy-peasy';
 
 import Heading from "./heading";
 import Footer from "./footer";
 
 const Layout = props => {
   const { children } = props;
+  const title = useStoreState(state => state.title);
   return (
     <>
       <Head>
-        <title>Quoke</title>
+        <title>{title}</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
