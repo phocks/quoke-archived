@@ -22,7 +22,6 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <Nav></Nav>
         <Heading />
         {children}
         {/* <Footer /> */}

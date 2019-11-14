@@ -1,20 +1,16 @@
 .root {
   // background: cadetblue;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   
 }
 
 .container {
+  display: flex;
   font-family: 'IM Fell English SC', serif;
   text-transform: lowercase;
   font-size: 20px;
-  width: 590px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   text-align: right;
-  margin-right: 8%;
-
   a {
     color: #666;
     text-decoration: none;

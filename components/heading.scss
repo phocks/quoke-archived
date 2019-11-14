@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   font-family: 'IM Fell English', serif;
+  padding: 16px;
   // font-size: 14px;
   // padding: 8px 16px;
   // background-color: #FD507E;
@@ -11,8 +12,15 @@
   }
 }
 
+.container {
+  width: 590px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .branding a {
-  text-decoration: none;
+  font-size: 24px;
+  // text-decoration: none;
 }
 .nav a {
   margin-left: 6px;

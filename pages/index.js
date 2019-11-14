@@ -11,9 +11,11 @@ import css from "./index.scss";
 const Home = props => {
   const setTitle = useStoreActions(actions => actions.setTitle);
   setTitle("Quoke");
+
   return (
     <main className={css.root}>
       <section>
+        <h2 className={css.quotationMark}>&ldquo;</h2>
         <div className={css.text}>{props.randomQuote.text}</div>
       </section>
     </main>
