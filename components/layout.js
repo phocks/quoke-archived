@@ -1,7 +1,8 @@
 import Head from "next/head";
 import css from "./layout.scss";
-import { useStoreState } from 'easy-peasy';
+import { useStoreState } from "easy-peasy";
 
+import Nav from "./nav";
 import Heading from "./heading";
 import Footer from "./footer";
 
@@ -18,13 +19,10 @@ const Layout = props => {
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
       </Head>
 
       <div className={css.container}>
+        <Nav></Nav>
         <Heading />
         {children}
         {/* <Footer /> */}

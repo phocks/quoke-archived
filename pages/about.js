@@ -1,9 +1,13 @@
+import css from "./about.scss"
+
 const About = () => {
   return (
     <>
-      <main className={"article"}>
+      <main className={css.root}>
         <section>
-          <h1>About Quoke</h1>
+          <div class={css.title}>
+          <p>About</p>
+          </div>
           <p>Quoke is a website about words and quotes and ideas.</p>
         </section>
       </main>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Roboto&display=swap");
+
 .container {
   min-height: 100%;
   display: flex;
@@ -13,7 +15,9 @@
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
+    font-family: "IM Fell English", serif;
     line-height: 1.5;
+    color: #404040;
   }
   a {
     color: black;
@@ -26,14 +30,14 @@
     height: 100%;
   }
   main {
-    background-color: #332B50;
     min-height: 100%;
     flex: 1;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
-    color: white;
+    display: flex;
+    justify-content: center;
   }
   main.mid {
     display: flex;
@@ -45,9 +49,10 @@
     display: flex;
     justify-content: center;
   }
-  main.article section {
-    max-width: 720px;
+  main section {
+    max-width: 590px;
     width: 100%;
+    font-size: 20px;
   }
   main.center {
     display: flex;

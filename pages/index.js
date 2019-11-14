@@ -9,11 +9,13 @@ import absoluteUrl from "next-absolute-url";
 import css from "./index.scss";
 
 const Home = props => {
-  const setTitle = useStoreActions(actions => actions.setTitle)
-  setTitle("Quoke")
+  const setTitle = useStoreActions(actions => actions.setTitle);
+  setTitle("Quoke");
   return (
     <main className={css.root}>
-      <div className={css.text}>{props.randomQuote.text}</div>
+      <section>
+        <div className={css.text}>{props.randomQuote.text}</div>
+      </section>
     </main>
   );
 };
