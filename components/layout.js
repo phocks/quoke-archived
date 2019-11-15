@@ -22,10 +22,12 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <Heading />
+        {/* <Heading /> */}
         {children}
         {/* <Footer /> */}
       </div>
+      <script src="smartquotes.js"></script>
+      <script>smartquotes();</script>
     </>
   );
 };
