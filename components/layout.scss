@@ -15,7 +15,7 @@
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
-    font-family: "IM Fell English", serif;
+    // font-family: "IM Fell English", serif;
     line-height: 1.5;
     color: #404040;
   }
@@ -34,7 +34,7 @@
     flex: 1;
     padding-top: 16px;
     padding-bottom: 16px;
-    padding-left: 16px;
+    padding-left: 32px;
     padding-right: 16px;
     display: flex;
     justify-content: center;
@@ -53,6 +53,7 @@
     max-width: 590px;
     width: 100%;
     font-size: 20px;
+    // position: relative;
   }
   main.center {
     display: flex;

@@ -1,54 +1,19 @@
-import Link from "next/link";
-import Head from "next/head";
+import css from "./quotation.scss";
 
 const Quotation = props => {
   return (
-    <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      <blockquote>
-        {props.text}
-        <cite>
-          <small>
+    <div className={css.root}>
+      <h2 className={css.quotationMark}>&ldquo;</h2>
+      <p className={css.text}>{props.text}</p>
+      <small>
+        <div className={css.citation}>
+          <p className={css.author}>
             &mdash;{props.author}
-            {props.source && <i>, {props.source}</i>}
-          </small>
-        </cite>
-      </blockquote>
-
-      {/* <style jsx>
-        {`
-          blockquote {
-            font-size: 1.1em;
-            margin: 0 0 30px;
-            max-width: 640px;
-          }
-
-          @media (min-width: 641px) {
-            blockquote {
-              font-size: 1.4em;
-            }
-          }
-
-          @media (min-width: 961px) {
-            blockquote {
-              font-size: 1.8em;
-            }
-          }
-
-          cite {
-            display: block;
-            margin-top: 1em;
-            font-style: normal;
-          }
-        `}
-      </style> */}
-    </>
+            {props.source && <em className={css.source}>, {props.source}</em>}
+          </p>
+        </div>
+      </small>
+    </div>
   );
 };
 

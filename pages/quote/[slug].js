@@ -23,13 +23,12 @@ export default function Quote(props) {
 
 Quote.getInitialProps = async ({ req, query }) => {
   const { origin } = absoluteUrl(req);
-  const apiOrigin = `${origin}`;
 
   const res = await fetch(apiOrigin + "/api/quote/" + query.slug);
   const data = await res.json();
 
   return {
-    quote: data[0]
+    quote: data
   };
 
   return {};

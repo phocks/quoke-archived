@@ -5,6 +5,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
+import Quotation from "../components/quotation";
 
 import css from "./index.scss";
 
@@ -15,7 +16,12 @@ const Home = props => {
   return (
     <main className={css.root}>
       <section>
-        <h2 className={css.quotationMark}>&ldquo;</h2>
+        <Quotation
+          text={props.randomQuote.text}
+          author={props.randomQuote.author}
+          source={props.randomQuote.source}
+        />
+        {/* <h2 className={css.quotationMark}>&ldquo;</h2>
         <p className={css.text}>{props.randomQuote.text}</p>
         <small>
           <div className={css.citation}>
@@ -26,7 +32,7 @@ const Home = props => {
               )}
             </p>
           </div>
-        </small>
+        </small> */}
         <hr />
       </section>
     </main>
