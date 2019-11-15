@@ -16,7 +16,18 @@ const Home = props => {
     <main className={css.root}>
       <section>
         <h2 className={css.quotationMark}>&ldquo;</h2>
-        <div className={css.text}>{props.randomQuote.text}</div>
+        <p className={css.text}>{props.randomQuote.text}</p>
+        <small>
+          <div className={css.citation}>
+            <p className={css.author}>
+              &mdash;{props.randomQuote.author}
+              {props.randomQuote.source && (
+                <em className={css.source}>, {props.randomQuote.source}</em>
+              )}
+            </p>
+          </div>
+        </small>
+        <hr />
       </section>
     </main>
   );
