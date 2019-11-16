@@ -17,17 +17,17 @@ const Home = props => {
 
   return (
     <>
-    <center><h2>quoke</h2></center>
-    <main className={css.root}>
-      <section>
-        
-          
-        
-        <Quotation quote={props.randomQuote} />
-        <hr />
-        <Info quote={props.randomQuote} />
-      </section>
-    </main></>
+      <center>
+        <h2>quoke</h2>
+      </center>
+      <main className={css.root}>
+        <section>
+          <Quotation quote={props.randomQuote} />
+          <hr />
+          <Info quote={props.randomQuote} />
+        </section>
+      </main>
+    </>
   );
 };
 
