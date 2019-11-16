@@ -8,5 +8,5 @@ export default async function handle(req, res) {
   const result = await collection.findOne({ slug: slug });
 
   res.status(200).json(result);
-  client.close();
+  
 }
