@@ -6,6 +6,10 @@
 .quotationMark {
   position: absolute;
   left: -25px;
-  top: -4px;
+  top: -2px;
   margin: 0;
+
+  a {
+    text-decoration: none;
+  }
 }

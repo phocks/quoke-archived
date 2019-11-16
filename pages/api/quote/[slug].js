@@ -8,7 +8,7 @@ export default async function handle(req, res) {
   const db = client.db(dbName);
   const collection = db.collection("quotations");
 
-  const result = await collection.findOne({ slug: slug }).toArray();
+  const result = await collection.findOne({ slug: slug });
 
   res.status(200).json(result);
   client.close();

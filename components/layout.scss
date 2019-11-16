@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Roboto|Montserrat&display=swap");
 
 .container {
   min-height: 100%;
@@ -16,11 +16,20 @@
     height: 100%;
     font-family: "Roboto", sans-serif;
     // font-family: "IM Fell English", serif;
+    // font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
     color: #404040;
   }
   a {
-    color: black;
+    color: #404040;
+  }
+  hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
   }
   button,
   input[type="submit"] {
@@ -34,7 +43,7 @@
     flex: 1;
     padding-top: 16px;
     padding-bottom: 16px;
-    padding-left: 32px;
+    padding-left: 36px;
     padding-right: 16px;
     display: flex;
     justify-content: center;
