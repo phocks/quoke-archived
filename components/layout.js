@@ -23,10 +23,11 @@ const Layout = props => {
 
       <div className={css.container}>
         {/* <Heading /> */}
+        <p></p>
         {children}
         {/* <Footer /> */}
       </div>
-      <script src="smartquotes.js"></script>
+      <script src="/js/smartquotes.js"></script>
       <script>smartquotes();</script>
     </>
   );

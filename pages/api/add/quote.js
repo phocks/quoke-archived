@@ -17,8 +17,6 @@ const addQuote = async (req, res) => {
     return;
   }
 
-  console.log(loginData.payload.username);
-
   // Get user input
   const { text, author, source, slug, noRedirect } = req.body;
 

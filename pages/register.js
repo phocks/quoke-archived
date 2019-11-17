@@ -38,7 +38,6 @@ const Register = props => {
       noRedirect: true
     });
 
-    console.log(res.data);
     const { success } = res.data;
 
     if (success) router.push("/login");
@@ -105,7 +104,6 @@ const Register = props => {
 Register.getInitialProps = async ctx => {
   return {
     checkCaptcha: () => {
-      console.log("server");
     }
   };
 };

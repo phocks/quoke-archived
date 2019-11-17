@@ -14,7 +14,7 @@ const storeModel = {
     state.username = payload;
   }),
   title: "Quoke",
-  setTitle : action((state, payload) => {
+  setTitle: action((state, payload) => {
     state.title = payload;
   })
 };
@@ -22,9 +22,7 @@ const storeModel = {
 const store = createStore(storeModel);
 
 // Fires when navigation occurs
-const handleRouteChange = url => {
-  console.log("App is changing to: ", url);
-};
+const handleRouteChange = url => {};
 
 Router.events.on("routeChangeStart", handleRouteChange);
 
@@ -33,9 +31,7 @@ class MyApp extends App {
     super(props);
   }
 
-  componentDidMount() {
-    console.log(":)");
-  }
+  componentDidMount() {}
 
   render() {
     const { Component, pageProps } = this.props;

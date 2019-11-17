@@ -4,20 +4,10 @@ export default props => {
   const addQuote = async event => {
     event.preventDefault();
 
-
     const text = event.target.text.value;
     const author = event.target.author.value;
     const source = event.target.source.value;
     const slug = event.target.slug.value;
-    
-
-    // const authRes = await axios.post(
-    //   "/api/is-authenticated",
-    //   {},
-    //   { withCredentials: true }
-    // );
-
-    // console.log(authRes);
 
     const res = await axios.post(
       "/api/add/quote",
@@ -31,11 +21,6 @@ export default props => {
       { withCredentials: true }
     );
 
-    console.log(res.data);
-
-    
-
-    console.log("Adding quote?");
   };
   return (
     <>
