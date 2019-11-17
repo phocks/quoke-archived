@@ -19,7 +19,6 @@ const LogoutButton = props => {
       { withCredentials: true }
     );
 
-    console.log(res.data);
     const { success } = res.data;
 
     if (success) {

@@ -12,8 +12,6 @@ const UserPage = props => {
   const setTitle = useStoreActions(actions => actions.setTitle);
   setTitle(props.userPageName + " - Quoke");
 
-  console.log("Current user: " + currentUser);
-
   if (!props.userFound) return <Error statusCode={404} />;
   else {
     return (
@@ -38,8 +36,6 @@ UserPage.getInitialProps = async context => {
 
   const res = await fetch(apiOrigin + "/api/" + query.username);
   const data = await res.json();
-
-  console.log(data);
 
   if (!data.userFound) {
     return { userFound: false };

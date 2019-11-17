@@ -17,8 +17,6 @@ export default async (req, res) => {
   // See if user exists
   const result = await collection.findOne({ username: username });
 
-  console.log(result);
-
   if (!result) {
     res.status(200).json({ userFound: false });
     client.close();

@@ -24,7 +24,6 @@ const Login = props => {
       { withCredentials: true }
     );
 
-    console.log(res.data);
     const { loggedIn } = res.data;
 
     if (loggedIn) {
