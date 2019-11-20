@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  justify-content: center;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 32px;
+}
+
+.title {
+  max-width: 590px;
+  flex: 1;
+  font-weight: bold;
+  font-size: 28px;
+}

@@ -8,6 +8,7 @@ import absoluteUrl from "next-absolute-url";
 
 import Quotation from "../components/quotation";
 import Info from "../components/info";
+import Title from "../components/title";
 
 import css from "./index.scss";
 
@@ -16,18 +17,12 @@ const Home = props => {
   setTitle("Quoke");
 
   return (
-    <>
-      <center>
-        <h2>quoke</h2>
-      </center>
-      <main className={css.root}>
-        <section>
-          <Quotation quote={props.randomQuote} />
-          <hr />
-          <Info quote={props.randomQuote} />
-        </section>
-      </main>
-    </>
+    <div className={css.root}>
+      <Title text="/quoke" />
+      <Quotation quote={props.randomQuote} />
+      <hr />
+      {/* <Info quote={props.randomQuote} /> */}
+    </div>
   );
 };
 

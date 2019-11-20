@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useStoreActions } from "easy-peasy";
 
+import css from "./login.scss"
+
 const Login = props => {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState();
@@ -52,51 +54,16 @@ const Login = props => {
             name="username"
             placeholder="Username"
             required
-            className="btn"
+            className={css.input}
           />
           <input
             type="password"
             name="password"
             placeholder="Password"
             required
-            className="btn"
+            className={css.input}
           />
-          <input type="submit" value="Login" className="btn" />
-          {/* <div>
-            <TextField
-              id="username"
-              name="username"
-              label="Username"
-              margin="normal"
-              variant="filled"
-              required
-              className={classes.textField}
-            />
-          </div>
-          <div>
-            <TextField
-              id="password"
-              name="password"
-              type="password"
-              label="Password"
-              margin="normal"
-              variant="filled"
-              required
-              className={classes.textField}
-              
-            />
-          </div>
-
-          <div className="button-container">
-            <Button
-              type="submit"
-              variant="contained"
-              color="default"
-              fullWidth={false}
-            >
-              Login
-            </Button>
-          </div> */}
+          <input type="submit" value="Login" className={css.input} />
         </form>
         <p>
           <small>
@@ -110,7 +77,7 @@ const Login = props => {
       </main>
       <style jsx>
         {`
-          .btn {
+          .input {
             width: 100%;
             max-width: 480px;
             padding: 12px;
@@ -123,15 +90,6 @@ const Login = props => {
             line-height: 20px;
             text-decoration: none;
             background: none;
-          }
-           {
-            /* .button-container {
-            display: flex;
-            justify-content: flex-end;
-          }
-          .button-container button {
-            margin: 3px;
-          } */
           }
         `}
       </style>

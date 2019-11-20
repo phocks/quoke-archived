@@ -2,21 +2,17 @@
 
 .container {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 :global {
   html {
     height: 100%;
+    overflow: hidden;
   }
   body {
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
-    // font-family: "IM Fell English", serif;
-    // font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
     color: #404040;
   }
@@ -37,35 +33,5 @@
   }
   #__next {
     height: 100%;
-  }
-  main {
-    min-height: 100%;
-    flex: 1;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 36px;
-    padding-right: 16px;
-    display: flex;
-    justify-content: center;
-  }
-  main.mid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  main.article {
-    display: flex;
-    justify-content: center;
-  }
-  main section {
-    max-width: 590px;
-    width: 100%;
-    font-size: 20px;
-    // position: relative;
-  }
-  main.center {
-    display: flex;
-    justify-content: center;
   }
 }

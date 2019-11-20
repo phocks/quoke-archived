@@ -1,12 +1,18 @@
 .root {
+  display: flex;
   font-family: "IM Fell English", serif;
-  position: relative;
+  font-size: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.container {
+  max-width: 590px;
 }
 
 .quotationMark {
-  position: absolute;
-  left: -25px;
-  top: -2px;
   margin: 0;
 
   a {
