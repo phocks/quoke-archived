@@ -55,7 +55,7 @@ const Register = props => {
       <main className={"mid"}>
         {userMessage && <div>{userMessage}</div>}
         <form action="/api/register" method="post" onSubmit={handleSubmit}>
-          <input type="text" name="username" placeholder="Username" required />
+          <input type="text" name="username" placeholder="Username" minLength="3" required />
           <input type="email" name="email" placeholder="Email" required />
           <input
             type="password"

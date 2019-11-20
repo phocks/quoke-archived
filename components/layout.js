@@ -18,12 +18,11 @@ const Layout = props => {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/css/normalize.css"></link>
+        <link rel="stylesheet" href="/css/normalize.css"></link>
       </Head>
 
       <div className={css.container}>
         {/* <Heading /> */}
-        <p></p>
         {children}
         {/* <Footer /> */}
       </div>
