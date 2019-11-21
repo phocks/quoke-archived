@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 import { dbName, url, options } from "../../../lib/mongodb";
 
-const main = async (req, res) => {
+export default async (req, res) => {
   const { username } = req.query;
 
   const client = await MongoClient.connect(url, options);
@@ -19,4 +19,3 @@ const main = async (req, res) => {
   }
 };
 
-export default main;

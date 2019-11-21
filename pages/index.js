@@ -16,12 +16,21 @@ const Home = props => {
   const setTitle = useStoreActions(actions => actions.setTitle);
   setTitle("Quoke");
 
+  const { quotes } = props;
+
   return (
     <div className={css.root}>
       <Title text="/quoke" />
       <Quotation quote={props.randomQuote} />
       <hr />
+      
       {/* <Info quote={props.randomQuote} /> */}
+      {/* <div className={css.quotesRoot}>
+        <div className={css.quotesContainer}>
+          {quotes &&
+            quotes.map((quote, index) => <div key={index} className={css.quoteTeaser}>{quote.text}</div>)}
+        </div>
+      </div> */}
     </div>
   );
 };
@@ -29,11 +38,15 @@ const Home = props => {
 Home.getInitialProps = async ({ req, query }) => {
   const { origin } = absoluteUrl(req);
 
-  const fetched = await fetch(origin + "/api/random");
-  const data = await fetched.json();
+  let fetched = await fetch(origin + "/api/random");
+  const randomQuote = await fetched.json();
+
+  fetched = await fetch(origin + "/api/get-quotes");
+  const quotes = await fetched.json();
 
   return {
-    randomQuote: data
+    randomQuote: randomQuote,
+    quotes: quotes
   };
 };
 

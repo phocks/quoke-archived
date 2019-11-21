@@ -2,12 +2,12 @@
 
 .container {
   min-height: 100%;
+  padding-top: 32px;
 }
 
 :global {
   html {
     height: 100%;
-    overflow: hidden;
   }
   body {
     margin: 0;
