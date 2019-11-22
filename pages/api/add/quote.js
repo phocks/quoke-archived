@@ -35,6 +35,7 @@ const addQuote = async (req, res) => {
     });
   } catch (err) {
     res.json(err);
+    client.close()
     return;
   }
 
