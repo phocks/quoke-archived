@@ -4,7 +4,7 @@
  */
 import { MongoClient } from "mongodb";
 
-import { dbName, url, options } from "../../lib/mongodb";
+import { dbName, url, options } from "../../../lib/mongodb";
 
 export default async (req, res) => {
   const { username } = req.query;

@@ -34,7 +34,7 @@ UserPage.getInitialProps = async context => {
   const { origin } = absoluteUrl(req);
   const apiOrigin = `${origin}`;
 
-  const res = await fetch(apiOrigin + "/api/" + query.username);
+  const res = await fetch(apiOrigin + "/api/get-user/" + query.username);
   const data = await res.json();
 
   if (!data.userFound) {
