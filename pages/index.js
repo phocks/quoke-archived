@@ -21,7 +21,8 @@ const Home = props => {
   return (
     <div className={css.root}>
       <Title text="/quoke" />
-      <Quotation quote={props.randomQuote} />
+      {/* <Quotation quote={props.randomQuote} /> */}
+      <p>{props.randomQuote.text}</p>
       <hr />
       
       {/* <Info quote={props.randomQuote} /> */}

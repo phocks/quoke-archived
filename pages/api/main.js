@@ -1,4 +1,4 @@
-import { getCollection, dbName, url, options } from "../../lib/mongodb";
+import { getCollection } from "../../lib/mongodb";
 
 export default async (req, res) => {
   const collection = await getCollection("quotations");
