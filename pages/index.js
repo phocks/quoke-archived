@@ -65,7 +65,7 @@ Home.getInitialProps = async ({ req, query }) => {
   // let fetched = await fetch(origin + "/api/random");
   // const randomQuote = await fetched.json();
 
-  fetched = await fetch(origin + "/api/get-quotes/quoke");
+  const fetched = await fetch(origin + "/api/get-quotes/quoke");
   const quotes = await fetched.json();
 
   return {
