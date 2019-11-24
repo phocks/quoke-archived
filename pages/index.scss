@@ -1,5 +1,4 @@
 .root {
-  
 }
 
 .quotes-root {
@@ -8,13 +7,28 @@
   justify-content: center;
   margin-left: 16px;
   margin-right: 16px;
-  
 }
 
-.quotes-container {
-  max-width: 590px;
-  width: 100%;
+.quote-container {
+  text-align: center;
+  margin-left: 16px;
+  margin-right: 16px;
 }
+
+.quote {
+  margin: auto;
+  max-width: 590px;
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+// @media (min-width: 800px) {
+//   .quote {
+//     max-width: 1024px;
+//     font-size: 2em;
+//   }
+// }
 
 .quote-teaser {
   margin-bottom: 24px;

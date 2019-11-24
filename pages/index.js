@@ -21,10 +21,27 @@ const Home = props => {
   return (
     <div className={css.root}>
       <Title text="/quoke" />
+      <div className="spacer" />
       {/* <Quotation quote={props.randomQuote} /> */}
-      <p>{props.randomQuote.text}</p>
-      <hr />
-      
+      {/* <hr /> */}
+
+      {quotes.map((quote, index) => {
+        return (
+          <div key={quote._id}>
+            <div className="spacer" />
+
+            <div className={css.quoteContainer}>
+              <div className={css.quote}>
+                <i class="fas fa-quote-left"></i>
+                <p>{quote.text}</p>
+              </div>
+            </div>
+            <div className="spacer" />
+            {/* <hr /> */}
+          </div>
+        );
+      })}
+
       {/* <Info quote={props.randomQuote} /> */}
       {/* <div className={css.quotesRoot}>
         <div className={css.quotesContainer}>
@@ -42,7 +59,7 @@ Home.getInitialProps = async ({ req, query }) => {
   let fetched = await fetch(origin + "/api/random");
   const randomQuote = await fetched.json();
 
-  fetched = await fetch(origin + "/api/get-quotes");
+  fetched = await fetch(origin + "/api/get-quotes/quoke");
   const quotes = await fetched.json();
 
   return {
