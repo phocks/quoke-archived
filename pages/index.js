@@ -62,14 +62,14 @@ const Home = props => {
 Home.getInitialProps = async ({ req, query }) => {
   const { origin } = absoluteUrl(req);
 
-  let fetched = await fetch(origin + "/api/random");
-  const randomQuote = await fetched.json();
+  // let fetched = await fetch(origin + "/api/random");
+  // const randomQuote = await fetched.json();
 
   fetched = await fetch(origin + "/api/get-quotes/quoke");
   const quotes = await fetched.json();
 
   return {
-    randomQuote: randomQuote,
+    // randomQuote: randomQuote,
     quotes: quotes
   };
 };
