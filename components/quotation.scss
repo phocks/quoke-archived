@@ -1,22 +1,36 @@
 .root {
   display: flex;
-  font-family: "IM Fell English", serif;
-  font-size: 20px;
+  justify-content: center;
   margin-left: 16px;
   margin-right: 16px;
-  justify-content: center;
-  margin-top: 16px;
 }
 
 .container {
+  text-align: center;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 4em;
   width: 100%;
-  max-width: 590px;
-}
-
-.quotationMark {
-  margin: 0;
 
   a {
     text-decoration: none;
   }
+}
+
+.quote {
+  margin: auto;
+  max-width: 590px;
+  font-size: 22px;
+  // text-align: left;
+  border: 1px solid #ddd;
+  padding: 20px;
+  min-height: 400px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+
+.text {
+  display: block;
+  
 }
