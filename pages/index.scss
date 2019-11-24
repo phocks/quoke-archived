@@ -13,6 +13,10 @@
   text-align: center;
   margin-left: 16px;
   margin-right: 16px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .quote {
@@ -22,13 +26,6 @@
   border: 1px solid #ddd;
   padding: 20px;
 }
-
-// @media (min-width: 800px) {
-//   .quote {
-//     max-width: 1024px;
-//     font-size: 2em;
-//   }
-// }
 
 .quote-teaser {
   margin-bottom: 24px;

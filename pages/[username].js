@@ -4,26 +4,31 @@ import absoluteUrl from "next-absolute-url";
 import Error from "./_error";
 import dayjs from "dayjs";
 
+import css from "./[username].scss";
+
 import LogoutButton from "../components/LogoutButton";
+import Title from "../components/title";
+import Row from "../components/row";
 
 const UserPage = props => {
   const currentUser = useStoreState(state => state.username);
-  
+
   const setTitle = useStoreActions(actions => actions.setTitle);
   setTitle(props.userPageName + " - Quoke");
 
   if (!props.userFound) return <Error statusCode={404} />;
   else {
     return (
-      <main className={"article"}>
-        <section>
-          <h2>@{props.userPageName}</h2>
-          <p>
+      <div className={css.root}>
+        <Title text={"/" + props.userPageName} />
+        <Row>
+          
+          {/* <p>
             Date joined: {dayjs(props.dateRegistered).format("DD MMMM YYYY")}
           </p>
-          {currentUser === props.userPageName && <LogoutButton />}
-        </section>
-      </main>
+          {currentUser === props.userPageName && <LogoutButton />} */}
+        </Row>
+      </div>
     );
   }
 };

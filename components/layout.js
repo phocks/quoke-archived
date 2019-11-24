@@ -27,8 +27,8 @@ const Layout = props => {
         {children}
         {/* <Footer /> */}
       </div>
-      <script src="/js/smartquotes.js"></script>
-      <script>smartquotes();</script>
+      {/* <script src="/js/smartquotes.js"></script>
+      <script>smartquotes();</script> */}
     </>
   );
 };

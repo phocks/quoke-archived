@@ -5,6 +5,8 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
+// const smartquotes = require('smartquotes');
+import smartquotes from "smartquotes";
 
 import Quotation from "../components/quotation";
 import Info from "../components/info";
@@ -29,12 +31,16 @@ const Home = props => {
         return (
           <div key={quote._id}>
             <div className="spacer" />
-
             <div className={css.quoteContainer}>
-              <div className={css.quote}>
-                <i class="fas fa-quote-left"></i>
-                <p>{quote.text}</p>
-              </div>
+              <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
+                <a>
+                  {" "}
+                  <div className={css.quote}>
+                    <i className="fas fa-quote-left"></i>
+                    <p>{smartquotes(quote.text)}</p>
+                  </div>
+                </a>
+              </Link>
             </div>
             <div className="spacer" />
             {/* <hr /> */}
