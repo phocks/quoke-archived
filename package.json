@@ -28,6 +28,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "recaptcha-v3": "^1.7.0",
-    "slug": "^1.1.0"
+    "slug": "^1.1.0",
+    "smartquotes": "^2.3.1"
   }
 }

@@ -6,17 +6,7 @@ import Info from "../../components/info";
 
 export default function Quote(props) {
   const { quote } = props;
-  return (
-    <>
-      <main className="center">
-        <section>
-          <Quotation quote={quote} />
-          <hr />
-          <Info quote={quote} />
-        </section>
-      </main>
-    </>
-  );
+  return <Quotation quote={quote} />;
 }
 
 Quote.getInitialProps = async ({ req, query }) => {

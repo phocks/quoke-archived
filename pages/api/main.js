@@ -1,10 +1,7 @@
-import { MongoClient } from "mongodb";
-import { dbName, url, options } from "../../lib/mongodb";
+import { getCollection } from "../../lib/mongodb";
 
-const main = async (req, res) => {
-  const client = await MongoClient.connect(url, options);
-  const db = client.db(dbName);
-  const collection = db.collection("quotations");
+export default async (req, res) => {
+  const collection = await getCollection("quotations");
 
   try {
     const result = await collection
@@ -16,5 +13,3 @@ const main = async (req, res) => {
     console.error(error);
   }
 };
-
-export default main;
