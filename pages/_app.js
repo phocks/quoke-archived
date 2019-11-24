@@ -5,7 +5,6 @@ import { StoreProvider } from "easy-peasy";
 import { action } from "easy-peasy";
 import Router from "next/router";
 
-import Layout from "../components/layout";
 
 // Create a global data store using Easy Peasy
 const storeModel = {
@@ -37,9 +36,9 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Layout>
+        
           <Component {...pageProps} />
-        </Layout>
+        
       </StoreProvider>
     );
   }

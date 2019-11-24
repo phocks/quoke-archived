@@ -1,5 +1,5 @@
 import Head from "next/head";
-import css from "./layout.scss";
+import css from "./Layout.scss";
 import { useStoreState } from "easy-peasy";
 
 import Nav from "./nav";
@@ -12,7 +12,7 @@ const Layout = props => {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{props.title}</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"

@@ -1,12 +1,18 @@
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 
-import Quotation from "../../components/quotation";
-import Info from "../../components/info";
+import Layout from "../../components/Layout";
+import Quotation from "../../components/Quotation";
+import Title from "../../components/title";
 
 export default function Quote(props) {
   const { quote } = props;
-  return <Quotation quote={quote} />;
+  return (
+    <Layout title="A quote from Quoke">
+      <Title text="/quote" />
+      <Quotation quote={quote} />
+    </Layout>
+  );
 }
 
 Quote.getInitialProps = async ({ req, query }) => {
