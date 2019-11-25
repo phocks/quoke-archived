@@ -1,5 +1,5 @@
 import Head from "next/head";
-import css from "./Layout.scss";
+import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
 import Nav from "./nav";

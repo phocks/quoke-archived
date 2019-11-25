@@ -1,4 +1,4 @@
-import css from "./Row.scss";
+import css from "./row.scss";
 
 export default props => (
   <div className={css.root}>
