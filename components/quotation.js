@@ -1,8 +1,8 @@
-import css from "./Quotation.scss";
+import css from "./quotation.scss";
 import Link from "next/link";
 import smartquotes from "smartquotes";
 
-const Quotation = props => {
+export default props => {
   const { quote } = props;
   return (
     <div className={css.root}>
@@ -40,5 +40,3 @@ const Quotation = props => {
     </div>
   );
 };
-
-export default Quotation;

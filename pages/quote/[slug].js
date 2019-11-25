@@ -1,8 +1,8 @@
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 
-import Layout from "../../components/Layout";
-import Quotation from "../../components/Quotation";
+import Layout from "../../components/layout";
+import Quotation from "../../components/quotation";
 import Title from "../../components/title";
 
 export default function Quote(props) {
