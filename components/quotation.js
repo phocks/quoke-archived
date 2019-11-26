@@ -14,7 +14,7 @@ export default props => {
           rel="stylesheet"
         />
       </Head>
-      <div className={css.root} style={{ fontFamily: "Calistoga" }}>
+      <div className={css.root} style={{ fontFamily: "'Calistoga', sans-serif" }}>
         <div className={css.container}>
           <div className={css.quote}>
             <div className={css.text}>
