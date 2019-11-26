@@ -15,6 +15,8 @@
   a {
     text-decoration: none;
   }
+
+ 
 }
 
 .quote {
@@ -22,12 +24,17 @@
   max-width: 590px;
   font-size: 22px;
   // text-align: left;
-  border: 1px solid #ddd;
+  // border: 1px solid #ddd;
   padding: 20px;
   min-height: 400px;
   display: flex;
   // justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 640px) {
+    max-width: 960px;
+    font-size: 28px;
+  }
 }
 
 .text {

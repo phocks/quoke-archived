@@ -10,6 +10,8 @@ export default function Quote(props) {
   return (
     <Layout title="A quote from Quoke">
       <Title text="/quote" />
+      <div className="spacer" />
+      <hr />
       <Quotation quote={quote} />
     </Layout>
   );
