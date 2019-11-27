@@ -13,6 +13,7 @@ export default function Quote(props) {
       <div className="spacer" />
       <hr />
       <Quotation quote={quote} />
+      <hr />
     </Layout>
   );
 }

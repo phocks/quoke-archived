@@ -20,7 +20,7 @@ const Home = props => {
   const { quotes } = props;
 
   return (
-    <Layout title="Quoke - ideas build the world">
+    <Layout title="Quoke.">
       <div className={css.root}>
         <Title text="/quoke" />
         <div className="spacer" />
