@@ -18,7 +18,7 @@ export default function Quote(props) {
 }
 
 Quote.getInitialProps = async ({ req, query }) => {
-  const data = await apiGet(req, "/api/quote/" + query.slug);
+  const data = await apiGet(req, "/api/get-quote/" + query.slug);
 
   return {
     quote: data
