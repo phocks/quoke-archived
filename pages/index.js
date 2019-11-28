@@ -15,8 +15,6 @@ import Title from "../components/title";
 import css from "./index.scss";
 
 const Home = props => {
-  
-
   const { quotes } = props;
 
   return (
@@ -24,7 +22,6 @@ const Home = props => {
       <div className={css.root}>
         <Title text="/quoke" />
         <div className="spacer" />
-        
 
         {quotes.map((quote, index) => {
           return (
@@ -33,7 +30,6 @@ const Home = props => {
               <div className={css.quoteContainer}>
                 <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
                   <a>
-                    {" "}
                     <div className={css.quote}>
                       <i className="fas fa-quote-left"></i>
                       <p>{smartquotes(quote.text)}</p>
@@ -42,12 +38,9 @@ const Home = props => {
                 </Link>
               </div>
               <div className="spacer" />
-             
             </div>
           );
         })}
-
-        
       </div>
     </Layout>
   );
@@ -59,7 +52,7 @@ Home.getInitialProps = async ({ req, query }) => {
   // let fetched = await fetch(origin + "/api/random");
   // const randomQuote = await fetched.json();
 
-  const fetched = await fetch(origin + "/api/get-quotes/quoke");
+  const fetched = await fetch(origin + "/api/get-user-quotes/quoke");
   const quotes = await fetched.json();
 
   return {
