@@ -42,6 +42,8 @@ const Home = props => {
   );
 };
 
+let cache = {};
+
 Home.getInitialProps = async ({ req, query }) => {
   const topicsArray = await apiGet(req, "/api/get-topics");
   return { topics: topicsArray };
