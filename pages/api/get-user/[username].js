@@ -1,8 +1,3 @@
-/**
- * A server-side route that gives user data
- * depending on /user query
- */
-
 import { getCollection } from "../../../lib/mongodb";
 
 export default async (req, res) => {

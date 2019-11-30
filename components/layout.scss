@@ -1,23 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Roboto|Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Merriweather&display=swap");
 
 .container {
   min-height: 100%;
-  padding-top: 32px;
+  padding: 32px 16px;
+  max-width: 590px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 :global {
   html {
     height: 100%;
   }
+
   body {
+    background-color: #1f1f1f;
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
-    color: #404040;
+    color: white;
+    text-align: middle;
   }
+
   a {
-    color: #404040;
+    color: white;
   }
   hr {
     border: 0;
