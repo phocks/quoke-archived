@@ -6,15 +6,21 @@ import Title from "../../components/title";
 
 import css from "./[slug].scss";
 
+let cache = null;
+
 export default function Quote(props) {
+  const { topic, quotes } = props.data;
+
+  if (process.browser) cache = props.data;
+
   return (
-    <Layout title={`${props.topic.name} / Quoke`}>
-      <Title text={`/${props.topic.slug}`} />
+    <Layout title={`${topic.name} / Quoke`}>
+      <Title text={`/topic: ${topic.name}`} />
       <div className="spacer" />
-      {props.quotes.length < 1 ? (
+      {quotes.length < 1 ? (
         <span>No quotes...</span>
       ) : (
-        props.quotes.map(quote => (
+        quotes.map(quote => (
           <span className={css.link} key={quote._id}>
             <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
               <a>{truncate(quote.text, 4)}</a>
@@ -27,12 +33,19 @@ export default function Quote(props) {
 }
 
 Quote.getInitialProps = async ({ req, query }) => {
-  const topic = await apiGet(req, `/api/get-topic?slug=${query.slug}`);
-  const quotes = await apiGet(req, `/api/get-topic-quotes?topic=${topic.name}`);
+  let data = {};
+
+  if (cache) data = cache;
+  else {
+    data.topic = await apiGet(req, `/api/get-topic?slug=${query.slug}`);
+    data.quotes = await apiGet(
+      req,
+      `/api/get-topic-quotes?topic=${data.topic.name}`
+    );
+  }
 
   return {
-    topic: topic,
-    quotes: quotes
+    data: data
   };
 };
 

@@ -17,12 +17,12 @@ import Title from "../components/title";
 import css from "./index.scss";
 import QuoteTeaser from "../components/QuoteTeaser";
 
-const cache = {};
+let cache = null;
 
 const Home = props => {
-  const { quotes, topics } = props;
+  const { topics } = props.data;
 
-  if (process.browser) cache["index"] = props.topics;
+  if (process.browser) cache = props.data;
 
   return (
     <Layout title="Quoke">
@@ -37,22 +37,18 @@ const Home = props => {
             </Link>
           </span>
         ))}
-
-        {/* {quotes.map((quote, index) => {
-          return <QuoteTeaser quote={quote}></QuoteTeaser>;
-        })} */}
       </div>
     </Layout>
   );
 };
 
 Home.getInitialProps = async ({ req, query }) => {
-  let topics;
+  let data = {};
 
-  if (cache["index"]) topics = cache["index"];
-  else topics = await apiGet(req, "/api/get-topics");
+  if (cache) data = cache;
+  else data.topics = await apiGet(req, "/api/get-topics");
 
-  return { topics: topics };
+  return { data: data };
 };
 
 export default Home;
