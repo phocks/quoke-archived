@@ -14,12 +14,12 @@ export default props => {
               <p>{smartquotes(quote.text)}</p>
               <small>
                 <div className={css.citation}>
-                  <p className={css.author}>
+                  <div className={css.author}>
                     &mdash;{quote.author}
                     {props.source && (
                       <em className={css.source}>, {quote.source}</em>
                     )}
-                  </p>
+                  </div>
                 </div>
               </small>
             </div>

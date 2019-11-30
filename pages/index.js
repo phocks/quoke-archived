@@ -7,58 +7,44 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
 import smartquotes from "smartquotes";
 
+import { apiGet } from "../lib/utils";
+
 import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 import Info from "../components/info";
 import Title from "../components/title";
 
 import css from "./index.scss";
+import QuoteTeaser from "../components/QuoteTeaser";
 
 const Home = props => {
-  const { quotes } = props;
+  const { quotes, topics } = props;
 
   return (
-    <Layout title="Quoke.">
+    <Layout title="Quoke">
       <div className={css.root}>
         <Title text="/quoke" />
-        <div className="spacer" />
+        <div className="spacer"></div>
 
-        {quotes.map((quote, index) => {
-          return (
-            <div key={quote._id}>
-              <div className="spacer" />
-              <div className={css.quoteContainer}>
-                <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
-                  <a>
-                    <div className={css.quote}>
-                      <i className="fas fa-quote-left"></i>
-                      <p>{smartquotes(quote.text)}</p>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-              <div className="spacer" />
-            </div>
-          );
-        })}
+        {topics.map(topic => (
+          <span className={css.topicLink} key={topic._id}>
+            <Link href={"/topic/[slug]"} as={"/topic/" + topic.slug}>
+              <a>{topic.name}</a>
+            </Link>
+          </span>
+        ))}
+
+        {/* {quotes.map((quote, index) => {
+          return <QuoteTeaser quote={quote}></QuoteTeaser>;
+        })} */}
       </div>
     </Layout>
   );
 };
 
 Home.getInitialProps = async ({ req, query }) => {
-  const { origin } = absoluteUrl(req);
-
-  // let fetched = await fetch(origin + "/api/random");
-  // const randomQuote = await fetched.json();
-
-  const fetched = await fetch(origin + "/api/get-user-quotes/quoke");
-  const quotes = await fetched.json();
-
-  return {
-    // randomQuote: randomQuote,
-    quotes: quotes
-  };
+  const topicsArray = await apiGet(req, "/api/get-topics");
+  return { topics: topicsArray };
 };
 
 export default Home;

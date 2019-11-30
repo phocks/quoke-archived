@@ -1,17 +1,15 @@
 import React from "react";
-// import Layout from "../components/layout";
+import Layout from "../components/layout";
 
 function Error({ statusCode }) {
   return (
-    <>
-      <main className={"mid"}>
+    <Layout title={"Error"}>
         <p>
           {statusCode
             ? `An error ${statusCode} occurred on server`
             : "An error occurred on client"}
         </p>
-      </main>
-    </>
+    </Layout>
   );
 }
 
