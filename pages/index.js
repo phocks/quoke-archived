@@ -17,8 +17,12 @@ import Title from "../components/title";
 import css from "./index.scss";
 import QuoteTeaser from "../components/QuoteTeaser";
 
+const cache = {};
+
 const Home = props => {
   const { quotes, topics } = props;
+
+  if (process.browser) cache["index"] = props.topics;
 
   return (
     <Layout title="Quoke">
@@ -42,11 +46,13 @@ const Home = props => {
   );
 };
 
-let cache = {};
-
 Home.getInitialProps = async ({ req, query }) => {
-  const topicsArray = await apiGet(req, "/api/get-topics");
-  return { topics: topicsArray };
+  let topics;
+
+  if (cache["index"]) topics = cache["index"];
+  else topics = await apiGet(req, "/api/get-topics");
+
+  return { topics: topics };
 };
 
 export default Home;
