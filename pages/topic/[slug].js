@@ -1,4 +1,4 @@
-import { apiGet } from "../../lib/utils";
+import { apiGet, truncate } from "../../lib/utils";
 import Link from "next/link";
 
 import Layout from "../../components/layout";
@@ -18,7 +18,11 @@ export default function Quote(props) {
       <Title text={`/topic`} />
       <div className="spacer" />
       {quotes.length < 1 ? (
-        <span>No quotes...</span>
+        <span className={css.link}>
+        <Link href={"/"}>
+          <a>No quotations found...</a>
+        </Link>
+      </span>
       ) : (
         quotes.map(quote => (
           <span className={css.link} key={quote._id}>
@@ -48,10 +52,3 @@ Quote.getInitialProps = async ({ req, query }) => {
     data: data
   };
 };
-
-function truncate(str, no_words) {
-  return str
-    .split(" ")
-    .splice(0, no_words)
-    .join(" ");
-}

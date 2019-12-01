@@ -5,6 +5,7 @@ import { StoreProvider } from "easy-peasy";
 import { action } from "easy-peasy";
 import Router from "next/router";
 
+import Progress from "../components/progress";
 
 // Create a global data store using Easy Peasy
 const storeModel = {
@@ -20,25 +21,33 @@ const storeModel = {
 
 const store = createStore(storeModel);
 
-// Fires when navigation occurs
-const handleRouteChange = url => {};
-
-Router.events.on("routeChangeStart", handleRouteChange);
-
 class MyApp extends App {
   constructor(props) {
     super(props);
+
+    this.state = { progress: 0 };
   }
 
-  componentDidMount() {}
+  // Fires when navigation occurs
+  handleRouteChange = url => {
+    console.log(url);
+    this.setState({ progress: 100 });
+  };
+
+  componentDidMount() {
+    Router.events.on("routeChangeStart", this.handleRouteChange);
+  }
+
+  componentWillUnmount() {
+    Router.events.off("routeChangeStart", this.handleRouteChange);
+  }
 
   render() {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        
-          <Component {...pageProps} />
-        
+        <Component {...pageProps} />
+        {/* <Progress progress={this.state.progress}  /> */}
       </StoreProvider>
     );
   }
