@@ -29,25 +29,23 @@ class MyApp extends App {
   }
 
   // Fires when navigation occurs
-  handleRouteChange = url => {
+  routeChangeStart = url => {
     console.log(url);
     this.setState({ progress: 100 });
   };
 
-  componentDidMount() {
-    Router.events.on("routeChangeStart", this.handleRouteChange);
-  }
+  routeChangeEnd = url => {};
 
-  componentWillUnmount() {
-    Router.events.off("routeChangeStart", this.handleRouteChange);
-  }
+  componentDidMount() {}
+
+  componentWillUnmount() {}
 
   render() {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Component {...pageProps} />
-        {/* <Progress progress={this.state.progress}  /> */}
+        <Component {...pageProps}></Component>
+        <Progress progress={this.state.progress} />
       </StoreProvider>
     );
   }
