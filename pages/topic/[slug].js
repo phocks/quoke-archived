@@ -1,4 +1,4 @@
-import { apiGet } from "../../lib/utils";
+import { apiGet, truncate } from "../../lib/utils";
 import Link from "next/link";
 
 import Layout from "../../components/layout";
@@ -6,24 +6,28 @@ import Title from "../../components/title";
 
 import css from "./[slug].scss";
 
-let cache = null;
+const cache = {};
 
 export default function Quote(props) {
   const { topic, quotes } = props.data;
 
-  if (process.browser) cache = props.data;
+  if (process.browser) cache[topic.slug] = props.data;
 
   return (
     <Layout title={`${topic.name} / Quoke`}>
-      <Title text={`/topic: ${topic.name}`} />
+      <Title text={`/topic`} />
       <div className="spacer" />
       {quotes.length < 1 ? (
-        <span>No quotes...</span>
+        <span className={css.link}>
+        <Link href={"/"}>
+          <a>No quotations found...</a>
+        </Link>
+      </span>
       ) : (
         quotes.map(quote => (
           <span className={css.link} key={quote._id}>
             <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
-              <a>{truncate(quote.text, 4)}</a>
+              <a>{quote.title || truncate(quote.text, 4)}</a>
             </Link>
           </span>
         ))
@@ -35,7 +39,7 @@ export default function Quote(props) {
 Quote.getInitialProps = async ({ req, query }) => {
   let data = {};
 
-  if (cache) data = cache;
+  if (cache[query.slug]) data = cache[query.slug];
   else {
     data.topic = await apiGet(req, `/api/get-topic?slug=${query.slug}`);
     data.quotes = await apiGet(
@@ -48,10 +52,3 @@ Quote.getInitialProps = async ({ req, query }) => {
     data: data
   };
 };
-
-function truncate(str, no_words) {
-  return str
-    .split(" ")
-    .splice(0, no_words)
-    .join(" ");
-}

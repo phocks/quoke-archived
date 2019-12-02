@@ -1,0 +1,30 @@
+.root {
+  position: absolute;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background-color: grey;
+  transition-property: width;
+  transition-duration: 1s;
+  background: repeating-linear-gradient(
+    45deg,
+    #bdbdbd 25%,
+    #999999 25%,
+    #999999 50%,
+    #bdbdbd 50%,
+    #bdbdbd 75%,
+    #999999 75%,
+    #999999 100%
+  );
+  animation: move 0.5s linear infinite;
+  background-size: 15px 15px;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 15px 0px;
+  }
+}

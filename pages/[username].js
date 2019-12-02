@@ -65,8 +65,6 @@ UserPage.getInitialProps = async ({ req, query }) => {
     "/api/get-user-quotes/" + query.username
   );
 
-  console.log(userQuotes);
-
   if (!userData.userFound) {
     return { userFound: false };
   } else {
