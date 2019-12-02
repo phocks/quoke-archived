@@ -1,17 +1,17 @@
-import {useEffect} from "react"
+import {useState, useEffect} from "react"
 import Router from "next/router"
 
 import css from "./progress.scss";
 
 export default props => {
-  const { progress = 0 } = props;
+  const [visibility, setVisibility] = useState("hidden")
 
   const routeChangeStart = url => {
-    console.log(url);
+    setVisibility("visible")
   };
 
   const routeChangeEnd = url => {
-    console.log(url);
+    setVisibility("hide")
   };
 
   useEffect(() => {
@@ -26,5 +26,5 @@ export default props => {
     }
   })
 
-  return <div className={css.root} style={{ width: progress + "%" }}></div>;
+  return <div className={css.root} style={{visibility: visibility}}></div>;
 };

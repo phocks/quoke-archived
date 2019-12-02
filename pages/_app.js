@@ -24,14 +24,11 @@ const store = createStore(storeModel);
 class MyApp extends App {
   constructor(props) {
     super(props);
-
-    this.state = { progress: 0 };
   }
 
   // Fires when navigation occurs
   routeChangeStart = url => {
     console.log(url);
-    this.setState({ progress: 100 });
   };
 
   routeChangeEnd = url => {};
@@ -45,7 +42,7 @@ class MyApp extends App {
     return (
       <StoreProvider store={store}>
         <Component {...pageProps}></Component>
-        <Progress progress={this.state.progress} />
+        <Progress />
       </StoreProvider>
     );
   }
