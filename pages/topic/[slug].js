@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Layout from "../../components/layout";
 import Title from "../../components/title";
+import Item from "../../components/item";
 
 import css from "./[slug].scss";
 
@@ -19,17 +20,24 @@ export default function Quote(props) {
       <div className="spacer" />
       {quotes.length < 1 ? (
         <span className={css.link}>
-        <Link href={"/"}>
-          <a>No quotations found...</a>
-        </Link>
-      </span>
+          <Link href={"/"}>
+            <a>No quotations found...</a>
+          </Link>
+        </span>
       ) : (
         quotes.map(quote => (
-          <span className={css.link} key={quote._id}>
-            <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
-              <a>{quote.title || truncate(quote.text, 4)}</a>
-            </Link>
-          </span>
+          <Item
+            href={"/quote/[slug]"}
+            as={"/quote/" + quote.slug}
+            key={quote._id}
+          >
+            {quote.title || truncate(quote.text, 4)}
+          </Item>
+          // <span className={css.link} key={quote._id}>
+          //   <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
+          //     <a>{quote.title || truncate(quote.text, 4)}</a>
+          //   </Link>
+          // </span>
         ))
       )}
     </Layout>

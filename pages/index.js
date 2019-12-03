@@ -7,13 +7,13 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
 import smartquotes from "smartquotes";
 
-
 import { apiGet } from "../lib/utils";
 
 import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 import Info from "../components/info";
 import Title from "../components/title";
+import Item from "../components/item";
 
 import css from "./index.scss";
 import QuoteTeaser from "../components/QuoteTeaser";
@@ -31,12 +31,20 @@ const Home = props => {
         <Title text="/quoke" />
         <div className="spacer"></div>
 
+        <p>Topics:</p>
         {topics.map(topic => (
-          <span className={css.topicLink} key={topic._id}>
-            <Link href={"/topic/[slug]"} as={"/topic/" + topic.slug}>
-              <a>{topic.name}</a>
-            </Link>
-          </span>
+          <Item
+            href={"/topic/[slug]"}
+            as={"/topic/" + topic.slug}
+            key={topic._id}
+          >
+            {topic.name}
+          </Item>
+          // <span className={css.topicLink} key={topic._id}>
+          //   <Link href={"/topic/[slug]"} as={"/topic/" + topic.slug}>
+          //     <a>{topic.name}</a>
+          //   </Link>
+          // </span>
         ))}
       </div>
     </Layout>
