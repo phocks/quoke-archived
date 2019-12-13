@@ -21,31 +21,14 @@ import QuoteTeaser from "../components/QuoteTeaser";
 let cache = null;
 
 const Home = props => {
-  const { topics } = props.data;
+  const { quotes } = props.data;
 
   if (process.browser) cache = props.data;
 
   return (
     <Layout title="Quoke">
       <div className={css.root}>
-        <Title text="/quoke" />
-        <div className="spacer"></div>
-
-        <p>Topics:</p>
-        {topics.map(topic => (
-          <Item
-            href={"/topic/[slug]"}
-            as={"/topic/" + topic.slug}
-            key={topic._id}
-          >
-            {topic.name}
-          </Item>
-          // <span className={css.topicLink} key={topic._id}>
-          //   <Link href={"/topic/[slug]"} as={"/topic/" + topic.slug}>
-          //     <a>{topic.name}</a>
-          //   </Link>
-          // </span>
-        ))}
+        <Quotation quote={quotes[0]}></Quotation>
       </div>
     </Layout>
   );
@@ -55,7 +38,7 @@ Home.getInitialProps = async ({ req, query }) => {
   let data = {};
 
   if (cache) data = cache;
-  else data.topics = await apiGet(req, "/api/get-topics");
+  else data.quotes = await apiGet(req, "/api/get-user-quotes");
 
   return { data: data };
 };

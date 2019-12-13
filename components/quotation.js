@@ -11,7 +11,7 @@ export default props => {
           <div className={css.quote}>
             <div className={css.text}>
               {/* <i className="fas fa-quote-left"></i> */}
-              <p>{smartquotes(quote.text)}</p>
+              <div>{smartquotes(quote.text)}</div>
               <small>
                 <div className={css.citation}>
                   <div className={css.author}>
