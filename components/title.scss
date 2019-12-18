@@ -1,8 +1,6 @@
 .root {
   display: flex;
   justify-content: center;
-  margin-left: 16px;
-  margin-right: 16px;
 }
 
 .title {
@@ -10,4 +8,8 @@
   flex: 1;
   font-weight: bold;
   font-size: 28px;
+
+  a {
+    text-decoration: none;
+  }
 }

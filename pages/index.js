@@ -5,49 +5,44 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
+import smartquotes from "smartquotes";
 
+import { apiGet } from "../lib/utils";
+
+import Layout from "../components/layout";
 import Quotation from "../components/quotation";
 import Info from "../components/info";
 import Title from "../components/title";
+import Item from "../components/item";
 
 import css from "./index.scss";
+import QuoteTeaser from "../components/QuoteTeaser";
+import Heading from "../components/heading";
+
+let cache = null;
 
 const Home = props => {
-  const setTitle = useStoreActions(actions => actions.setTitle);
-  setTitle("Quoke");
+  const { quotes } = props.data;
 
-  const { quotes } = props;
+  if (process.browser) cache = props.data;
 
   return (
-    <div className={css.root}>
-      <Title text="/quoke" />
-      <Quotation quote={props.randomQuote} />
-      <hr />
-      
-      {/* <Info quote={props.randomQuote} /> */}
-      {/* <div className={css.quotesRoot}>
-        <div className={css.quotesContainer}>
-          {quotes &&
-            quotes.map((quote, index) => <div key={index} className={css.quoteTeaser}>{quote.text}</div>)}
-        </div>
-      </div> */}
-    </div>
+    <Layout title="quoke">
+      <div className={css.root}>
+        <Heading />
+        <Quotation quote={quotes[0]}></Quotation>
+      </div>
+    </Layout>
   );
 };
 
 Home.getInitialProps = async ({ req, query }) => {
-  const { origin } = absoluteUrl(req);
+  let data = {};
 
-  let fetched = await fetch(origin + "/api/random");
-  const randomQuote = await fetched.json();
+  if (cache) data = cache;
+  else data.quotes = await apiGet(req, "/api/get-user-quotes");
 
-  fetched = await fetch(origin + "/api/get-quotes");
-  const quotes = await fetched.json();
-
-  return {
-    randomQuote: randomQuote,
-    quotes: quotes
-  };
+  return { data: data };
 };
 
 export default Home;

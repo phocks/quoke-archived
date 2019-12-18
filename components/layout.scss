@@ -1,30 +1,38 @@
-@import url("https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Roboto|Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Bree+Serif&display=swap");
 
 .container {
   min-height: 100%;
-  padding-top: 32px;
+  // padding: 16px 16px;
+  // max-width: 590px;
+  // text-align: left;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 :global {
   html {
     height: 100%;
   }
+
   body {
+    // background-color: #1f1f1f;
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
-    color: #404040;
+    color: rgb(39, 39, 39);
+    // text-align: center;
   }
+
   a {
-    color: #404040;
+    color: rgb(32, 32, 32);
   }
   hr {
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin-top: 1.5em;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
   button,
@@ -33,5 +41,8 @@
   }
   #__next {
     height: 100%;
+  }
+  .spacer {
+    height: 2em;
   }
 }

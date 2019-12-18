@@ -1,21 +1,13 @@
 import Link from "next/link";
-import Nav from "./nav";
 import css from "./heading.scss";
 
 const Heading = props => {
   return (
     <header className={css.root}>
-      <div className={css.container}>
-        <div>
-          <div className={css.branding}>
-            <Link href="/">
-              <a>Quoke</a>
-            </Link>
-          </div>
-        </div>
-        <div>
-          <Nav></Nav>
-        </div>
+      <div className={css.branding}>
+        <Link href="/">
+          <a>Quoke</a>
+        </Link>
       </div>
     </header>
   );

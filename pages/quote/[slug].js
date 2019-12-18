@@ -1,31 +1,34 @@
-import fetch from "isomorphic-unfetch";
-import absoluteUrl from "next-absolute-url";
+import { apiGet, truncate } from "../../lib/utils";
 
+import Layout from "../../components/layout";
 import Quotation from "../../components/quotation";
-import Info from "../../components/info";
+import Title from "../../components/title";
+
+const cache = {};
 
 export default function Quote(props) {
-  const { quote } = props;
+  const { quote } = props.data;
+
+  if (process.browser) cache[quote.slug] = props.data;
+
   return (
-    <>
-      <main className="center">
-        <section>
-          <Quotation quote={quote} />
-          <hr />
-          <Info quote={quote} />
-        </section>
-      </main>
-    </>
+    <Layout title={(quote.title || truncate(quote.text, 4)) + " / Quoke"}>
+      <Title text="/quote" />
+      <div className="spacer" />
+      <Quotation quote={quote} />
+    </Layout>
   );
 }
 
 Quote.getInitialProps = async ({ req, query }) => {
-  const { origin } = absoluteUrl(req);
+  let data = {};
 
-  const res = await fetch(origin + "/api/quote/" + query.slug);
-  const data = await res.json();
+  if (cache[query.slug]) data = cache[query.slug];
+  else {
+    data.quote = await apiGet(req, "/api/get-quote/" + query.slug);
+  }
 
   return {
-    quote: data
+    data: data
   };
 };

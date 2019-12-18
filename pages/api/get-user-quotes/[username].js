@@ -12,6 +12,7 @@ export default async (req, res) => {
     const result = await collection
       .find({ addedBy: username })
       .sort({ date: -1 })
+      .limit(10)
       .toArray();
     res.json(result);
   } catch (error) {

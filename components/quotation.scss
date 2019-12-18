@@ -1,21 +1,28 @@
 .root {
-  display: flex;
-  font-family: "IM Fell English", serif;
-  font-size: 20px;
-  margin-left: 16px;
-  margin-right: 16px;
-  justify-content: center;
-  margin-top: 16px;
 }
 
 .container {
-  max-width: 590px;
+  max-width: 580px;
 }
 
-.quotationMark {
-  margin: 0;
+.quote {
+  margin: auto;
+}
 
-  a {
-    text-decoration: none;
-  }
+.text {
+  display: inline;
+  max-width: 580px;
+  font-size: 2em;
+  margin: 0;
+  background-color: #2710f2;
+  color: white;
+  padding: 0.15em 1rem 0.2em 1rem;
+  // line-height: 1.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.citation {
+  margin-top: 2rem;
+  padding-left: 1rem;
 }

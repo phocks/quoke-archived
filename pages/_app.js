@@ -5,7 +5,7 @@ import { StoreProvider } from "easy-peasy";
 import { action } from "easy-peasy";
 import Router from "next/router";
 
-import Layout from "../components/layout";
+import Progress from "../components/progress";
 
 // Create a global data store using Easy Peasy
 const storeModel = {
@@ -21,25 +21,28 @@ const storeModel = {
 
 const store = createStore(storeModel);
 
-// Fires when navigation occurs
-const handleRouteChange = url => {};
-
-Router.events.on("routeChangeStart", handleRouteChange);
-
 class MyApp extends App {
   constructor(props) {
     super(props);
   }
 
+  // Fires when navigation occurs
+  routeChangeStart = url => {
+    console.log(url);
+  };
+
+  routeChangeEnd = url => {};
+
   componentDidMount() {}
+
+  componentWillUnmount() {}
 
   render() {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps}></Component>
+        <Progress />
       </StoreProvider>
     );
   }

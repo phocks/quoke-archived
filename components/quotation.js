@@ -1,16 +1,33 @@
 import css from "./quotation.scss";
 import Link from "next/link";
+import smartquotes from "smartquotes";
 
-const Quotation = props => {
+export default props => {
   const { quote } = props;
   return (
-    <div className={css.root}>
-      <div className={css.container}>
-        {/* <h2 className={css.quotationMark}>
-          <Link href="/quote/[slug]" as={"/quote/" + quote.slug}>
-            <a>&ldquo;</a>
-          </Link>
-        </h2> */}
+    <>
+      <div className={css.root}>
+        <div className={css.container}>
+          <div className={css.quote}>
+            <div className={css.text}>
+              {/* <i className="fas fa-quote-left"></i> */}
+
+              {smartquotes(quote.text)}
+            </div>
+
+            <div className={css.citation}>
+              <div className={css.author}>
+                &mdash;{quote.author}
+                {props.source && (
+                  <em className={css.source}>, {quote.source}</em>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className={css.container}>
+        
         <p className={css.text}>{quote.text}</p>
         <small>
           <div className={css.citation}>
@@ -20,9 +37,8 @@ const Quotation = props => {
             </p>
           </div>
         </small>
+      </div> */}
       </div>
-    </div>
+    </>
   );
 };
-
-export default Quotation;
