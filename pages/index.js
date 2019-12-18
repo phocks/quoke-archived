@@ -17,6 +17,7 @@ import Item from "../components/item";
 
 import css from "./index.scss";
 import QuoteTeaser from "../components/QuoteTeaser";
+import Heading from "../components/heading";
 
 let cache = null;
 
@@ -28,6 +29,7 @@ const Home = props => {
   return (
     <Layout title="Quoke">
       <div className={css.root}>
+        <Heading />
         <Quotation quote={quotes[0]}></Quotation>
       </div>
     </Layout>
