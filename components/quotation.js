@@ -12,7 +12,7 @@ export default props => {
             <div className={css.text}>
               {/* <i className="fas fa-quote-left"></i> */}
 
-              <div>{smartquotes(quote.text)}</div>
+              {smartquotes(quote.text)}
             </div>
 
             <div className={css.citation}>

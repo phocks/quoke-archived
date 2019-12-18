@@ -1,7 +1,13 @@
 .root {
   padding: 16px;
+  background-color: #49ffb9;
 }
 
-.branding a {
-  text-decoration: none;
+.branding {
+  text-transform: lowercase;
+
+  a {
+    text-decoration: none;
+    color: #2710f2;
+  }
 }

@@ -1,5 +1,4 @@
 .root {
-  padding: 16px;
 }
 
 .container {
@@ -10,6 +9,13 @@
 }
 
 .text {
-  font-size: large;
-  margin-bottom: 1em;
+  display: inline;
+  font-size: 2em;
+  margin: 0;
+  background-color: #2710f2;
+  color: white;
+  padding: 0.15em 0.25em 0.2em 1rem;
+  // line-height: 1.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
