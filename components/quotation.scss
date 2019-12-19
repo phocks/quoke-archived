@@ -11,7 +11,7 @@
 
 .text {
   display: inline;
-  max-width: 580px;
+  max-width: 680px;
   font-size: 2em;
   margin: 0;
   background-color: #2710f2;
@@ -22,7 +22,14 @@
   -webkit-box-decoration-break: clone;
 }
 
+.citation-container {
+  margin-top: 0.5em;
+  font-size: 1.25em;
+}
+
 .citation {
-  margin-top: 2rem;
-  padding-left: 1rem;
+  display: inline;
+  padding: 0.15em 1rem 0.2em 1rem;
+  background-color: #ffe5ef;
+  line-height: 1.7rem;
 }
