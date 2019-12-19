@@ -14,13 +14,14 @@ export default props => {
 
               {smartquotes(quote.text)}
             </div>
-
-            <div className={css.citation}>
-              <div className={css.author}>
-                &mdash;{quote.author}
-                {props.source && (
-                  <em className={css.source}>, {quote.source}</em>
-                )}
+            <div className={css.citationContainer}>
+              <div className={css.citation}>
+                <span className={css.author}>
+                  &mdash;{quote.author}
+                  {props.source && (
+                    <em className={css.source}>, {quote.source}</em>
+                  )}
+                </span>
               </div>
             </div>
           </div>
