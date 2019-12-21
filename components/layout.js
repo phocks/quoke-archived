@@ -2,12 +2,6 @@ import Head from "next/head";
 import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
-
-import Nav from "./nav";
-import Heading from "./heading";
-import Footer from "./footer";
-
-
 const Layout = props => {
   const { children } = props;
   const title = useStoreState(state => state.title);

@@ -27,7 +27,7 @@ const Home = props => {
   if (process.browser) cache = props.data;
 
   return (
-    <Layout title="quoke">
+    <Layout title="Quoke">
       <div className={css.root}>
         <Heading />
         <Quotation quote={quotes[0]}></Quotation>
