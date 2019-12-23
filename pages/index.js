@@ -11,7 +11,6 @@ import { apiGet } from "../lib/utils";
 
 import Layout from "../components/layout";
 import Quotation from "../components/quotation";
-import Heading from "../components/heading";
 
 import css from "./index.scss";
 
@@ -25,7 +24,6 @@ const Home = props => {
   return (
     <Layout title="Quoke">
       <div className={css.root}>
-        <Heading />
         <Quotation quote={quotes[0]}></Quotation>
       </div>
     </Layout>

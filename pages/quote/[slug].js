@@ -2,7 +2,7 @@ import { apiGet, truncate } from "../../lib/utils";
 
 import Layout from "../../components/layout";
 import Quotation from "../../components/quotation";
-import Title from "../../components/title";
+// import Title from "../../components/title";
 
 const cache = {};
 
@@ -13,8 +13,6 @@ export default function Quote(props) {
 
   return (
     <Layout title={(quote.title || truncate(quote.text, 4)) + " / Quoke"}>
-      <Title text="/quote" />
-      <div className="spacer" />
       <Quotation quote={quote} />
     </Layout>
   );

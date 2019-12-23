@@ -2,6 +2,8 @@ import Head from "next/head";
 import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
+import Heading from "../components/heading";
+
 const Layout = props => {
   const { children } = props;
   const title = useStoreState(state => state.title);
@@ -18,6 +20,7 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
+        <Heading />
         {children}
       </div>
     </>
