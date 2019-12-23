@@ -11,13 +11,9 @@ import { apiGet } from "../lib/utils";
 
 import Layout from "../components/layout";
 import Quotation from "../components/quotation";
-import Info from "../components/info";
-import Title from "../components/title";
-import Item from "../components/item";
+import Heading from "../components/heading";
 
 import css from "./index.scss";
-import QuoteTeaser from "../components/QuoteTeaser";
-import Heading from "../components/heading";
 
 let cache = null;
 

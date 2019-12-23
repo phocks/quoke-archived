@@ -12,16 +12,15 @@
 :global {
   html {
     height: 100%;
+    font-size: 16px;
   }
 
   body {
-    // background-color: #1f1f1f;
     margin: 0;
     height: 100%;
-    font-family: "Roboto", sans-serif;
+    // font-family: "Roboto", sans-serif;
     line-height: 1.5;
-    color: #1e1e1e;
-    // text-align: center;
+    
   }
 
   a {
