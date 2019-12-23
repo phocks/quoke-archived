@@ -9,7 +9,6 @@ import Link from "next/link";
 import { apiGet } from "../lib/utils";
 import css from "./[username].scss";
 
-import LogoutButton from "../components/LogoutButton";
 import Title from "../components/title";
 import Row from "../components/row";
 import Layout from "../components/layout";

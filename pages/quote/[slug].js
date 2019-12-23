@@ -2,7 +2,6 @@ import { apiGet, truncate } from "../../lib/utils";
 
 import Layout from "../../components/layout";
 import Quotation from "../../components/quotation";
-// import Title from "../../components/title";
 
 const cache = {};
 
