@@ -10,7 +10,6 @@ import { apiGet } from "../lib/utils";
 import css from "./[username].scss";
 
 import Title from "../components/title";
-import Row from "../components/row";
 import Layout from "../components/layout";
 import Quote from "./author/[slug]";
 
