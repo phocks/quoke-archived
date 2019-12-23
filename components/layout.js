@@ -15,7 +15,6 @@ const Layout = props => {
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/css/normalize.css"></link>
-        <link rel="stylesheet" href="/css/fontawesome.all.min.css"></link>
       </Head>
 
       <div className={css.container}>
