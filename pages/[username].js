@@ -3,15 +3,12 @@ import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import Error from "./_error";
 import dayjs from "dayjs";
-import ellipsize from "ellipsize";
 import Link from "next/link";
 
 import { apiGet } from "../lib/utils";
 import css from "./[username].scss";
 
-import Title from "../components/title";
 import Layout from "../components/layout";
-import Quote from "./author/[slug]";
 
 const UserPage = props => {
   const currentUser = useStoreState(state => state.username);
@@ -24,24 +21,22 @@ const UserPage = props => {
     return (
       <Layout title={props.userPageName + " / Quoke"}>
         <div className={css.root}>
-          <Title text={"/" + props.userPageName} />
-          <div className="spacer"></div>
-          <Row>
-            {/* <p>
+
+
+          {/* <p>
               Date joined: {dayjs(props.dateRegistered).format("DD MMMM YYYY")}
             </p>
             {currentUser === props.userPageName && <LogoutButton />} */}
-            {props.userQuotes.map(quote => {
-              console.log(quote);
-              return (
-                <div key={quote._id} className={css.singleQuote}>
-                  <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
-                    <a>{ellipsize(quote.text, 30)}</a>
-                  </Link>
-                </div>
-              );
-            })}
-          </Row>
+          {props.userQuotes.map(quote => {
+            console.log(quote);
+            return (
+              <div key={quote._id} className={css.singleQuote}>
+                <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
+                  <a>{ellipsize(quote.text, 30)}</a>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </Layout>
     );
