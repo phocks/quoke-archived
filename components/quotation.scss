@@ -1,41 +1,14 @@
 .root {
-  // text-align: center;
+  text-align: center;
 
   blockquote {
-    margin-inline-start: 16px;
-    margin-inline-end: 16px;
+    text-align: left;
+    margin: auto;
+    padding: 16px;
+    max-width: 580px;
+
+    p {
+      font-size: large;
+    }
   }
-}
-
-.container {
-  max-width: 580px;
-  margin: auto;
-}
-
-.quote {
-  margin: auto;
-}
-
-.text {
-  // display: inline;
-  // max-width: 680px;
-  // font-size: 2em;
-  // margin: 0;
-  // background-color: #2710f2;
-  // color: white;
-  // padding: 0.15em 1rem 0.2em 1rem;
-  // box-decoration-break: clone;
-  // -webkit-box-decoration-break: clone;
-}
-
-.citation-container {
-  // margin-top: 0.5em;
-  // font-size: 1.25em;
-}
-
-.citation {
-  // display: inline;
-  // padding: 0.15em 1rem 0.2em 1rem;
-  // background-color: #ffe5ef;
-  // line-height: 1.7rem;
 }

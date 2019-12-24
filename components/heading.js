@@ -7,7 +7,7 @@ const Heading = props => {
       <div className={css.branding}>
         <Link href="/">
           <a>
-            <img src="/img/straight-quotes-left.svg" alt="Quoke" />
+            <img src="/img/right-quote.svg" alt="Quoke" />
           </a>
         </Link>
       </div>
