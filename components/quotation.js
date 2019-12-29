@@ -10,7 +10,7 @@ export default props => {
         <p>{smartquotes(quote.text)}</p>
         <footer>
           &mdash;{quote.author}
-          {props.source && <cite>, {quote.source}</cite>}
+          {quote.source && <cite>, {quote.source}</cite>}
         </footer>
       </blockquote>
     </div>
@@ -22,7 +22,7 @@ export default props => {
     //         <div className={css.citation}>
     //           <span className={css.author}>
     //             &mdash;{quote.author}
-    //             {props.source && (
+    //             {quote.source && (
     //               <em className={css.source}>, {quote.source}</em>
     //             )}
     //           </span>
