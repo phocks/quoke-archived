@@ -5,7 +5,7 @@ const Heading = props => {
   return (
     <header className={css.root}>
       <div className={css.branding}>
-        <Link href="/">
+        <Link href="/random">
           <a>
             <img src="/img/left-quote.svg" alt="Quoke" />
           </a>
