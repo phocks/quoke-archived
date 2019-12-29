@@ -10,7 +10,7 @@ const Heading = props => {
             {/* <img src="/img/straight-quotes-right.svg" alt="Quoke" /> */}
             {/* ❧ */}
             {/* Quoke */}
-            &amp;
+            Quoke
           </a>
         </Link>
       </div>
