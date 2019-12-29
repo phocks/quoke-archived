@@ -1,7 +1,7 @@
 import { useStoreState, useStoreActions } from "easy-peasy";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
-import Error from "./_error";
+// import Error from "./_error";
 import dayjs from "dayjs";
 import Link from "next/link";
 
@@ -16,32 +16,32 @@ const UserPage = props => {
   // const setTitle = useStoreActions(actions => actions.setTitle);
   // setTitle(props.userPageName + " - Quoke");
 
-  if (!props.userFound) return <Error statusCode={404} />;
-  else {
-    return (
-      <Layout title={props.userPageName + " / Quoke"}>
-        <div className={css.root}>
-
-
-          {/* <p>
+  // if (!props.userFound) return <Error statusCode={404} />;
+  // else {
+  return (
+    <Layout title={props.userPageName + " / Quoke"}>
+      <div className={css.root}>
+        User page
+        
+        {/* <p>
               Date joined: {dayjs(props.dateRegistered).format("DD MMMM YYYY")}
             </p>
             {currentUser === props.userPageName && <LogoutButton />} */}
-          {props.userQuotes.map(quote => {
-            console.log(quote);
-            return (
-              <div key={quote._id} className={css.singleQuote}>
-                <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
-                  <a>{ellipsize(quote.text, 30)}</a>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      </Layout>
-    );
-  }
+        {/* {props.userQuotes.map(quote => {
+          console.log(quote);
+          return (
+            <div key={quote._id} className={css.singleQuote}>
+              <Link href={"/quote/[slug]"} as={"/quote/" + quote.slug}>
+                <a>{ellipsize(quote.text, 30)}</a>
+              </Link>
+            </div>
+          );
+        })} */}
+      </div>
+    </Layout>
+  );
 };
+// };
 
 UserPage.getInitialProps = async ({ req, query }) => {
   // const { req, query } = context;
