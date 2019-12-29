@@ -5,11 +5,12 @@ const Heading = props => {
   return (
     <header className={css.root}>
       <div className={css.branding}>
-        <Link href="/random">
+        <Link href="/">
           <a>
             {/* <img src="/img/straight-quotes-right.svg" alt="Quoke" /> */}
             {/* ❧ */}
-            Quoke
+            {/* Quoke */}
+            &amp;
           </a>
         </Link>
       </div>
