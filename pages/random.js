@@ -5,9 +5,6 @@ import absoluteUrl from "next-absolute-url";
 
 import Layout from "../components/layout";
 
-// Number of words to truncate the quote text to
-const SLUG_WORD_COUNT = 10;
-
 const Random = props => {
   const router = useRouter();
 

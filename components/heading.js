@@ -7,7 +7,8 @@ const Heading = props => {
       <div className={css.branding}>
         <Link href="/random">
           <a>
-            {/* <img src="/img/left-quote.svg" alt="Quoke" /> */}
+            {/* <img src="/img/straight-quotes-right.svg" alt="Quoke" /> */}
+            {/* ❧ */}
             Quoke
           </a>
         </Link>

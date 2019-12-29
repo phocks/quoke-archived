@@ -5,9 +5,13 @@
 }
 
 .branding {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8em;
+
   img {
     max-height: 2.5rem;
     max-width: 2.5rem;
+    opacity: 0.1;
   }
   a {
     text-decoration: none;

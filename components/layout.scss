@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Bree+Serif&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
 .container {
   min-height: 100%;
@@ -20,11 +21,17 @@
     height: 100%;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
+    color: #333;
+  }
+
+  p {
+    margin-top: 0;
   }
 
   a {
-    color: rgb(0, 0, 0);
+    color: #444;
   }
+
   hr {
     border: 0;
     height: 0;
