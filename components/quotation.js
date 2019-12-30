@@ -13,6 +13,7 @@ export default props => {
           {quote.source && <cite>, {quote.source}</cite>}
         </footer>
       </blockquote>
+      <div className={"spacer"} />
     </div>
     // <div className={css.root}>
     //   <div className={css.container}>

@@ -40,14 +40,23 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
+
   button,
   input[type="submit"] {
     cursor: pointer;
   }
+
   #__next {
     height: 100%;
   }
+
   .spacer {
-    height: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 2em;
+  }
+
+  .spacer::after {
+    content: "❧";
   }
 }
