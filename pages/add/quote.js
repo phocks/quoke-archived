@@ -1,3 +1,5 @@
+import Layout from "../../components/layout";
+
 import axios from "axios";
 
 export default props => {
@@ -20,10 +22,10 @@ export default props => {
       },
       { withCredentials: true }
     );
-
   };
+  
   return (
-    <>
+    <Layout>
       <main className="">
         <section>
           <p>Add quotation:</p>
@@ -68,6 +70,6 @@ export default props => {
           }
         `}
       </style>
-    </>
+    </Layout>
   );
 };
