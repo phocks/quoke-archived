@@ -11,6 +11,7 @@ const Heading = props => {
             {/* ❧ */}
             {/* Quoke */}
             &ldquo;
+            {/* Q */}
           </a>
         </Link>
       </div>

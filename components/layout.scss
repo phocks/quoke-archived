@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Bree+Serif&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
 .container {
   min-height: 100%;
@@ -51,12 +52,15 @@
   }
 
   .spacer {
+    font-family: 'Playfair Display', serif;
     padding-top: 2em;
     padding-bottom: 2em;
-    font-size: 2em;
+    font-size: 1.6em;
+    // font-style: italic;
   }
 
   .spacer::after {
     content: "❧";
+    content: "&";
   }
 }
