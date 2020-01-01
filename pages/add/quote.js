@@ -33,14 +33,12 @@ export default props => {
             <input
               type="text"
               name="title"
-              placeholder="Quotation text"
+              placeholder="Title (a few words from start of quote)"
               required
             />
-            <textarea rows="5" cols="60" name="description">
-              Enter details here...
-            </textarea>
-            <input type="text" name="author" placeholder="Author" />
-            <input type="text" name="source" placeholder="Source" />
+            <textarea rows="5" cols="50" name="text" placeholder="Quotation text" />
+            <input type="text" name="author" placeholder="Author (who said it?)" />
+            <input type="text" name="source" placeholder="Source (where's it from?)" />
             <input type="submit" value="Add quote" />
           </form>
         </section>
