@@ -22,6 +22,8 @@ export default props => {
       },
       { withCredentials: true }
     );
+
+    console.log(res);
   };
 
   return (
@@ -36,9 +38,22 @@ export default props => {
               placeholder="Title (a few words from start of quote)"
               required
             />
-            <textarea rows="5" cols="50" name="text" placeholder="Quotation text" />
-            <input type="text" name="author" placeholder="Author (who said it?)" />
-            <input type="text" name="source" placeholder="Source (where's it from?)" />
+            <textarea
+              rows="5"
+              cols="50"
+              name="text"
+              placeholder="Quotation text"
+            />
+            <input
+              type="text"
+              name="author"
+              placeholder="Author (who said it?)"
+            />
+            <input
+              type="text"
+              name="source"
+              placeholder="Source (where's it from?)"
+            />
             <input type="submit" value="Add quote" />
           </form>
         </section>
