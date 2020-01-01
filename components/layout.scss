@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto|Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i&display=swap");
 
 .container {
   min-height: 100%;
@@ -12,21 +15,25 @@
 :global {
   html {
     height: 100%;
+    font-size: 16px;
   }
 
   body {
-    // background-color: #1f1f1f;
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
-    color: #1e1e1e;
-    // text-align: center;
+    color: #333;
+  }
+
+  p {
+    margin-top: 0;
   }
 
   a {
-    color: rgb(32, 32, 32);
+    color: #444;
   }
+
   hr {
     border: 0;
     height: 0;
@@ -35,14 +42,26 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
+
   button,
   input[type="submit"] {
     cursor: pointer;
   }
+
   #__next {
     height: 100%;
   }
+
   .spacer {
-    height: 2em;
+    font-family: 'Playfair Display', serif;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 1.6em;
+    // font-style: italic;
+  }
+
+  .spacer::after {
+    content: "❧";
+    content: "&";
   }
 }

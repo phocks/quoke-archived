@@ -4,11 +4,11 @@ import Layout from "../components/layout";
 function Error({ statusCode }) {
   return (
     <Layout title={"Error"}>
-        <p>
-          {statusCode
-            ? `An error ${statusCode} occurred on server`
-            : "An error occurred on client"}
-        </p>
+      <p>
+        {statusCode
+          ? `An error ${statusCode} occurred on server`
+          : "An error occurred on client"}
+      </p>
     </Layout>
   );
 }

@@ -6,7 +6,13 @@ const Heading = props => {
     <header className={css.root}>
       <div className={css.branding}>
         <Link href="/">
-          <a>Quoke</a>
+          <a>
+            {/* <img src="/img/straight-quotes-right.svg" alt="Quoke" /> */}
+            {/* ❧ */}
+            {/* Quoke */}
+            &ldquo;
+            {/* Q */}
+          </a>
         </Link>
       </div>
     </header>

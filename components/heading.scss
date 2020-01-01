@@ -1,13 +1,25 @@
 .root {
-  padding: 16px;
-  background-color: #49ffb9;
+  padding: 1rem 1rem 0 1rem;
+  // background-color: #49ffb9;
+  // border-bottom: solid 1px #ddd;
 }
 
 .branding {
-  text-transform: lowercase;
+  // font-family: 'Playfair Display', serif;
+  // font-family: "Crimson Text", serif;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1.9em;
+  // line-height: 0.4em;
+  // position: relative;
+  // top: 0.19em;
+
+  img {
+    max-height: 2.5rem;
+    max-width: 2.5rem;
+    opacity: 0.1;
+  }
 
   a {
     text-decoration: none;
-    color: #2710f2;
   }
 }

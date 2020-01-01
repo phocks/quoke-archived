@@ -1,35 +1,27 @@
+@import "../sass/breakpoints.scss";
+
 .root {
-}
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  padding-top: 2em;
+  padding-bottom: 2em;
 
-.container {
-  max-width: 580px;
-}
+  blockquote {
+    text-align: left;
+    margin: auto;
+    padding: 16px;
 
-.quote {
-  margin: auto;
-}
+    @include for-size(tablet-portrait-up) {
+      font-size: 1.25rem;
+      max-width: 640px;
+    }
+    @include for-size(desktop-up) {
+      font-size: 1.75rem;
+      max-width: 1100px;
+    }
 
-.text {
-  display: inline;
-  max-width: 680px;
-  font-size: 2em;
-  margin: 0;
-  background-color: #2710f2;
-  color: white;
-  padding: 0.15em 1rem 0.2em 1rem;
-  // line-height: 1.25em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-.citation-container {
-  margin-top: 0.5em;
-  font-size: 1.25em;
-}
-
-.citation {
-  display: inline;
-  padding: 0.15em 1rem 0.2em 1rem;
-  background-color: #ffe5ef;
-  line-height: 1.7rem;
+    p {
+      font-size: 1.25em;
+    }
+  }
 }
