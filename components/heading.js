@@ -4,13 +4,13 @@ import css from "./heading.scss";
 const Heading = props => {
   return (
     <header className={css.root}>
-      <div className={css.branding}>
+      <div className="">
         <Link href="/">
           <a>
             {/* <img src="/img/straight-quotes-right.svg" alt="Quoke" /> */}
             {/* ❧ */}
-            {/* Quoke */}
-            &ldquo;
+            <span className={css.branding}>Quoke</span> | some quotations 
+            {/* &ldquo; */}
             {/* Q */}
           </a>
         </Link>
