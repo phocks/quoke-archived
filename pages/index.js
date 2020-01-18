@@ -24,7 +24,10 @@ const Home = props => {
   return (
     <Layout title="Quoke">
       <div className={css.root}>
-        <Quotation quote={quotes[0]}></Quotation>
+        {/* <Quotation quote={quotes[0]}></Quotation> */}
+        <h2>Welcome to quoke</h2>
+        <p>A place to collect and share quotations.</p>
+        <Link href="/random"><a><button>Get started</button></a></Link>
       </div>
     </Layout>
   );

@@ -7,11 +7,13 @@ export default props => {
   return (
     <div className={css.root}>
       <blockquote cite="https://quoke.co">
-        <p>{smartquotes(quote.text)}</p>
-        <footer>
+        <span>&ldquo;{smartquotes(quote.text)}&rdquo;</span>
+
+        <span>
+          {" "}
           &mdash;{quote.author}
           {quote.source && <cite>, {quote.source}</cite>}
-        </footer>
+        </span>
       </blockquote>
     </div>
     // <div className={css.root}>
