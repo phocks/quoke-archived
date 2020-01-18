@@ -20,8 +20,11 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <Heading />
-        {children}
+        <heading>
+          <Heading />
+        </heading>
+        <main className={css.content}>{children}</main>
+        <footer>❧</footer>
       </div>
     </>
   );

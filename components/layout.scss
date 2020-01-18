@@ -10,6 +10,16 @@
   // text-align: left;
   // margin-left: auto;
   // margin-right: auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 :global {
@@ -24,6 +34,15 @@
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
     color: #333;
+  }
+
+  footer {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
   }
 
   p {
@@ -46,6 +65,13 @@
   button,
   input[type="submit"] {
     cursor: pointer;
+  }
+
+  button {
+    background: none;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 3px;
   }
 
   #__next {

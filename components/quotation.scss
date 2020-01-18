@@ -5,8 +5,11 @@
   font-family: "Crimson Text", serif;
   padding-top: 2em;
   padding-bottom: 2em;
-  background: #FDEDE6;
+  // background: #FDEDE6;
   color: #222;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  // border-radius: 3px;
 
   blockquote {
     text-align: center;

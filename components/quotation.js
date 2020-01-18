@@ -9,11 +9,11 @@ export default props => {
       <blockquote cite="https://quoke.co">
         <span>&ldquo;{smartquotes(quote.text)}&rdquo;</span>
 
-        <footer>
+        <span>
           {" "}
           &mdash;{quote.author}
           {quote.source && <cite>, {quote.source}</cite>}
-        </footer>
+        </span>
       </blockquote>
     </div>
     // <div className={css.root}>
