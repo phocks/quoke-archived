@@ -10,7 +10,7 @@ export default props => {
         <span>&ldquo;{smartquotes(quote.text)}&rdquo;</span>
         <small>
           {" "}
-          &mdash;{quote.author}
+          <span className={css.author}>&mdash;{quote.author}</span>
           {quote.source && <cite>, {quote.source}</cite>}
         </small>
       </blockquote>

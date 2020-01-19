@@ -14,7 +14,8 @@
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 :global {
@@ -28,12 +29,15 @@
     height: 100%;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
+    background-color: #eee;
     color: #333;
   }
 
   footer {
     font-size: 2em;
     text-align: center;
+    background-color: #333;
+    color: white;
   }
 
   h1, h2, h3, h4, h5, h6 {

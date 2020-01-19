@@ -7,8 +7,8 @@
   padding-bottom: 2em;
   // background: #FDEDE6;
   color: #222;
-  border-top: 1px solid #DDD;
-  border-bottom: 1px solid #DDD;
+  // border-top: 1px solid #DDD;
+  // border-bottom: 1px solid #DDD;
   // border-radius: 3px;
 
   blockquote {
@@ -30,7 +30,7 @@
     }
   }
 
-  footer {
-    display: inline;
+  .author {
+    white-space: nowrap;
   }
 }
