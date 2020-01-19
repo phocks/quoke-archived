@@ -11,7 +11,7 @@ export default function Quote(props) {
   if (process.browser) cache[quote.slug] = props.data;
 
   return (
-    <Layout title={(quote.title || truncate(quote.text, 4)) + " / Quoke"}>
+    <Layout title={(quote.title || truncate(quote.text, 5)) + " — Quoke"}>
       <Quotation quote={quote} />
     </Layout>
   );
