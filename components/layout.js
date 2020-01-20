@@ -3,14 +3,14 @@ import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
 import Heading from "../components/heading";
+import Foot from "../components/foot";
 
 const Layout = props => {
   const { children } = props;
-  const title = useStoreState(state => state.title);
   return (
     <>
       <Head>
-        <title>{props.title || title}</title>
+        <title>{props.title || useStoreState(state => state.title)}</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
@@ -20,11 +20,13 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <heading>
+        <header>
           <Heading />
-        </heading>
+        </header>
         <main className={css.content}>{children}</main>
-        <footer>❧</footer>
+        <footer>
+          <Foot />
+        </footer>
       </div>
     </>
   );

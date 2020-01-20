@@ -3,6 +3,8 @@ import { apiGet, truncate } from "../../lib/utils";
 import Layout from "../../components/layout";
 import Quotation from "../../components/quotation";
 
+import css from "./[slug].scss";
+
 const cache = {};
 
 export default function Quote(props) {
@@ -11,8 +13,15 @@ export default function Quote(props) {
   if (process.browser) cache[quote.slug] = props.data;
 
   return (
-    <Layout title={(quote.title || truncate(quote.text, 4)) + " / Quoke"}>
-      <Quotation quote={quote} />
+    <Layout title={(quote.title || truncate(quote.text, 5)) + " — Quoke"}>
+      <div className={css.root}>
+        {/* <div className={css.title}>
+          <h1>A quotation by Carl Sagan</h1>
+        </div> */}
+
+        <Quotation quote={quote} />
+        {/* <div className={css.info}>213 views</div> */}
+      </div>
     </Layout>
   );
 }
