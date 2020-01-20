@@ -1,5 +1,12 @@
 .root {
-  text-align: center;
+  padding: 1rem;
+
+  .quote {
+    max-width: 500px;
+    // margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: justify;
+  }
 }
 
 .quotes-root {

@@ -24,10 +24,9 @@ const Home = props => {
   return (
     <Layout title="Quoke">
       <div className={css.root}>
-        {/* <Quotation quote={quotes[0]}></Quotation> */}
-        <h2>Welcome to quoke</h2>
-        <p>A place to collect and share quotations.</p>
-        <Link href="/random"><a><button>Get started</button></a></Link>
+        {quotes.map((quote, index) => (
+          <div key={index} className={css.quote}>{quote.text}</div>
+        ))}
       </div>
     </Layout>
   );
@@ -37,7 +36,9 @@ Home.getInitialProps = async ({ req, query }) => {
   let data = {};
 
   if (cache) data = cache;
-  else data.quotes = await apiGet(req, "/api/get-user-quotes");
+  else data.quotes = await apiGet(req, "/api/get-quotes");
+
+  console.log(data);
 
   return { data: data };
 };

@@ -1,24 +1,17 @@
 import Link from "next/link";
 import css from "./heading.scss";
 
-const Heading = props => {
+export default props => {
   return (
     <div className={css.root}>
       <Link href="/">
         <a>
-          {/* <img src="/img/straight-quotes-right.svg" alt="Quoke" /> */}
-          {/* ❧ */}
-          <span className={css.branding}>Quoke</span> | some quotations
-          {/* &ldquo; */}
-          {/* Q */}
+          <span className={css.branding}>quoke</span>
         </a>
       </Link>
-      {/* <hr /> */}
     </div>
   );
 };
-
-export default Heading;
 
 /**
  * BELOW HERE IS OLD CODE THAT MIGHT BE

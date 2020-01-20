@@ -3,6 +3,7 @@ import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
 import Heading from "../components/heading";
+import Foot from "../components/foot";
 
 const Layout = props => {
   const { children } = props;
@@ -19,11 +20,13 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <heading>
+        <header>
           <Heading />
-        </heading>
+        </header>
         <main className={css.content}>{children}</main>
-        <footer>❧</footer>
+        <footer>
+          <Foot />
+        </footer>
       </div>
     </>
   );
