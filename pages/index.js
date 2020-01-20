@@ -7,7 +7,7 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
 import smartquotes from "smartquotes";
 
-import { apiGet } from "../lib/utils";
+import { apiGet, truncate } from "../lib/utils";
 
 import Layout from "../components/layout";
 import Quotation from "../components/quotation";
@@ -25,7 +25,9 @@ const Home = props => {
     <Layout title="Quoke">
       <div className={css.root}>
         {quotes.map((quote, index) => (
-          <div key={index} className={css.quote}>{quote.text}</div>
+          <div key={index} className={css.quote}>
+            {truncate(quote.text, 50)}
+          </div>
         ))}
       </div>
     </Layout>
@@ -35,10 +37,15 @@ const Home = props => {
 Home.getInitialProps = async ({ req, query }) => {
   let data = {};
 
-  if (cache) data = cache;
-  else data.quotes = await apiGet(req, "/api/get-quotes");
+  const quotesPerPage = 5;
+  let page = 1;
 
-  console.log(data);
+  let skip = 0;
+
+
+
+  if (cache) data = cache;
+  else data.quotes = await apiGet(req, `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`);
 
   return { data: data };
 };
