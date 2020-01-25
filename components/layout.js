@@ -11,7 +11,6 @@ const Layout = props => {
   return (
     <>
       <Head>
-        <title>{props.title || useStoreState(state => state.title)}</title>
         {/* <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
@@ -20,12 +19,13 @@ const Layout = props => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" href="/icons/favorite-7-240.png" />
         <link rel="stylesheet" href="/css/normalize.css"></link>
+        <title>{props.title || useStoreState(state => state.title)}</title>
       </Head>
 
       <div className={css.container}>
         <header>
           <Heading />
-          {/* <Search /> */}
+          <Search />
         </header>
         <main className={css.content}>{children}</main>
         <footer>
