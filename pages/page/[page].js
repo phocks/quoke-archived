@@ -36,7 +36,7 @@ const Pagination = props => {
           </div>
         ))}
 
-        <div>
+        <div className={css.pagination}>
           {page === "2" ? (
             <Link href="/">
               <a>&lt; Previous</a>

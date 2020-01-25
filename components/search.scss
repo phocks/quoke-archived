@@ -1,0 +1,17 @@
+.root {
+  background-color: white;
+  border-bottom: 1px solid #dcdcdc;
+  min-height: 100px;
+  display: flex;
+
+  form {
+    flex: 1;
+  }
+
+  input[type=search] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0rem 1rem;
+  }
+}

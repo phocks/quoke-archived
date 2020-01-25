@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i&display=swap");
 
+@font-face {
+  font-family: GilroyExtraBold;
+  src: url("/fonts/Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: GilroyLight;
+  font-weight: bold;
+  src: url("/fonts/Gilroy-Light.otf") format("opentype");
+}
 .container {
   min-height: 100%;
   display: flex;
@@ -12,29 +22,22 @@
 
 .content {
   flex: 1;
-  display: flex;
-  background-color: mintcream;
-  justify-content: center;
-  flex-direction: column;
+  background-color: white;
 }
 
 :global {
   html {
     height: 100%;
-    font-size: 16px;
+    font-size: 32px;
   }
 
   body {
     margin: 0;
     height: 100%;
-    font-family: "Roboto", sans-serif;
+    font-family: GilroyExtraBold, "Roboto", sans-serif;
     line-height: 1.5;
-    background-color: #E2EFF4;
-    color: #333;
-  }
-
-  footer {
-    
+    color: black;
+    background-color: black;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -46,7 +49,7 @@
   }
 
   a {
-    color: #444;
+    color: black;
   }
 
   hr {
@@ -85,5 +88,9 @@
   .spacer::after {
     content: "❧";
     content: "&";
+  }
+
+  .invert {
+    filter: invert(1);
   }
 }
