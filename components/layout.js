@@ -18,13 +18,13 @@ const Layout = props => {
         /> */}
         <meta name="viewport" content="width=768"></meta>
         {/* <link rel="icon" href="/favicon.ico" /> */}
-        <link
-          rel="icon"
-          type="image/png"
-          href="/icons/favorite-7-240.png"
-        />
+        <link rel="icon" type="image/png" href="/icons/favorite-7-240.png" />
         <link rel="stylesheet" href="/css/normalize.css"></link>
-        <script data-ad-client="ca-pub-4754239438008393" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script
+          data-ad-client="ca-pub-4754239438008393"
+          async="async"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
       </Head>
 
       <div className={css.container}>

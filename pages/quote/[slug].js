@@ -35,7 +35,7 @@ export default function Quote(props) {
         {/* <div className={css.info}>213 views</div> */}
       </div>
       <hr />
-      <div dangerouslySetInnerHTML={createMarkup()} />
+      {/* <div dangerouslySetInnerHTML={createMarkup()} /> */}
     </Layout>
   );
 }
