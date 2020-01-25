@@ -37,6 +37,7 @@ const Layout = props => {
           <Foot />
         </footer>
       </div>
+      <script> </script>
     </>
   );
 };
