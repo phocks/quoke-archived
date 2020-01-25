@@ -1,4 +1,4 @@
-.root {
+.foot {
   font-size: 1.5em;
   color: white;
   min-height: 100px;
@@ -9,6 +9,11 @@
   a {
     color: white;
     text-decoration: none;
+    padding: 0 0.5rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   .fleuron {
