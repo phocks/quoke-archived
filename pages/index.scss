@@ -19,6 +19,18 @@
   .quote {
     margin-bottom: 2em;
     text-align: left;
+
+    img {
+      height: 0.7em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .pagination {
