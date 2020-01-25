@@ -1,9 +1,36 @@
 .root {
-  padding: 1rem;
+
+  .content {
+    text-align: center;
+    margin:auto;
+    max-width: 500px;
+    padding-top: 0.3em;
+    padding-bottom: 0.6em;
+
+    h1 {
+      font-size: 1.25em;
+    }
+  }
+
+  .quotes-container {
+    padding: 2em 1em;
+  }
 
   .quote {
     margin-bottom: 2em;
     text-align: left;
+
+    img {
+      height: 0.7em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .pagination {

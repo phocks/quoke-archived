@@ -7,7 +7,7 @@ const About = props => {
       <div className={css.about}>
         <div className={css.top}>
           <h1 className={css.title}>About</h1>
-          <p>quoke - an open source place to find and share quotations.</p>
+          <p>quoke - an <a href="https://github.com/phocks/quoke">open source</a> project to collect and share quotations run by one <a href="https://github.com/sponsors/phocks/">creator</a></p>
         </div>
       </div>
       <hr />
