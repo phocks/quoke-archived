@@ -1,18 +1,6 @@
-// @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-// @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
-// @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-// @import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i&display=swap");
 
-// @font-face {
-//   font-family: GilroyExtraBold;
-//   src: url("/fonts/Gilroy-ExtraBold.otf") format("opentype");
-// }
 
-// @font-face {
-//   font-family: GilroyLight;
-//   font-weight: bold;
-//   src: url("/fonts/Gilroy-Light.otf") format("opentype");
-// }
+@import url('https://fonts.googleapis.com/css?family=Signika:700&display=swap');
 
 .container {
   min-height: 100%;
@@ -36,6 +24,7 @@
     margin: 0;
     height: 100%;
     // font-family: GilroyExtraBold, "Roboto", sans-serif;
+    font-family: 'Signika', sans-serif;
     line-height: 1.2;
     color: black;
     background-color: black;
@@ -104,3 +93,5 @@
     filter: invert(1);
   }
 }
+
+
