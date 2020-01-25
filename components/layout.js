@@ -3,7 +3,7 @@ import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
 import Heading from "../components/heading";
-import Search from "../components/search"
+import Search from "../components/search";
 import Foot from "../components/foot";
 
 const Layout = props => {
@@ -17,7 +17,12 @@ const Layout = props => {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         /> */}
         <meta name="viewport" content="width=768"></meta>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="/icons/favorite-7-240.png"
+        />
         <link rel="stylesheet" href="/css/normalize.css"></link>
       </Head>
 

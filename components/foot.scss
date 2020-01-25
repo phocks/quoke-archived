@@ -1,10 +1,11 @@
 .foot {
-  font-size: 1.5em;
   color: white;
   min-height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 1em;
 
   a {
     color: white;
@@ -16,7 +17,21 @@
     text-decoration: underline;
   }
 
-  .fleuron {
-    font-size: 1.5em;
+  .mid {
+    margin-bottom: 0.7em;
+  }
+
+  .sub {
+    display: flex;
+    align-items: center;
+    font-size: 0.7em;
+    color: dimgray;
+    margin-bottom: 2em;
+
+    img {
+      filter: invert(0.4);
+      height: 0.9em;
+      padding-left: 8px;
+    }
   }
 }

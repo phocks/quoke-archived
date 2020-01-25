@@ -33,7 +33,7 @@ const Home = props => {
           </div>
         ))}
 
-        <div>
+        <div className={css.pagination}>
           <Link href="/page/[page]" as="/page/2">
             <a>Next &gt;</a>
           </Link>

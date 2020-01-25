@@ -28,7 +28,7 @@
 :global {
   html {
     height: 100%;
-    font-size: 16px;
+    font-size: 32px;
   }
 
   body {
@@ -38,10 +38,6 @@
     line-height: 1.5;
     color: black;
     background-color: black;
-  }
-
-  footer {
-    
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,5 +88,9 @@
   .spacer::after {
     content: "❧";
     content: "&";
+  }
+
+  .invert {
+    filter: invert(1);
   }
 }

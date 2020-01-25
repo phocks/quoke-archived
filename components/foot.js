@@ -4,7 +4,15 @@ import css from "./foot.scss";
 export default props => {
   return (
     <div className={css.foot}>
-      <Link href="/"><a>Home</a></Link> <Link href="/about"><a>About</a></Link>
+      <div className={css.mid}>
+        <Link href="/">
+          <a>Home</a>
+        </Link>{" "}
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </div>
+      <div className={css.sub}>Made with Love <img src={"/icons/favorite-7.svg"} /></div>
     </div>
   );
 };

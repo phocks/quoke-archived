@@ -4,27 +4,9 @@
   .quote {
     margin-bottom: 2em;
     text-align: left;
-    font-size: 2em;
   }
-}
 
-.quotes-root {
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-.topic-link {
-  a {
-    margin-right: 6px;
-    margin-bottom: 6px;
-    text-decoration: none;
-    // font-weight: bold;
-    padding: 4px 8px;
-    // background-color: #333;
-    display: inline-block;
-    border: 1px solid #333;
+  .pagination {
+    text-align: center;
   }
 }
