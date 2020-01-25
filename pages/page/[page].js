@@ -27,29 +27,31 @@ const Pagination = props => {
   return (
     <Layout title="Quoke">
       <div className={css.root}>
-        {quotes.map((quote, index) => (
-          <div key={index} className={css.quote}>
-            {truncate(quote.text, 50)}{" "}
-            <Link href={"/quote/[slug]"} as={`/quote/${quote.slug}`}>
-              <a>—></a>
+        <div className={css.quotesContainer}>
+          {quotes.map((quote, index) => (
+            <div key={index} className={css.quote}>
+              {truncate(quote.text, 50)}{" "}
+              <Link href={"/quote/[slug]"} as={`/quote/${quote.slug}`}>
+                <a>—></a>
+              </Link>
+            </div>
+          ))}
+
+          <div className={css.pagination}>
+            {page === "2" ? (
+              <Link href="/">
+                <a>&lt; Previous</a>
+              </Link>
+            ) : (
+              <Link href="/page/[page]" as={`/page/${+page - 1}`}>
+                <a>&lt; Previous</a>
+              </Link>
+            )}
+            &nbsp;/&nbsp;
+            <Link href="/page/[page]" as={`/page/${+page + 1}`}>
+              <a>Next &gt;</a>
             </Link>
           </div>
-        ))}
-
-        <div className={css.pagination}>
-          {page === "2" ? (
-            <Link href="/">
-              <a>&lt; Previous</a>
-            </Link>
-          ) : (
-            <Link href="/page/[page]" as={`/page/${+page - 1}`}>
-              <a>&lt; Previous</a>
-            </Link>
-          )}
-          &nbsp;/&nbsp;
-          <Link href="/page/[page]" as={`/page/${+page + 1}`}>
-            <a>Next &gt;</a>
-          </Link>
         </div>
       </div>
     </Layout>
