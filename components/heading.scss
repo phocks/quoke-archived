@@ -1,17 +1,19 @@
 .root {
-  padding: 0.5rem 1rem;
-  // background-color: #E2EFF4;
-  // border-bottom: solid 1px lightgrey;
+  color: white;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+
   a {
+    color: white;
     text-decoration: none;
   }
+
+  min-height: 100px;
 }
 
 .branding {
-  // font-family: 'Press Start 2P', sans-serif;
   font-size: 2em;
-  // position: relative;
-  // top: 2px;
   
   img {
     max-height: 2.5rem;

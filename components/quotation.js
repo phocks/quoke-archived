@@ -5,7 +5,7 @@ import smartquotes from "smartquotes";
 export default props => {
   const { quote } = props;
   return (
-    <div className={css.root}>
+    <div className={css.quotation}>
       <blockquote cite="https://quoke.co">
         <span>&ldquo;{smartquotes(quote.text)}&rdquo;</span>
         <small>
