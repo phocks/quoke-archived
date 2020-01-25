@@ -22,6 +22,21 @@ export default function Quote(props) {
         <Quotation quote={quote} />
         {/* <div className={css.info}>213 views</div> */}
       </div>
+      <hr />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
+
+      <ins
+        class="adsbygoogle"
+        style={{display:"block"}}
+        data-ad-client="ca-pub-4754239438008393"
+        data-ad-slot="8725133602"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </Layout>
   );
 }
