@@ -24,6 +24,7 @@ const Layout = props => {
           href="/icons/favorite-7-240.png"
         />
         <link rel="stylesheet" href="/css/normalize.css"></link>
+        <script data-ad-client="ca-pub-4754239438008393" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
 
       <div className={css.container}>
