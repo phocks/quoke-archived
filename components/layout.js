@@ -32,6 +32,20 @@ const Layout = props => {
           <Foot />
         </footer>
       </div>
+
+      <style jsx global>
+        {`
+          @font-face {
+            font-family: "GilroyExtraBold";
+            src: url("/fonts/Gilroy-ExtraBold.woff") format("woff");
+          }
+
+          @font-face {
+            font-family: "GilroyLight";
+            src: url("/fonts/Gilroy-Light.woff") format("woff");
+          }
+        `}
+      </style>
     </>
   );
 };
