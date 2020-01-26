@@ -33,6 +33,7 @@ const Layout = props => {
         </footer>
       </div>
 
+      {/* To stop font flickering in Chrome we need to use style jsx global */}
       <style jsx global>
         {`
           @font-face {

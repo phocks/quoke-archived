@@ -26,12 +26,15 @@ const Home = props => {
       <div className={css.root}>
         <div className={css.content}>
           <h1>Discover some inspirational quotes today</h1>
-          <h2>What is this? <Link href="/about"><a>Learn more</a></Link></h2>
+          <h2>
+            What is this?{" "}
+            <Link href="/about">
+              <a>Learn more</a>
+            </Link>
+          </h2>
         </div>
-
         <hr />
-
-        <div className={css.quotesContainer}>
+        {/* <div className={css.quotesContainer}>
           {quotes.map((quote, index) => (
             <div key={index} className={css.quote}>
               {truncate(quote.text, 50)}{" "}
@@ -46,7 +49,7 @@ const Home = props => {
               <a>Next &gt;</a>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

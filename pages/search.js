@@ -1,13 +1,13 @@
 import Layout from "../components/layout";
 import css from "./about.scss";
 
-const About = props => {
+const Search = props => {
   return (
     <Layout title={"About — Quoke"}>
       <div className={css.about}>
         <div className={css.top}>
-          <h1 className={css.title}>About</h1>
-          <p>quoke - an open source project to collect and share quotations funded by <a href="https://github.com/sponsors/phocks/">the community</a></p>
+          <h1 className={css.title}>Results</h1>
+          <p>here are your results</p>
         </div>
       </div>
       <hr />
@@ -15,4 +15,4 @@ const About = props => {
   );
 };
 
-export default About;
+export default Search;
