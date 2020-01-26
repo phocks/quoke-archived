@@ -42,7 +42,7 @@ class MyApp extends App {
     return (
       <StoreProvider store={store}>
         <Component {...pageProps}></Component>
-        <Progress />
+        {/* <Progress /> */}
       </StoreProvider>
     );
   }

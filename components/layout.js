@@ -25,7 +25,7 @@ const Layout = props => {
       <div className={css.container}>
         <header>
           <Heading />
-          {/* <Search /> */}
+          <Search />
         </header>
         <main className={css.content}>{children}</main>
         <footer>
