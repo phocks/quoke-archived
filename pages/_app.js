@@ -41,8 +41,8 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Component {...pageProps}></Component>
         <Progress />
+        <Component {...pageProps}></Component>
       </StoreProvider>
     );
   }
