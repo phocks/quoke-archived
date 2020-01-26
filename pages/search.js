@@ -15,4 +15,10 @@ const Search = props => {
   );
 };
 
+Search.getInitialProps = async ({ req, query }) => {
+  console.log("hello");
+
+  return {};
+};
+
 export default Search;
