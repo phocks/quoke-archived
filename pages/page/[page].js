@@ -30,7 +30,7 @@ const Pagination = props => {
         <div className={css.quotesContainer}>
           {quotes.map((quote, index) => (
             <div key={index} className={css.quote}>
-              {truncate(quote.text, 50)}{" "}
+              {truncate(quote.text, 30)}{" "}
               <Link href={"/quote/[slug]"} as={`/quote/${quote.slug}`}>
                 <a>...</a>
               </Link>

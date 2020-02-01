@@ -1,8 +1,6 @@
 @import "../sass/breakpoints.scss";
 
 .quotation {
-  
-
   blockquote {
     text-align: center;
     max-width: 640px;
@@ -16,6 +14,47 @@
 
     @include for-size(desktop-up) {
       font-size: 1.4em;
+      max-width: 1280px;
+    }
+  }
+
+  blockquote.short {
+    font-size: 1;
+    @include for-size(tablet-portrait-up) {
+      font-size: 1.2em;
+      max-width: 960px;
+    }
+
+    @include for-size(desktop-up) {
+      font-size: 1.4em;
+      max-width: 1280px;
+    }
+  }
+
+  blockquote.medium {
+    font-size: 1em;
+
+    @include for-size(tablet-portrait-up) {
+      font-size: 1.1em;
+      max-width: 960px;
+    }
+
+    @include for-size(desktop-up) {
+      font-size: 1.2em;
+      max-width: 1280px;
+    }
+  }
+
+  blockquote.long {
+    font-size: 0.8em;
+
+    @include for-size(tablet-portrait-up) {
+      font-size: 0.9em;
+      max-width: 960px;
+    }
+
+    @include for-size(desktop-up) {
+      font-size: 1em;
       max-width: 1280px;
     }
   }

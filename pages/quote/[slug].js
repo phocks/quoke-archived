@@ -7,18 +7,6 @@ import css from "./[slug].scss";
 
 const cache = {};
 
-function createMarkup() {
-  return {
-    __html: `<!-- Banner -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4754239438008393"
-       data-ad-slot="8725133602"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>`
-  };
-}
-
 export default function Quote(props) {
   const { quote } = props.data;
 

@@ -10,7 +10,7 @@ import smartquotes from "smartquotes";
 import { apiGet, truncate } from "../lib/utils";
 
 import Layout from "../components/layout";
-import Quotation from "../components/quotation";
+import Preview from "../components/preview";
 
 import css from "./index.scss";
 
@@ -34,10 +34,11 @@ const Home = props => {
           </h2>
         </div>
         <hr />
-        {/* <div className={css.quotesContainer}>
+        <div className={css.quotesContainer}>
           {quotes.map((quote, index) => (
             <div key={index} className={css.quote}>
-              {truncate(quote.text, 50)}{" "}
+              {/* <Preview quote={quote}></Preview> */}
+              {truncate(quote.text, 30)}{" "}
               <Link href={"/quote/[slug]"} as={`/quote/${quote.slug}`}>
                 <a>...</a>
               </Link>
@@ -49,7 +50,7 @@ const Home = props => {
               <a>Next &gt;</a>
             </Link>
           </div>
-        </div> */}
+        </div>
       </div>
     </Layout>
   );

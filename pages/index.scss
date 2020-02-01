@@ -14,11 +14,14 @@
 
   .quotes-container {
     padding: 2em 1em;
+    text-align: center;
   }
 
   .quote {
+    margin: auto;
     margin-bottom: 2em;
     text-align: left;
+    max-width: 1024px;
 
     img {
       height: 0.7em;
