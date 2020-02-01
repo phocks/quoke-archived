@@ -37,10 +37,8 @@ const Home = props => {
         <div className={css.quotesContainer}>
           {quotes.map((quote, index) => (
             <div key={index} className={css.quote}>
-              {/* <Preview quote={quote}></Preview> */}
-              {truncate(quote.text, 30)}{" "}
               <Link href={"/quote/[slug]"} as={`/quote/${quote.slug}`}>
-                <a>...</a>
+                <a>{truncate(quote.text, 30)}</a>
               </Link>
             </div>
           ))}
