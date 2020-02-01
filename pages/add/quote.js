@@ -28,7 +28,7 @@ export default props => {
 
   return (
     <Layout title={"Add quote / Quoke"}>
-      <div className={css.root}>
+      <div className={css.add}>
         <section>
           <p>Add quotation:</p>
           <form action="/api/add/quote" method="post" onSubmit={addQuote}>
