@@ -4,6 +4,7 @@ import { createStore } from "easy-peasy";
 import { StoreProvider } from "easy-peasy";
 import { action } from "easy-peasy";
 import Router from "next/router";
+import "./empty.css";
 
 import Progress from "../components/progress";
 
@@ -41,8 +42,8 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider store={store}>
-        <Component {...pageProps}></Component>
         <Progress />
+        <Component {...pageProps}></Component>
       </StoreProvider>
     );
   }

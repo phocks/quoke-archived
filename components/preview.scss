@@ -1,0 +1,9 @@
+.preview {
+  // font-size: 0.5em;
+  .text {
+  // width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+}

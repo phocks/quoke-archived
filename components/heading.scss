@@ -1,7 +1,11 @@
-.root {
+.heading {
   color: white;
   padding: 0.5rem 1rem;
   display: flex;
+  align-items: center;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 
   a {
@@ -13,7 +17,9 @@
     text-decoration: underline;
   }
 
-  min-height: 100px;
+  .heart {
+    filter: invert(1);
+  }
 }
 
 .branding {

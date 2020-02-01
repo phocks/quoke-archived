@@ -3,12 +3,13 @@ import css from "./heading.scss";
 
 export default props => {
   return (
-    <div className={css.root}>
+    <div className={css.heading}>
       <Link href="/">
         <a>
           <span className={css.branding}>quoke</span>
         </a>
       </Link>
+      <img className={css.heart} src="/icons/favorite-8.svg" />
     </div>
   );
 };
