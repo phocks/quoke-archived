@@ -11,7 +11,6 @@ const About = props => {
         </div>
       </div>
       <hr />
-      <style jsx>{``}</style>
     </Layout>
   );
 };

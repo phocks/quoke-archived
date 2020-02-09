@@ -12,7 +12,9 @@ export default props => {
           <a>About</a>
         </Link>
       </div>
-      <div className={css.sub}>Made in Australia <img src={"/icons/favorite-7.svg"} /></div>
+      <div className={css.sub}>
+        Made in Australia <img src={"/icons/favorite-7.svg"} />
+      </div>
     </div>
   );
 };

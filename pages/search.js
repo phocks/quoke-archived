@@ -6,7 +6,7 @@ const Search = props => {
     <Layout title={"About — Quoke"}>
       <div className={css.search}>
         <div className={css.top}>
-          <h1 className={css.title}>Results</h1>
+          <h1 className={css.title}>Results for {props.q}</h1>
           <p>here are your results (search feature coming soon...)</p>
         </div>
       </div>
@@ -16,9 +16,9 @@ const Search = props => {
 };
 
 Search.getInitialProps = async ({ req, query }) => {
-  console.log("hello");
+  console.log(query);
 
-  return {};
+  return {q: query.q};
 };
 
 export default Search;
