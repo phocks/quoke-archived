@@ -11,11 +11,11 @@ const Layout = props => {
   return (
     <>
       <Head>
-        {/* <meta
+        <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-        /> */}
-        <meta name="viewport" content="width=768"></meta>
+        />
+        {/* <meta name="viewport" content="width=768"></meta> */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" href="/icons/favorite-7-240.png" />
         <link rel="stylesheet" href="/css/normalize.css"></link>
@@ -24,12 +24,12 @@ const Layout = props => {
 
       <div className={css.container}>
         <header>
-          <Heading />
-          <Search />
+          {/* <Heading /> */}
+          {/* <Search /> */}
         </header>
         <main className={css.content}>{children}</main>
         <footer>
-          <Foot />
+          {/* <Foot /> */}
         </footer>
       </div>
 
