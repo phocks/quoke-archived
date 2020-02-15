@@ -11,6 +11,7 @@ import { apiGet, truncate } from "../lib/utils";
 
 import Layout from "../components/layout";
 import Preview from "../components/preview";
+import TinyQuote from "../components/tinyQuote";
 
 import css from "./index.scss";
 
@@ -23,7 +24,9 @@ const Home = props => {
 
   return (
     <Layout title="Quoke">
-     <div className="absolute-center"><span>Hello!</span></div> 
+      <div className="absolute-center">
+        <TinyQuote quote={{text: "Hello", author: "Josh"}} />
+      </div>
     </Layout>
   );
 };
@@ -46,8 +49,8 @@ Home.getInitialProps = async ({ req, query }) => {
 
 export default Home;
 
-
-{/* <div className={css.root}>
+{
+  /* <div className={css.root}>
 <div className={css.content}>
   <h1>Discover some inspirational quotes today</h1>
   <h2>
@@ -73,4 +76,5 @@ export default Home;
     </Link>
   </div>
 </div>
-</div> */}
+</div> */
+}
