@@ -23,7 +23,7 @@ const Home = props => {
 
   return (
     <Layout title="Quoke">
-     
+     <div className="absolute-center"><span>Hello!</span></div> 
     </Layout>
   );
 };
