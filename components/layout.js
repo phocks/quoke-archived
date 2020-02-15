@@ -5,6 +5,7 @@ import { useStoreState } from "easy-peasy";
 import Heading from "../components/heading";
 import Search from "../components/search";
 import Foot from "../components/foot";
+import RightButtons from "../components/rightButtons";
 
 const Layout = props => {
   const { children } = props;
@@ -29,6 +30,7 @@ const Layout = props => {
         </header>
         <main className={css.content}>{children}</main>
         <footer>
+          <RightButtons />
           {/* <Foot /> */}
         </footer>
       </div>
