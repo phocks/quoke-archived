@@ -1,6 +1,8 @@
 import css from "./tinyQuote.scss";
 import Link from "next/link";
 import smartquotes from "smartquotes";
+import marked from "marked";
+import parse from "html-react-parser"
 
 export default props => {
   const { quote } = props;
@@ -10,7 +12,7 @@ export default props => {
         className={`${quote.text.length > 500 ? css.long : ""}`}
         cite="https://quoke.co"
       >
-        <span>&ldquo;{smartquotes(quote.text)}&rdquo;</span>
+        <span>{parse(marked(smartquotes(quote.text)))}</span>
         {quote.author || quote.source ? <span> &mdash;</span> : ""}
         <small>
           <span className={css.author}>{quote.author}</span>

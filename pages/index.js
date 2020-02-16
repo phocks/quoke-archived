@@ -13,6 +13,7 @@ import Layout from "../components/layout";
 import Preview from "../components/preview";
 import TinyQuote from "../components/tinyQuote";
 
+
 import css from "./index.scss";
 
 let cache = null;
@@ -25,7 +26,13 @@ const Home = props => {
   return (
     <Layout title="Quoke">
       <div className="absolute-center">
-        <TinyQuote quote={{text: "Hello", author: "Josh"}} />
+        <TinyQuote
+          quote={{
+            text: "Somewhere, something incredible is waiting to be known.",
+            author: "Carl Sagan",
+            source: "Cosmos"
+          }}
+        />
       </div>
     </Layout>
   );
