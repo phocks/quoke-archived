@@ -25,7 +25,7 @@ const Home = props => {
 
   return (
     <Layout title="Quoke">
-      <div className="absolute-center">
+      <div>
         <TinyQuote
           quote={{
             text: "Somewhere, something incredible is waiting to be known.",

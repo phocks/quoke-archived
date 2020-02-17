@@ -24,7 +24,9 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
+        <h1 className={css.topper}>❧</h1>
         <main className={css.quote}>{children}</main>
+        {/* <RightButtons /> */}
       </div>
       {/* <div className={css.content}>Other content</div> */}
       {/* To stop font flickering in Chrome we need to use style jsx global */}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap");
 
 .container {
   min-height: 100%;
@@ -20,16 +20,15 @@
 :global {
   html {
     height: 100%;
-    font-size: 32px;
+    font-size: 16px;
   }
 
   body {
     margin: 0;
     height: 100%;
-    font-family: "Josefin Sans", GilroyExtraBold, sans-serif;    // font-family: 'Open Sans', sans-serif;
+    font-family: "Josefin Sans", GilroyExtraBold, sans-serif; // font-family: 'Open Sans', sans-serif;
     line-height: 1.2;
     color: black;
-    background-color: black;
   }
 
   h1,
@@ -43,11 +42,9 @@
   }
 
   h1 {
-    font-size: 1.25em;
   }
 
   h2 {
-    font-size: 1.05em;
   }
 
   p {
@@ -106,5 +103,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .topper {
+    
   }
 }
