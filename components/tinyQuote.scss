@@ -4,12 +4,18 @@
   // font-family: "Josefin Slab", serif;
   // border: 1px solid black;
 
+  .date {
+    color: #aaa;
+    font-size: small;
+    margin-bottom: 1em;
+  }
+
   blockquote {
     // text-align: center;
     font-size: 1.5em;
-    max-width: 640px;
+    // max-width: 640px;
     margin: auto;
-    padding: 3rem 2rem;
+    // padding: 3rem 2rem;
 
     // @include for-size(tablet-portrait-up) {
     //   font-size: 1.2em;

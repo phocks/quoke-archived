@@ -24,8 +24,9 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <h1 className={css.topper}>❧</h1>
-        <main className={css.quote}>{children}</main>
+        <div className={"col"}><h1 className={css.topper}>quoke</h1></div>
+        
+        <main className={css.content}>{children}</main>
         {/* <RightButtons /> */}
       </div>
       {/* <div className={css.content}>Other content</div> */}

@@ -25,12 +25,13 @@ const Home = props => {
 
   return (
     <Layout title="Quoke">
-      <div>
+      <div className="col">
         <TinyQuote
           quote={{
             text: "Somewhere, something incredible is waiting to be known.",
             author: "Carl Sagan",
-            source: "Cosmos"
+            source: "Cosmos",
+            date: "2019-02-18"
           }}
         />
       </div>
