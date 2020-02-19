@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap");
 
+.brand {
+  font-size: x-large;
+  position: fixed;
+  padding: 1rem;
+  
+  a {
+    color: lightgray;
+    text-decoration: none;
+  }
+}
+
 .container {
   
 }
@@ -9,7 +20,7 @@
 }
 
 .content {
-  
+  padding-top: 6em;
 }
 
 :global {

@@ -31,7 +31,7 @@ const Home = props => {
             text: "Somewhere, something incredible is waiting to be known.",
             author: "Carl Sagan",
             source: "Cosmos",
-            date: "2019-02-18"
+            date: "2020-02-18"
           }}
         />
       </div>

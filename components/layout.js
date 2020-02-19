@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
@@ -24,8 +25,12 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <div className={"col"}><h1 className={css.topper}>quoke</h1></div>
-        
+        <div className={css.brand}>
+          <Link href="/">
+            <a>Q</a>
+          </Link>
+        </div>
+
         <main className={css.content}>{children}</main>
         {/* <RightButtons /> */}
       </div>
