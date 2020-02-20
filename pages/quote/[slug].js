@@ -15,18 +15,9 @@ export default function Quote(props) {
 
   return (
     <Layout title={(quote.title || truncate(quote.text, 5)) + " — Quoke"}>
-      <div className={`${css.root} absolute-center`}>
-        {/* <div className={css.title}>
-          <h1>A quotation by Carl Sagan</h1>
-        </div> */}
-
+      <div className={`${css.root} col`}>
         <TinyQuote quote={quote} />
-
-        {/* <Quotation quote={quote} /> */}
-        {/* <div className={css.info}>213 views</div> */}
       </div>
-      {/* <hr /> */}
-      {/* <div dangerouslySetInnerHTML={createMarkup()} /> */}
     </Layout>
   );
 }

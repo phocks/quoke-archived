@@ -25,10 +25,20 @@ const Layout = props => {
       </Head>
 
       <div className={css.container}>
-        <div className={css.brand}>
-          <Link href="/">
-            <a>Q</a>
-          </Link>
+        <div className={css.header}>
+          <div className={css.brand}>
+            <Link href="/">
+              <a>Q</a>
+            </Link>
+          </div>
+
+          <div className={css.links}>
+            
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            
+          </div>
         </div>
 
         <main className={css.content}>{children}</main>

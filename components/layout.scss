@@ -4,15 +4,28 @@
   font-size: x-large;
   position: fixed;
   padding: 1rem;
-  
+
   a {
     color: lightgray;
     text-decoration: none;
   }
 }
 
+.links {
+  position: fixed;
+  right: 0px;
+  padding: 1rem;
+
+  a {
+    text-decoration: none;
+    color: lightgray;
+  }
+}
+
+.header {
+}
+
 .container {
-  
 }
 
 .quote {
@@ -41,7 +54,7 @@
   h4,
   h5,
   h6 {
-    margin-top: 1em;
+    margin-top: 0;
     margin-bottom: 1em;
   }
 

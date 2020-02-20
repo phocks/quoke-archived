@@ -13,15 +13,18 @@ import Layout from "../components/layout";
 import Preview from "../components/preview";
 import TinyQuote from "../components/tinyQuote";
 
-
 import css from "./index.scss";
 
 let cache = null;
 
 const Home = props => {
-  const { quotes } = props.data;
+  const { quotes, testLog } = props.data;
+
+  console.log(props.data)
 
   if (process.browser) cache = props.data;
+
+  // testLog();
 
   return (
     <Layout title="Quoke">
@@ -46,11 +49,16 @@ Home.getInitialProps = async ({ req, query }) => {
   let skip = 0;
 
   if (cache) data = cache;
-  else
+  else {
     data.quotes = await apiGet(
       req,
       `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
     );
+
+    
+  }
+
+
 
   return { data: data };
 };
