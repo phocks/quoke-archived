@@ -33,6 +33,9 @@ const Layout = props => {
               </a>
             </Link>
           </div>
+          <div className={"search"}>
+            <input type="search"></input>
+          </div>
         </div>
 
         <main className={"content"}>{props.children}</main>
@@ -41,16 +44,31 @@ const Layout = props => {
 
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap");
+        @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
 
         .header {
           border-bottom: 1px solid gainsboro;
-          
+          display: flex;
+          align-items: center;
         }
 
         .brand {
-          display: inline-block;
           padding: 1rem 1rem;
           border-right: 1px solid gainsboro;
+        }
+
+        .search {
+          flex: 1;
+          font-size: 24px;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .search input {
+          width: 100%;
+          height: 100%;
+          border: none;
+          padding: 0.5rem;
         }
 
         .brand a {
@@ -80,7 +98,7 @@ const Layout = props => {
 
           body {
             margin: 0;
-            font-family: "Josefin Sans", GilroyExtraBold, sans-serif;
+            font-family: "IBM Plex Sans", GilroyExtraBold, sans-serif;
             line-height: 1.2;
             color: black;
           }
@@ -133,7 +151,6 @@ const Layout = props => {
             width: 100%;
             padding: 0 1rem;
           }
-
 
           .invert {
             filter: invert(1);
