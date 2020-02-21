@@ -1,64 +1,38 @@
 import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
-
 import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import absoluteUrl from "next-absolute-url";
 import smartquotes from "smartquotes";
-
-import { apiGet, truncate } from "../lib/utils";
-
-import Layout from "../components/layout";
-import Preview from "../components/preview";
-import TinyQuote from "../components/tinyQuote";
-
 import Link from "next/link";
 
-import css from "./index.scss";
+import { apiGet } from "../lib/utils";
 
-let cache = null;
+// Import components
+import Layout from "../components/layout";
+import TinyQuote from "../components/tinyQuote";
+
 
 const Home = props => {
-  const { quotes, testLog } = props.data;
-
-  console.log(props.data);
-
-  if (process.browser) cache = props.data;
-
-  // testLog();
-
   return (
     <Layout title="Quoke">
       <div className="col">
-        <TinyQuote
+        {/* <TinyQuote
           quote={{
             text: "Somewhere, something incredible is waiting to be known.",
             author: "Carl Sagan",
             source: "Cosmos",
             date: "2020-02-18"
           }}
-        />
+        /> */}
       </div>
     </Layout>
   );
 };
 
 Home.getInitialProps = async ({ req, query }) => {
-  let data = {};
-
-  const quotesPerPage = 5;
-  let skip = 0;
-
-  if (cache) data = cache;
-  else {
-    data.quotes = await apiGet(
-      req,
-      `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
-    );
-  }
-
-  return { data: data };
+  return {};
 };
 
 export default Home;
@@ -90,8 +64,6 @@ export default Home;
   </div>
 </div>
 </div> */
-
-
 
 // Home.getInitialProps = async ({ req, query }) => {
 //   let data = {};

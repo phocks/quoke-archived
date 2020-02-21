@@ -1,15 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import css from "./layout.scss";
 import { useStoreState } from "easy-peasy";
 
-import Heading from "../components/heading";
-import Search from "../components/search";
-import Foot from "../components/foot";
-import RightButtons from "../components/rightButtons";
-
 const Layout = props => {
-  const { children } = props;
   return (
     <>
       <Head>
@@ -17,35 +10,55 @@ const Layout = props => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
-        {/* <meta name="viewport" content="width=768"></meta> */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" href="/icons/favorite-7-240.png" />
         <link rel="stylesheet" href="/css/normalize.css"></link>
         <title>{props.title || useStoreState(state => state.title)}</title>
       </Head>
 
-      <div className={css.container}>
-        <div className={css.header}>
-          <div className={css.brand}>
-            <Link href="/">
-              <a>Q</a>
-            </Link>
-          </div>
-
-          <div className={css.links}>
-            
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            
+      <div className={"container"}>
+        <div className={"header"}>
+          <div className={"brand"}>
+            {/* <Link href="/">
+              <a> */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="lightslategrey"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z" />
+                </svg>
+              {/* </a>
+            </Link> */}
           </div>
         </div>
 
-        <main className={css.content}>{children}</main>
+        <main className={"content"}>{props.children}</main>
         {/* <RightButtons /> */}
       </div>
-      {/* <div className={css.content}>Other content</div> */}
-      {/* To stop font flickering in Chrome we need to use style jsx global */}
+
+      <style jsx>{`
+        @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap");
+
+        .header {
+          background: gainsboro;
+        }
+
+        .brand {
+          
+        }
+
+        .brand a {
+          color: lightgray;
+          text-decoration: none;
+        }
+
+        .content {
+          padding-top: 6em;
+        }
+      `}</style>
       <style jsx global>
         {`
           @font-face {
@@ -56,6 +69,83 @@ const Layout = props => {
           @font-face {
             font-family: "GilroyLight";
             src: url("/fonts/Gilroy-Light.woff") format("woff");
+          }
+
+          html {
+            font-size: 16px;
+          }
+
+          body {
+            margin: 0;
+            font-family: "Josefin Sans", GilroyExtraBold, sans-serif;
+            line-height: 1.2;
+            color: black;
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            margin-top: 0;
+            margin-bottom: 1em;
+          }
+
+          p {
+            margin-top: 0;
+          }
+
+          a {
+            color: #46b6fc;
+          }
+
+          hr {
+            border: 0;
+            height: 0;
+            border-bottom: 1px solid #dcdcdc;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          button,
+          input[type="submit"] {
+            cursor: pointer;
+          }
+
+          button {
+            background: none;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 3px;
+          }
+
+          #__next {
+            height: 100%;
+          }
+
+          .col {
+            margin: auto;
+            max-width: 600px;
+            width: 100%;
+            padding: 0 1rem;
+          }
+
+
+          .invert {
+            filter: invert(1);
+          }
+
+          .absolute-center {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          svg {
+            vertical-align: top;
           }
         `}
       </style>
