@@ -19,19 +19,19 @@ const Layout = props => {
       <div className={"container"}>
         <div className={"header"}>
           <div className={"brand"}>
-            {/* <Link href="/">
-              <a> */}
+            <Link href="/">
+              <a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  fill="lightslategrey"
+                  fill="black"
                   viewBox="0 0 24 24"
                 >
                   <path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z" />
                 </svg>
-              {/* </a>
-            </Link> */}
+              </a>
+            </Link>
           </div>
         </div>
 
@@ -43,11 +43,14 @@ const Layout = props => {
         @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap");
 
         .header {
-          background: gainsboro;
+          border-bottom: 1px solid gainsboro;
+          
         }
 
         .brand {
-          
+          display: inline-block;
+          padding: 1rem 1rem;
+          border-right: 1px solid gainsboro;
         }
 
         .brand a {
