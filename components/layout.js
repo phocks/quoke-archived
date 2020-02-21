@@ -59,9 +59,9 @@ const Layout = props => {
 
         .search {
           flex: 1;
-          font-size: 24px;
-          padding-left: 1rem;
-          padding-right: 1rem;
+          font-size: 18px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
         }
 
         .search input {

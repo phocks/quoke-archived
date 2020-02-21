@@ -31,9 +31,9 @@ const Home = props => {
   );
 };
 
-Home.getInitialProps = async ({ req, query }) => {
-  return {};
-};
+// Home.getInitialProps = async ({ req, query }) => {
+//   return {};
+// };
 
 export default Home;
 
