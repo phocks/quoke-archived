@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
-import Link from "next/link";
+
 import axios from "axios";
 import dayjs from "dayjs";
 import { useStoreState, useStoreActions } from "easy-peasy";
@@ -13,6 +13,8 @@ import Layout from "../components/layout";
 import Preview from "../components/preview";
 import TinyQuote from "../components/tinyQuote";
 
+import Link from "next/link";
+
 import css from "./index.scss";
 
 let cache = null;
@@ -20,7 +22,7 @@ let cache = null;
 const Home = props => {
   const { quotes, testLog } = props.data;
 
-  console.log(props.data)
+  console.log(props.data);
 
   if (process.browser) cache = props.data;
 
@@ -54,19 +56,14 @@ Home.getInitialProps = async ({ req, query }) => {
       req,
       `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
     );
-
-    
   }
-
-
 
   return { data: data };
 };
 
 export default Home;
 
-{
-  /* <div className={css.root}>
+/* <div className={css.root}>
 <div className={css.content}>
   <h1>Discover some inspirational quotes today</h1>
   <h2>
@@ -93,4 +90,22 @@ export default Home;
   </div>
 </div>
 </div> */
-}
+
+
+
+// Home.getInitialProps = async ({ req, query }) => {
+//   let data = {};
+
+//   const quotesPerPage = 5;
+//   let skip = 0;
+
+//   if (cache) data = cache;
+//   else {
+//     data.quotes = await apiGet(
+//       req,
+//       `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
+//     );
+//   }
+
+//   return { data: data };
+// };
