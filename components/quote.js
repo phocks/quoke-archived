@@ -4,7 +4,7 @@ import marked from "marked";
 import parse from "html-react-parser";
 import dayjs from "dayjs";
 import slug from "slug";
-slug.defaults.mode ='rfc3986';
+slug.defaults.mode = "rfc3986";
 
 export default props => {
   const { quote } = props;
@@ -12,14 +12,17 @@ export default props => {
     <div className={"quotation"}>
       <div className={"info"}>
         <span>{dayjs(quote.date).format("DD.MM.YY")}</span>
-        <span> · </span>
-        {quote.topics.map((topic, index) => (
-          <span key={index}>
-            <Link href={"/search?q=" + slug(topic)}>
-              <a>{topic}</a>
-            </Link>{" "}
-          </span>
-        ))}
+
+        {quote.topics && <span> · </span>}
+
+        {quote.topics &&
+          quote.topics.map((topic, index) => (
+            <span key={index}>
+              <Link href={"/search?q=" + slug(topic)}>
+                <a>{topic}</a>
+              </Link>{" "}
+            </span>
+          ))}
       </div>
       <blockquote
         className={`${quote.text.length > 500 ? "long" : ""}`}
