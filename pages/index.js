@@ -11,21 +11,21 @@ import { apiGet } from "../lib/utils";
 
 // Import components
 import Layout from "../components/layout";
-import TinyQuote from "../components/tinyQuote";
+import Quote from "../components/quote";
 
 
 const Home = props => {
   return (
     <Layout title="Quoke">
       <div className="col">
-        {/* <TinyQuote
+        <Quote
           quote={{
             text: "Somewhere, something incredible is waiting to be known.",
             author: "Carl Sagan",
             source: "Cosmos",
             date: "2020-02-18"
           }}
-        /> */}
+        />
       </div>
     </Layout>
   );
