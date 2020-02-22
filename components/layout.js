@@ -39,47 +39,49 @@ const Layout = props => {
         </div>
 
         <main className={"content"}>{props.children}</main>
-        {/* <RightButtons /> */}
       </div>
 
-      <style jsx>{`
-        @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab:700&display=swap");
-        @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+      <style jsx>
+        {`
+          @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
 
-        .header {
-          border-bottom: 1px solid gainsboro;
-          display: flex;
-          align-items: center;
-        }
+          .header {
+            border-bottom: 1px solid gainsboro;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+          }
 
-        .brand {
-          padding: 1rem 1rem;
-          border-right: 1px solid gainsboro;
-        }
+          .brand {
+            padding: 1rem 1rem;
+            border-right: 1px solid gainsboro;
+          }
 
-        .search {
-          flex: 1;
-          font-size: 18px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-        }
+          .search {
+            flex: 1;
+            font-size: 18px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+          }
 
-        .search input {
-          width: 100%;
-          height: 100%;
-          border: none;
-          padding: 0.5rem;
-        }
+          .search input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0.5rem;
+          }
 
-        .brand a {
-          color: lightgray;
-          text-decoration: none;
-        }
+          .brand a {
+            color: lightgray;
+            text-decoration: none;
+          }
 
-        .content {
-          padding-top: 6em;
-        }
-      `}</style>
+          .content {
+            
+          }
+        `}
+      </style>
+
       <style jsx global>
         {`
           @font-face {
