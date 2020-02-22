@@ -101,7 +101,7 @@ const Layout = props => {
           body {
             margin: 0;
             font-family: "IBM Plex Sans", GilroyExtraBold, sans-serif;
-            line-height: 1.2;
+            line-height: 1.3;
             color: black;
           }
 
