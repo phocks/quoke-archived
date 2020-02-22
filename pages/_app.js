@@ -4,7 +4,6 @@ import { createStore } from "easy-peasy";
 import { StoreProvider } from "easy-peasy";
 import { action } from "easy-peasy";
 import Router from "next/router";
-import "./empty.css";
 
 import Progress from "../components/progress";
 
