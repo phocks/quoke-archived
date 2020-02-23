@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useStoreState } from "easy-peasy";
 import { useRouter } from "next/router";
 
+import Footer from "../components/foot";
+
 const Layout = props => {
   const [showMenu, setShowMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -112,6 +114,7 @@ const Layout = props => {
         )}
 
         <main className={"content"}>{props.children}</main>
+        <Footer />
       </div>
 
       <style jsx>
@@ -144,6 +147,7 @@ const Layout = props => {
 
           .menu {
             position: absolute;
+            top: 5rem;
             right: 0;
             padding: 1rem;
             background-color: white;
@@ -171,7 +175,14 @@ const Layout = props => {
             text-decoration: none;
           }
 
+          .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: white;
+          }
           .content {
+            flex: 1;
           }
         `}
       </style>
@@ -193,6 +204,7 @@ const Layout = props => {
           }
 
           body {
+            background: black;
             margin: 0;
             font-family: "IBM Plex Sans", GilroyExtraBold, sans-serif;
             line-height: 1.3;
