@@ -10,6 +10,11 @@ const About = props => {
             <p>
               quoke - an open source project to collect and share quotations.
             </p>
+            <div className="edit">
+              <a href="https://github.com/phocks/quoke/blob/master/pages/about.js">
+                Edit this page
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -24,8 +29,6 @@ const About = props => {
         }
 
         .about {
-          padding-left: 1rem;
-          padding-right: 1rem;
         }
 
         .top {
@@ -34,6 +37,10 @@ const About = props => {
         }
 
         h1 {
+        }
+
+        .edit {
+          margin-top: 80px;
         }
       `}</style>
     </Layout>
