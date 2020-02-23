@@ -8,7 +8,7 @@ const Search = props => {
       <div className={"search"}>
         <div className={"top"}>
           <h1 className={"title"}>Results for {props.q}</h1>
-          <p>here are your results (search feature coming soon...)</p>
+          <p>here are your results (search still in beta...)</p>
         </div>
       </div>
 
@@ -16,9 +16,9 @@ const Search = props => {
 
       <div className="col">
         {props.results &&
-          props.results.map(quote => {
+          props.results.map((quote, index) => {
             return (
-              <div className="result">
+              <div className="result" key={index}>
                 <Quote quote={quote} />
               </div>
             );
@@ -55,8 +55,6 @@ const Search = props => {
 
 Search.getInitialProps = async ({ req, query }) => {
   const searchResults = await apiGet(req, "/api/search?q=" + query.q);
-
-  console.log(searchResults);
 
   return { q: query.q, results: searchResults };
 };
