@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useStoreActions } from "easy-peasy";
 
-import css from "./login.scss"
-
 const Login = props => {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState();
@@ -54,16 +52,16 @@ const Login = props => {
             name="username"
             placeholder="Username"
             required
-            className={css.input}
+            className={"input"}
           />
           <input
             type="password"
             name="password"
             placeholder="Password"
             required
-            className={css.input}
+            className={"input"}
           />
-          <input type="submit" value="Login" className={css.input} />
+          <input type="submit" value="Login" className={"input"} />
         </form>
         <p>
           <small>

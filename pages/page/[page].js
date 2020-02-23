@@ -13,8 +13,6 @@ import { apiGet, truncate } from "../../lib/utils";
 import Layout from "../../components/layout";
 // import Quotation from "../components/quotation";
 
-import css from "../index.scss";
-
 let cache = null;
 
 const Pagination = props => {

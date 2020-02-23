@@ -1,40 +1,26 @@
 import { apiGet, truncate } from "../../lib/utils";
 
 import Layout from "../../components/layout";
-import Quotation from "../../components/quotation";
+import Quote from "../../components/quote"
 
 import css from "./[slug].scss";
 
-const cache = {};
-
-export default function Quote(props) {
+export default function Quotation(props) {
   const { quote } = props.data;
-
-  if (process.browser) cache[quote.slug] = props.data;
 
   return (
     <Layout title={(quote.title || truncate(quote.text, 5)) + " — Quoke"}>
-      <div className={css.root}>
-        {/* <div className={css.title}>
-          <h1>A quotation by Carl Sagan</h1>
-        </div> */}
-
-        <Quotation quote={quote} />
-        {/* <div className={css.info}>213 views</div> */}
+      <div className={`${css.root} col`}>
+        <Quote quote={quote} />
       </div>
-      <hr />
-      {/* <div dangerouslySetInnerHTML={createMarkup()} /> */}
     </Layout>
   );
 }
 
-Quote.getInitialProps = async ({ req, query }) => {
+Quotation.getInitialProps = async ({ req, query }) => {
   let data = {};
 
-  if (cache[query.slug]) data = cache[query.slug];
-  else {
-    data.quote = await apiGet(req, "/api/get-quote/" + query.slug);
-  }
+  data.quote = await apiGet(req, "/api/get-quote/" + query.slug);
 
   return {
     data: data
