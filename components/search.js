@@ -1,15 +1,10 @@
 import css from "./search.scss";
 
 export default props => {
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(event);
-  };
-
   return (
     <div className={css.search}>
       <img src="/icons/magnifier-1.svg" />
-      <form method="get" action="/search" onSubmit={handleSubmit}>
+      <form method="get" action="/search">
         <input
           type="search"
           placeholder="Search..."

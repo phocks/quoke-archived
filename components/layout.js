@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useStoreState } from "easy-peasy";
@@ -19,6 +19,10 @@ const Layout = props => {
   const handleSearchChange = event => {
     setSearchQuery(event.target.value);
   };
+
+  useEffect(() => {
+    if (props.searchQuery) setSearchQuery(props.searchQuery);
+  }, []);
 
   return (
     <>

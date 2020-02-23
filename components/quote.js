@@ -42,6 +42,10 @@ export default props => {
       </blockquote>
       <style jsx>
         {`
+        .quotation {
+          margin-bottom: 3rem;
+        }
+
           .info {
             color: #aaa;
             font-size: small;
