@@ -176,7 +176,7 @@ const Layout = props => {
           }
 
           .container {
-            min-height: 100vh;
+            min-height: 100%;
             display: flex;
             flex-direction: column;
             background: white;
@@ -201,10 +201,12 @@ const Layout = props => {
           }
 
           html {
+            height: 100%;
             font-size: 16px;
           }
 
           body {
+            height: 100%;
             background: black;
             margin: 0;
             font-family: "IBM Plex Sans", GilroyExtraBold, sans-serif;
