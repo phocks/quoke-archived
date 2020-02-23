@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useStoreState } from "easy-peasy";
@@ -11,10 +11,11 @@ const Layout = props => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const router = useRouter();
+  const inputEl = useRef(null);
 
   const handleSearchSubmit = event => {
     event.preventDefault();
-    console.log(event);
+    inputEl.current.blur();
     router.replace("/search?q=" + searchQuery);
   };
 
@@ -66,6 +67,7 @@ const Layout = props => {
                 autoComplete="off"
                 onChange={handleSearchChange}
                 value={searchQuery}
+                ref={inputEl}
               ></input>
             </form>
           </div>
