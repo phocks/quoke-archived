@@ -2,9 +2,23 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useStoreState } from "easy-peasy";
+import { useRouter } from "next/router";
 
 const Layout = props => {
   const [showMenu, setShowMenu] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const router = useRouter();
+
+  const handleSearchSubmit = event => {
+    event.preventDefault();
+    console.log(event);
+    router.replace("/search?q=" + searchQuery);
+  };
+
+  const handleSearchChange = event => {
+    setSearchQuery(event.target.value);
+  };
 
   return (
     <>
@@ -38,12 +52,16 @@ const Layout = props => {
           </div>
 
           <div className={"search"}>
-            <input
-              type="search"
-              placeholder="Search..."
-              name="q"
-              autoComplete="off"
-            ></input>
+            <form method="get" action="/search" onSubmit={handleSearchSubmit}>
+              <input
+                type="search"
+                placeholder="Search..."
+                name="q"
+                autoComplete="off"
+                onChange={handleSearchChange}
+                value={searchQuery}
+              ></input>
+            </form>
           </div>
 
           <div className={"option random"}>
