@@ -31,6 +31,8 @@
     "recaptcha-v3": "^1.7.0",
     "serialize-javascript": "2.1.2",
     "slug": "^2.1.1",
-    "smartquotes": "^2.3.1"
+    "smartquotes": "^2.3.1",
+    "swr": "^0.1.17",
+    "unfetch": "^4.1.0"
   }
 }

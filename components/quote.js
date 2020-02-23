@@ -29,8 +29,13 @@ export default props => {
         cite="https://quoke.co"
       >
         <span>{parse(marked(smartquotes(quote.text)))}</span>
-        {quote.author || quote.source ? <span> &mdash;</span> : ""}
         <small>
+          {quote.author || quote.source ? (
+            <span className="emdash"> &mdash;</span>
+          ) : (
+            ""
+          )}
+
           <span className={"author"}>{quote.author}</span>
           {quote.source && <cite>, {quote.source}</cite>}
         </small>

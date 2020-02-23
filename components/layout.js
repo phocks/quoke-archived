@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useStoreState } from "easy-peasy";
 
 const Layout = props => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <>
       <Head>
@@ -18,7 +21,7 @@ const Layout = props => {
 
       <div className={"container"}>
         <div className={"header"}>
-          <div className={"brand"}>
+          <div className={"option brand"}>
             <Link href="/">
               <a>
                 <svg
@@ -33,17 +36,65 @@ const Layout = props => {
               </a>
             </Link>
           </div>
+
           <div className={"search"}>
-            <input type="search"></input>
+            <input
+              type="search"
+              placeholder="Search..."
+              name="q"
+              autoComplete="off"
+            ></input>
+          </div>
+
+          <div className={"option random"}>
+            <Link href="/random">
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 10v7h10.797l1.594 2h-14.391v-9h-3l4-5 4 5h-3zm14 4v-7h-10.797l-1.594-2h14.391v9h3l-4 5-4-5h3z" />
+                </svg>
+              </a>
+            </Link>
+          </div>
+
+          <div
+            className={"option menu-option"}
+            onClick={event => {
+              setShowMenu(!showMenu);
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 18c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z" />
+            </svg>
           </div>
         </div>
+
+        {showMenu && (
+          <div className={"menu"}>
+            <h3>Menu</h3>
+            <div>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </div>
+          </div>
+        )}
 
         <main className={"content"}>{props.children}</main>
       </div>
 
       <style jsx>
         {`
-          @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap");
 
           .header {
             border-bottom: 1px solid gainsboro;
@@ -55,6 +106,28 @@ const Layout = props => {
           .brand {
             padding: 1rem 1rem;
             border-right: 1px solid gainsboro;
+          }
+
+          .random {
+            padding: 1rem;
+            border-left: 1px solid gainsboro;
+          }
+
+          .menu-option {
+            padding: 1rem;
+            border-left: 1px solid gainsboro;
+            cursor: pointer;
+            user-select: none;
+          }
+
+          .menu {
+            position: absolute;
+            right: 0;
+            padding: 1rem;
+            background-color: white;
+            border-top: 1px solid gainsboro;
+            border-left: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
           }
 
           .search {
@@ -77,7 +150,6 @@ const Layout = props => {
           }
 
           .content {
-            
           }
         `}
       </style>
