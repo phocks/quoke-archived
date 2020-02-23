@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 import { apiGet, truncate } from "../../lib/utils";
 
 import Layout from "../../components/layout";
-// import Quotation from "../components/quotation";
 
 let cache = null;
 

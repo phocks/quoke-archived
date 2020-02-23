@@ -181,6 +181,7 @@ const Layout = props => {
             flex-direction: column;
             background: white;
           }
+
           .content {
             flex: 1;
           }
