@@ -5,13 +5,22 @@ import parse from "html-react-parser";
 import dayjs from "dayjs";
 import slug from "slug";
 slug.defaults.mode = "rfc3986";
+import { truncate } from "../lib/utils";
 
 export default props => {
   const { quote } = props;
   return (
     <div className={"quotation"}>
       <div className={"info"}>
-        <span>{dayjs(quote.date).format("DD.MM.YY")}</span>
+        <span>
+          {props.isLinked ? (
+            <Link href={"/quote/[slug]"} as={`/quote/${quote.slug}`}>
+              <a>{dayjs(quote.date).format("DD.MM.YY")}</a>
+            </Link>
+          ) : (
+            dayjs(quote.date).format("DD.MM.YY")
+          )}
+        </span>
 
         {quote.topics && <span> · </span>}
 
@@ -28,7 +37,11 @@ export default props => {
         className={`${quote.text.length > 500 ? "long" : ""}`}
         cite="https://quoke.co"
       >
-        <span>{parse(marked(smartquotes(quote.text)))}</span>
+        {props.isTruncated ? (
+          <span>{parse(marked(smartquotes(truncate(quote.text, 42))))}</span>
+        ) : (
+          <span>{parse(marked(smartquotes(quote.text)))}</span>
+        )}
         <small>
           {quote.author || quote.source ? (
             <span className="emdash"> &mdash;</span>
@@ -42,9 +55,9 @@ export default props => {
       </blockquote>
       <style jsx>
         {`
-        .quotation {
-          margin-bottom: 3rem;
-        }
+          .quotation {
+            margin-bottom: 3rem;
+          }
 
           .info {
             color: #aaa;

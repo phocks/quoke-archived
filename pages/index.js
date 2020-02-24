@@ -14,26 +14,42 @@ import Layout from "../components/layout";
 import Quote from "../components/quote";
 
 const Home = props => {
+  const { quotes } = props.data;
+
   return (
     <Layout title="Quoke">
       <div className="col">
-        <Quote
+        {quotes.map((quote, index) => {
+          return <Quote quote={quote} key={index} isLinked={true} />;
+        })}
+
+        {/* <Quote
           quote={{
             text: "Somewhere, something incredible is waiting to be known.",
             author: "Carl Sagan",
             source: "Cosmos",
             date: "2020-02-18",
             topics: ["Knowledge", "Space"]
-          }}
-        />
+          }} 
+        /> */}
       </div>
     </Layout>
   );
 };
 
-// Home.getInitialProps = async ({ req, query }) => {
-//   return {};
-// };
+Home.getInitialProps = async ({ req, query }) => {
+  let data = {};
+
+  const quotesPerPage = 5;
+  let skip = 0;
+
+  data.quotes = await apiGet(
+    req,
+    `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
+  );
+
+  return { data: data };
+};
 
 export default Home;
 

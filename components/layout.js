@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useStoreState } from "easy-peasy";
@@ -11,10 +11,11 @@ const Layout = props => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const router = useRouter();
+  const inputEl = useRef(null);
 
   const handleSearchSubmit = event => {
     event.preventDefault();
-    console.log(event);
+    inputEl.current.blur();
     router.replace("/search?q=" + searchQuery);
   };
 
@@ -66,6 +67,7 @@ const Layout = props => {
                 autoComplete="off"
                 onChange={handleSearchChange}
                 value={searchQuery}
+                ref={inputEl}
               ></input>
             </form>
           </div>
@@ -176,7 +178,7 @@ const Layout = props => {
           }
 
           .container {
-            min-height: 100vh;
+            min-height: 100%;
             display: flex;
             flex-direction: column;
             background: white;
@@ -190,24 +192,16 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          @font-face {
-            font-family: "GilroyExtraBold";
-            src: url("/fonts/Gilroy-ExtraBold.woff") format("woff");
-          }
-
-          @font-face {
-            font-family: "GilroyLight";
-            src: url("/fonts/Gilroy-Light.woff") format("woff");
-          }
-
           html {
+            height: 100%;
             font-size: 16px;
           }
 
           body {
+            height: 100%;
             background: black;
             margin: 0;
-            font-family: "IBM Plex Sans", GilroyExtraBold, sans-serif;
+            font-family: "IBM Plex Sans", sans-serif;
             line-height: 1.3;
             color: black;
           }

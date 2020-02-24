@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import css from "./foot.scss";
 
 export default props => {
   return (
@@ -13,11 +12,12 @@ export default props => {
         </Link>
       </div>
       <div className={"sub"}>
-        Made in Australia <img src={"/icons/favorite-7.svg"} />
+        Made in Australia <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"/></svg>
       </div>
 
       <style jsx>{`
         .foot {
+          font-size: 1.25rem;
           background: black;
           color: white;
           min-height: 100px;
@@ -26,6 +26,7 @@ export default props => {
           align-items: center;
           justify-content: center;
           padding-top: 1em;
+          font-weight: bold;
         }
 
         a {
@@ -43,6 +44,7 @@ export default props => {
         }
 
         .sub {
+          font-weight: normal;
           display: flex;
           align-items: center;
           font-size: 0.7em;
@@ -50,7 +52,7 @@ export default props => {
           margin-bottom: 2em;
         }
 
-        .sub img {
+        .sub svg {
           filter: invert(0.4);
           height: 0.9em;
           padding-left: 8px;
