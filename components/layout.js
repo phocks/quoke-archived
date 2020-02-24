@@ -192,16 +192,6 @@ const Layout = props => {
 
       <style jsx global>
         {`
-          @font-face {
-            font-family: "GilroyExtraBold";
-            src: url("/fonts/Gilroy-ExtraBold.woff") format("woff");
-          }
-
-          @font-face {
-            font-family: "GilroyLight";
-            src: url("/fonts/Gilroy-Light.woff") format("woff");
-          }
-
           html {
             height: 100%;
             font-size: 16px;
@@ -211,7 +201,7 @@ const Layout = props => {
             height: 100%;
             background: black;
             margin: 0;
-            font-family: "IBM Plex Sans", GilroyExtraBold, sans-serif;
+            font-family: "IBM Plex Sans", sans-serif;
             line-height: 1.3;
             color: black;
           }
