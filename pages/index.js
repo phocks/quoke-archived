@@ -19,19 +19,9 @@ const Home = props => {
   return (
     <Layout title="Quoke">
       <div className="col">
-        {quotes.map((quote, index) => {
-          return <Quote quote={quote} key={index} isLinked={true} />;
+        {quotes.map((quote, iteration) => {
+          return <Quote quote={quote} key={iteration} isLinked={true} />;
         })}
-
-        {/* <Quote
-          quote={{
-            text: "Somewhere, something incredible is waiting to be known.",
-            author: "Carl Sagan",
-            source: "Cosmos",
-            date: "2020-02-18",
-            topics: ["Knowledge", "Space"]
-          }} 
-        /> */}
       </div>
     </Layout>
   );
