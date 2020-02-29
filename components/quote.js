@@ -7,6 +7,9 @@ import slug from "slug";
 slug.defaults.mode = "rfc3986";
 import { truncate } from "../lib/utils";
 
+/**
+ * @isTruncated truncates quote text
+ */
 export default props => {
   const { quote } = props;
   return (
