@@ -20,7 +20,14 @@ const Home = props => {
     <Layout title="Quoke">
       <div className="col">
         {quotes.map((quote, iteration) => {
-          return <Quote quote={quote} key={iteration} isLinked={true} />;
+          return (
+            <Quote
+              quote={quote}
+              key={iteration}
+              isLinked={true}
+              isTruncated={true}
+            />
+          );
         })}
       </div>
     </Layout>
