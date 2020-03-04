@@ -8,7 +8,7 @@ export default function Quotation(props) {
 
   return (
     <Layout title={(quote.title || truncate(quote.text, 5)) + " — Quoke"}>
-      <div className={`root col`}>
+      <div className={`root container`}>
         <Quote quote={quote} />
       </div>
       <style jsx>{`

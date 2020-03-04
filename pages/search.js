@@ -15,7 +15,7 @@ const Search = props => {
 
       <hr />
 
-      <div className="col">
+      <div className="container">
         {props.results &&
           props.results.map((quote, index) => {
             return (

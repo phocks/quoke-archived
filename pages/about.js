@@ -3,9 +3,9 @@ import Layout from "../components/layout";
 const About = props => {
   return (
     <Layout title={"About — Quoke"}>
-      <div className={"about"}>
+      <div className={"about container"}>
         <div className={"top"}>
-          <div className="col">
+          
             <h1 className={"title"}>About</h1>
             <p>
               quoke - an open source project to collect and share quotations.
@@ -15,7 +15,7 @@ const About = props => {
                 Edit this page
               </a>
             </div>
-          </div>
+          
         </div>
       </div>
       <hr />

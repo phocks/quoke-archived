@@ -18,9 +18,13 @@ const Home = props => {
 
   return (
     <Layout title="Quoke">
-      <div className="col">
-        <h1>Welcome to Quoke</h1>
-        {/* {quotes.map((quote, iteration) => {
+      <div className={"container"}><h1>Welcome to Quoke</h1></div>
+      
+    </Layout>
+  );
+};
+
+{/* {quotes.map((quote, iteration) => {
           return (
             <Quote
               quote={quote}
@@ -30,10 +34,6 @@ const Home = props => {
             />
           );
         })} */}
-      </div>
-    </Layout>
-  );
-};
 
 // Home.getInitialProps = async ({ req, query }) => {
 //   let data = {};
