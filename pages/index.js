@@ -14,12 +14,13 @@ import Layout from "../components/layout";
 import Quote from "../components/quote";
 
 const Home = props => {
-  const { quotes } = props.data;
+  // const { quotes } = props.data;
 
   return (
     <Layout title="Quoke">
       <div className="col">
-        {quotes.map((quote, iteration) => {
+        <h1>Welcome to Quoke</h1>
+        {/* {quotes.map((quote, iteration) => {
           return (
             <Quote
               quote={quote}
@@ -28,25 +29,25 @@ const Home = props => {
               isTruncated={true}
             />
           );
-        })}
+        })} */}
       </div>
     </Layout>
   );
 };
 
-Home.getInitialProps = async ({ req, query }) => {
-  let data = {};
+// Home.getInitialProps = async ({ req, query }) => {
+//   let data = {};
 
-  const quotesPerPage = 5;
-  let skip = 0;
+//   const quotesPerPage = 5;
+//   let skip = 0;
 
-  data.quotes = await apiGet(
-    req,
-    `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
-  );
+//   data.quotes = await apiGet(
+//     req,
+//     `/api/get-quotes?limit=${quotesPerPage}&skip=${skip}`
+//   );
 
-  return { data: data };
-};
+//   return { data: data };
+// };
 
 export default Home;
 
