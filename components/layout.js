@@ -44,6 +44,7 @@ const Layout = props => {
         ></link>
         {/* <link rel="stylesheet" href="/css/normalize.css"></link> */}
         <title>{props.title || useStoreState(state => state.title)}</title>
+        <meta name="google-site-verification" content="cwo7SJgHRGZn64HNxVPjeX-Xa_kKgb-GMfSXQCdZNZ8" />
       </Head>
 
       <div className={"header"}>
