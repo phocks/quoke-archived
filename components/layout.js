@@ -234,13 +234,13 @@ const Layout = props => {
           h4,
           h5,
           h6 {
-            /* margin-top: 0;
-            margin-bottom: 1em; */
             font-weight: bold;
+            margin-bottom: 0.75em;
           }
 
           p {
             margin-top: 0;
+            margin-bottom: 0.75em;
           }
 
           a {

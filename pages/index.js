@@ -18,7 +18,12 @@ const Home = props => {
 
   return (
     <Layout title="Quoke">
-      <div className={"container"}><h1>Welcome to Quoke</h1></div>
+      <div className={"container"}><h1>Welcome to Quoke</h1>
+      
+      <p className="lead">quoke - an open source project to collect and share quotations.</p>
+      
+      
+      </div>
       
     </Layout>
   );
