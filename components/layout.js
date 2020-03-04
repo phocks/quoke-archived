@@ -36,11 +36,17 @@ const Layout = props => {
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" href="/icons/favorite-7-240.png" />
-        <link rel="stylesheet" href="/css/normalize.css"></link>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        ></link>
+        {/* <link rel="stylesheet" href="/css/normalize.css"></link> */}
         <title>{props.title || useStoreState(state => state.title)}</title>
       </Head>
 
-      <div className={"container"}>
+   
         <div className={"header"}>
           <div className={"option brand"}>
             <Link href="/">
@@ -115,9 +121,28 @@ const Layout = props => {
           </div>
         )}
 
+
+
         <main className={"content"}>{props.children}</main>
-        <Footer />
-      </div>
+
+        {/* <Footer /> */}
+
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"
+        ></script>
+      
 
       <style jsx>
         {`
@@ -125,6 +150,8 @@ const Layout = props => {
 
           .header {
             border-bottom: 1px solid gainsboro;
+            border-right:  1px solid gainsboro;
+            border-left:  1px solid gainsboro;
             display: flex;
             align-items: center;
             margin-bottom: 2rem;
@@ -199,7 +226,6 @@ const Layout = props => {
 
           body {
             height: 100%;
-            background: black;
             margin: 0;
             font-family: "IBM Plex Sans", sans-serif;
             line-height: 1.3;
