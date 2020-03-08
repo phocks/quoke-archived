@@ -43,8 +43,12 @@ const Layout = props => {
           crossorigin="anonymous"
         ></link>
         {/* <link rel="stylesheet" href="/css/normalize.css"></link> */}
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i&display=swap" rel="stylesheet"></link>
         <title>{props.title || useStoreState(state => state.title)}</title>
-        <meta name="google-site-verification" content="cwo7SJgHRGZn64HNxVPjeX-Xa_kKgb-GMfSXQCdZNZ8" />
+        <meta
+          name="google-site-verification"
+          content="cwo7SJgHRGZn64HNxVPjeX-Xa_kKgb-GMfSXQCdZNZ8"
+        />
       </Head>
 
       <div className={"header"}>
@@ -112,7 +116,6 @@ const Layout = props => {
 
       {showMenu && (
         <div className={"menu"}>
-          <h4>Menu</h4>
           <div>
             <Link href="/about">
               <a>About</a>
@@ -128,22 +131,22 @@ const Layout = props => {
       <script
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
       <script
         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
       <script
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
 
       <style jsx>
         {`
-          @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+         
 
           .header {
             border-bottom: 1px solid gainsboro;

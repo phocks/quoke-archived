@@ -2,7 +2,6 @@ import Layout from "../components/layout";
 import { apiGet } from "../lib/utils";
 import Quote from "../components/quote";
 
-
 const Search = props => {
   return (
     <Layout title={"About — Quoke"} searchQuery={props.q}>
@@ -16,14 +15,19 @@ const Search = props => {
       <hr />
 
       <div className="container">
-        {props.results &&
-          props.results.map((quote, index) => {
-            return (
-              <div className="result" key={index}>
-                <Quote quote={quote} isLinked={true} isTruncated={true} />
-              </div>
-            );
-          })}
+        <div className="row">
+          <div className="col-8">
+            {props.results &&
+              props.results.map((quote, index) => {
+                return (
+                  <div className="result" key={index}>
+                    <Quote quote={quote} isLinked={true} isTruncated={true} />
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+        <div className="col-4"></div>
       </div>
       <style jsx>
         {`

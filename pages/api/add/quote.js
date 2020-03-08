@@ -43,6 +43,7 @@ const addQuote = async (req, res) => {
       slug: slugText,
       date: new Date(),
       addedBy: loginData.payload.username
+      // topics: ["Test", "Topics"]
     });
   } catch (err) {
     res.json(err);
