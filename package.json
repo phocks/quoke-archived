@@ -18,7 +18,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
     "marked": "^0.8.0",
-    "mongodb": "^3.5.2",
+    "mongodb": "^3.6.6",
     "next": "^9.3.2",
     "next-absolute-url": "^1.2.0",
     "next-cookies": "^2.0.3",
